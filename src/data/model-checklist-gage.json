@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generated": "2026-10-18",
+    "station": "GAGE",
+    "gate": "hotzone-rules fidelity-gate.md / MASTER_PROMPT section 5.7",
+    "scope": "Phase 3 - the tracked part flow along the line (src/sim), the demo operator actor and the manual GO/NO-GO gage station (EQ-007). EDUCATIONAL trend model only: the heat index and the GO/NO-GO dimensions are illustrative, and the gage station is an unverified concept. This is not the plant program and not a verified gage.",
+    "note": "The OPD/spline gage station (EQ-007) was deferred at Phase 2b increment 5 because NO photograph shows it (NV-016) and the only size figures in the source are given as an example, not a program table (NV-014). Phase 3 therefore models the gage as a CONCEPT on the unverified 'conceptual' layer: a bench, a labelled GO master and NO-GO master, a probe and a result flag - enough to show the *principle* of a manual go / no-go size check, clearly placarded 'GAGE (ASSUMED) / NV-016'. No gage brand, no pin diameters, no part tolerances and no check sheet are claimed. The human operator is a generic demo actor (hi-vis, hard hat): it is not plant staff, no PPE spec is claimed and it is not placed from any source. Part positions follow the accepted model x-axis; travel speed, dwell times, spawn interval, heat index and the GO/NO-GO window are all invented to make the flow legible and are labelled illustrative in the code and UI. The sim is deterministic and unit-tested (src/tests/sim.test.ts, 12 tests) so the flow can be reasoned about, but the numbers are not validated against the plant. Human sign-off of the gage concept (GS-16) is outstanding."
+  },
+  "items": [
+    {
+      "id": "GS-01",
+      "title": "overall silhouette and proportions",
+      "status": "partial",
+      "note": "Reads as: an operator standing at a bench beside the unload end of the line, checking a part against a labelled GO / NO-GO gage while parts travel the belt. The gage bench, the operator and the spacing are ASSUMED - the station is never photographed (NV-016) and no drawing places it.",
+      "evidence": { "sourceId": "NV-016 (gage station EQ-007 never photographed - deferred)", "category": "inference", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-02",
+      "title": "station placement on the line",
+      "status": "partial",
+      "note": "Placed at the unload end (x 9.9) between the cooling conveyor and the boxing bench, on the +Z operator side, inferred from the process order (size check after cooling, before boxing). The exact position is INFERRED; the line-end area itself is not photographed (NV-019).",
+      "evidence": { "sourceId": "PF process order (PF-009 cooling / unload, PF-010 check, PF-012 boxing); NV-019", "category": "inference", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-03",
+      "title": "gage bench and fixture",
+      "status": "partial",
+      "note": "A bench (top 0.9 m), two side frames, a fixture base and a guide column with a sliding probe are modelled. The bench form, height and fixture are ASSUMED - no source shows the gage station.",
+      "evidence": { "sourceId": "assumption - gage bench and fixture not visible in any source (NV-016)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-04",
+      "title": "GO and NO-GO masters",
+      "status": "partial",
+      "note": "A green GO master and a red NO-GO master are modelled side by side with labels, showing the two-limit manual check. The go / no-go principle is the documented inspection method, but the masters' size, shape and the pass window are ASSUMED and illustrative - the only figures in the source are an example, not a program table (NV-014).",
+      "evidence": { "sourceId": "NV-014 (pin diameters only an example, no program table); model-checklist CAL/DIM items", "category": "inference", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-05",
+      "title": "probe / measuring column",
+      "status": "partial",
+      "note": "A vertical column with a sliding probe and a knob is modelled so the check action is legible. Its form and motion are ASSUMED - no source shows the measuring device.",
+      "evidence": { "sourceId": "assumption - probe / column not visible in any source (NV-016)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-06",
+      "title": "result flag / pass-fail indication",
+      "status": "partial",
+      "note": "A bench flag turns green (GO) or red (NO-GO) from the simulated measurement. This mirrors the pass / fail outcome of the check but is a demo lamp, not a real indicator - no source shows how the station signals a result.",
+      "evidence": { "sourceId": "assumption - gage result indication not visible in any source (NV-016)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-07",
+      "title": "operator actor (form and pose)",
+      "status": "partial",
+      "note": "A generic operator (hi-vis vest, hard hat, gloves) stands at the bench and reaches down while a part is measured. This is a generic demo actor, not plant staff: no photo, no PPE specification and no actual person is represented, and its pose is scripted for legibility.",
+      "evidence": { "sourceId": "assumption - demo operator actor (Phase 3), no source (not plant staff)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-07b",
+      "title": "operator task / check step",
+      "status": "missing",
+      "note": "The exact gage procedure (which dimension, which fixture, the check sheet, the work instruction) is NOT modelled and NOT claimed - it has not been provided and would have to come from the controlled OPD / gage instruction, not invented. The sim only shows 'operator gages the part: GO / NO-GO'.",
+      "evidence": { "sourceId": "NV-014 / NV-016 (no check sheet; gage station not documented)", "category": "document", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-07b-note",
+      "title": "protective equipment and safety of the operator",
+      "status": "missing",
+      "note": "The demo operator is shown with a hard hat and gloves for legibility only. The real required PPE, guarding, and safety distances at an inspection bench are NOT modelled and no PPE spec is claimed.",
+      "evidence": { "sourceId": "not provided - no PPE spec in the sources", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-08",
+      "title": "part flow through the whole line",
+      "status": "partial",
+      "note": "A tracked part (serial, lot, recipe, 2D code, heat index, history) travels wash -> wash tunnel -> marking -> 2D read -> induction heat -> quench -> draw oven -> cooling -> gage -> boxing, with reject branches at the reader (EP-003 blank / EP-004 damaged) and at the gage. The station ORDER follows the document registers; the speeds, dwell times and temperatures are illustrative and NOT validated (no thermal result is claimed).",
+      "evidence": { "sourceId": "PF-002 / PF-003 / PF-004 / PF-009 / PF-010 / PF-012 (process register); EP-003 / EP-004", "category": "document", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-09",
+      "title": "heat treatment behaviour",
+      "status": "partial",
+      "note": "The part's colour and an 'heat index' number rise at induction heat, drop at the quench, hold at the draw oven and fall on the cooling conveyor. This is an EDUCATIONAL trend model to show the sequence - it is NOT a thermal result, NOT case depth, and NOT metallurgy, and must not be read as one (see the draw-oven and workpiece checklists).",
+      "evidence": { "sourceId": "NV - no thermal data provided; model is illustrative", "category": "inference", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-09b",
+      "title": "reject handling and reject box",
+      "status": "partial",
+      "note": "Rejected parts turn red in the 3D view and the rejected counter increments - a demo indication only. The real reject routing, reject box location and disposition are NOT modelled (the reject-box location is itself conflicting in the sources, NV-020).",
+      "evidence": { "sourceId": "NV-020 (reject-box location conflict); EP-003 / EP-004 reject reactions", "category": "document", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-10",
+      "title": "PES / signal bus wiring",
+      "status": "missing",
+      "note": "The Phase 3 model runs on a local deterministic sim, not on a typed signal bus. There are no real sensor inputs, no PLC tags and no interlocks - the sim's own state is the only 'signal'. The typed signal bus from the phase plan is not built yet.",
+      "evidence": { "sourceId": "not provided - signal bus is a project plan item, no plant wiring given", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-11",
+      "title": "pipes, hoses, cables, brackets, fasteners",
+      "status": "missing",
+      "note": "None modelled at the gage station - the station is conceptual and no source shows its services. Not inventing them avoids misrepresenting the plant.",
+      "evidence": { "sourceId": "assumption - gage station services not visible in any source (NV-016)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-12",
+      "title": "guarding, safety signage, safety equipment",
+      "status": "missing",
+      "note": "No guarding, no safety signage and no safety equipment are modelled at the inspection bench - none is documented. Inventing it would misrepresent the plant.",
+      "evidence": { "sourceId": "not provided - inspection bench guarding / signage not in the sources", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-13",
+      "title": "materials, bevels, shadows, surface detail",
+      "status": "partial",
+      "note": "Hi-vis yellow-green, grey bench, steel column, red / green masters. Approximated from the accepted line palette with generic actor colours; no colour matching and no surface detail beyond the primitives.",
+      "evidence": { "sourceId": "assumption - gage colours and finish not visible in any source (NV-016)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-14",
+      "title": "labels and placards",
+      "status": "partial",
+      "note": "GO / NO-GO labels and a 'GAGE (ASSUMED) / NV-016' placard are modelled so the reader can see what is and is not verified. Label style is ASSUMED.",
+      "evidence": { "sourceId": "assumption - label style not visible in any source (NV-016)", "category": "assumption", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-15",
+      "title": "comparison renders committed",
+      "status": "missing",
+      "note": "No render of the gage station / operator has been committed yet. When captured it is a free capture only - there is no reference photograph to overlay, so a render records the concept for review and cannot gate fidelity.",
+      "evidence": { "sourceId": "pending capture of the gage-station pose (no reference photo exists)", "category": "external", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    },
+    {
+      "id": "GS-16",
+      "title": "human visual sign-off",
+      "status": "missing",
+      "note": "Outstanding. The gage concept, the operator actor and the illustrative sim values have not been reviewed by a human. The executing model has no image input and cannot self-assess.",
+      "evidence": { "sourceId": "pending human review of the gage-station concept", "category": "external", "confidence": "low", "status": "unverified", "reviewed": "2026-10-18" }
+    }
+  ]
+}

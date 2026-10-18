@@ -1,0 +1,674 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generated": "2026-10-15",
+    "reviewMethod": "Contact sheets (4x4 thumbnails, EXIF-corrected) reviewed 2026-10-15; entries marked review=full were additionally opened at full resolution.",
+    "matchLegend": {
+      "match": "observed content agrees with the PDF caption for that filename",
+      "mismatch": "observed content differs from the PDF caption (see NV-007)",
+      "caption-missing": "the PDF gallery has no content line for this file",
+      "unclear": "thumbnail too small to confirm title/content"
+    },
+    "excludedFiles": "Seven loose WhatsApp images in C:/Users/Pc/Videos/avis (2026-09-20 / 2026-09-22) were reviewed and excluded: they show ceiling lamps, a door chime and personal identity documents - not plant content, and not copied into this project."
+  },
+  "photos": [
+    {
+      "id": "PHOTO-01",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.41 PM.jpeg",
+      "caption": "Wash blanks station CV OR #4, conveyor with parts, barcode scanner, red light curtain",
+      "observed": "Wash blanks station: placard OP_100102 / CV OR #4 / SV-000088; stainless conveyor with rows of blank parts; mounted green handheld barcode scanner; red light-curtain beam; E-stop on yellow mount; 'A-1' air point sign; overhead piping.",
+      "match": "match",
+      "review": "full",
+      "camera": "Three-quarter front-right view, slightly above conveyor height.",
+      "hidden": "Washer tunnel interior, rear of machine, far side of the conveyor.",
+      "station": "WASH-BLANK",
+      "evidence": { "sourceId": "PHOTO:4.20.41 PM.jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-02",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM (1).jpeg",
+      "caption": "AutoID Network Navigator HMI - DataMatrix live view, tuning banks, SR-20AH reader",
+      "observed": "PC monitor showing AutoID Network Navigator: DataMatrix live-view image, settings tree on the left, result/status table at the bottom.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "READER",
+      "evidence": { "sourceId": "PHOTO:4.20.42 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-03",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM (2).jpeg",
+      "caption": "Inside induction machine - pneumatics, blue hoses, red cover, E-stop",
+      "observed": "Interior of induction machine through open access: aluminium framing, blue pneumatic hoses, actuator/servo assembly, red cover plate in the foreground, yellow structural frame at right, small LED status lights.",
+      "match": "match",
+      "review": "full",
+      "camera": "Straight-in close-up, portrait orientation, low light.",
+      "hidden": "Coil, workpiece, overall station arrangement, upper assembly.",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.42 PM (2).jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-04",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM (3).jpeg",
+      "caption": "Induction station - gold cylinders, quench spray, green/blue/orange hoses",
+      "observed": "Through wet polycarbonate: two vertical gold anodized cylinders with rods; central black servo motor; green/blue/orange hoses; workpiece seated on a fixture at lower left with active quench spray; wet surfaces.",
+      "match": "match",
+      "review": "full",
+      "camera": "Straight-on through the access window, portrait; water droplets on glass.",
+      "hidden": "Upper assembly, coil geometry, station extent, quench ring detail.",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.42 PM (3).jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-05",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM (4).jpeg",
+      "caption": "Induction bowl station close-up - oil/coolant, fixtures, hoses",
+      "observed": "Close-up of bowl/bell station area: gold cylinder, workpiece on fixture with coolant/oil sheen, hoses and cable routes.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.42 PM (4).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-06",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM.jpeg",
+      "caption": "Stainless washer enclosure with viewing windows, yellow nozzles inside",
+      "observed": "Long stainless washer enclosure with several hinged doors, viewing windows, yellow spray nozzles visible inside, handles, lower frame with wheels/feet, side conduits.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "WASH-TPCV",
+      "evidence": { "sourceId": "PHOTO:4.20.42 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-07",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.43 PM (1).jpeg",
+      "caption": "Siemens SINUMERIK panel CV 4 - full keypad, E-stop, green pilot lights",
+      "observed": "SINUMERIK machine panel: display, full keypad, E-stop, green pilot lights, rotary switches.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.43 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-08",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.43 PM (2).jpeg",
+      "caption": "Nexteer Production Work Instruction - SETUP SHEET bowl/stem recipes (yellow = operator-editable)",
+      "observed": "Setup sheet document: recipe parameter table with yellow highlighted cells; photo too small to re-transcribe individual values (PDF text used instead).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.43 PM (2).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-09",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.43 PM.jpeg",
+      "caption": "Induction station - stem quench, ball joints visible, wet environment",
+      "observed": "Induction station interior: gold cylinder, workpiece with ball studs on fixture, wet surfaces, blue and green hoses.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.43 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-10",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (1).jpeg",
+      "caption": "Through wire-mesh guard: induction coil, cables, yellow frame",
+      "observed": "Through wire-mesh guard: silver cylindrical unit (possible transformer), yellow painted structural frames, green and red hoses, thick cable bundles overhead, dark red/maroon box, blue bin at lower left.",
+      "match": "match",
+      "review": "full",
+      "camera": "Straight-on through mesh; heavy occlusion by mesh grid.",
+      "hidden": "Coil geometry and fixture detail behind the silver unit; everything not aligned with mesh openings.",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.44 PM (1).jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-11",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (2).jpeg",
+      "caption": "Draw Oven CVOR #4 control cabinets - 3 zone controllers, energy meter 354368, Therelek",
+      "observed": "Row of light-grey electrical cabinets with indicator lights, buttons, warning labels and an 'OK' sign.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "OVEN",
+      "evidence": { "sourceId": "PHOTO:4.20.44 PM (2).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-12",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (3).jpeg",
+      "caption": "Therelek draw oven exit - metal belt, ball studs on tray, gage instructions posted",
+      "observed": "Beige/cream oven with placard, metal belt carrying ball-stud parts on a tray exiting the oven, posted instruction sheet, plant background.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "OVEN",
+      "evidence": { "sourceId": "PHOTO:4.20.44 PM (3).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-13",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (4).jpeg",
+      "caption": "HMI panel - manual/auto, homing, system reset, clear faults, E-stop, IP address list",
+      "observed": "Operator panel: small touchscreen, selector switches, yellow E-stop, pushbuttons, printed labels.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.44 PM (4).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-14",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM.jpeg",
+      "caption": "SINUMERIK screen: CHAN2/CHAN3 active, Z2/Z3 positions, NC blocks (STOPRE, G4 stop time, quench GOTO)",
+      "observed": "SINUMERIK screen labeled CV 4 / 700826: alarm 'BRAX % OUT OF RANGE: 3 - 3.5'; NC/MPF/BELL CHAN2 'Wait: Read-in enable missing'; NC/MPF/STEM CHAN3 'F12 dwell time still 5.9s'; Z2 5.000 / A2 60.000 deg / Z3 134.000; STEM blocks N530-N580; BELL blocks N1130-N1200 (N1130 illegible).",
+      "match": "match",
+      "review": "full",
+      "camera": "Straight-on screen photo with slight tilt; bezel and 'CV 4' label visible.",
+      "hidden": "Physical machine state; whether the NC program is running or stopped.",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.20.44 PM.jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-15",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.45 PM (1).jpeg",
+      "caption": "Nexteer Start-Stop Instruction (STR34407290) - photos of switches, HMI steps",
+      "observed": "Production Work Instruction 'start stop instruction' document with switch/HMI photos and highlighted steps, CONTROLLED COPY stamp.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.20.45 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-16",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.45 PM.jpeg",
+      "caption": "1st Level Maintenance Instruction (TPM34411007) - 14 steps, ALK-CAST 12.7, nozzles check",
+      "observed": "Maintenance instruction document with ~10 small photos and numbered steps.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.20.45 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-17",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.46 PM (1).jpeg",
+      "caption": "Washer Nozzles Check (VAS34402948) - orientation photos, before/after",
+      "observed": "Instruction sheet with nozzle close-up photos (red/green markings).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.20.46 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-18",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.46 PM.jpeg",
+      "caption": "Washer Setup Sheet - washing temp, ALK-CAST 12.7, 2.8 %, conductivity meter",
+      "observed": "Production Work Instruction sheet containing an embedded HMI screenshot; title not fully legible at thumbnail resolution.",
+      "match": "unclear",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.20.46 PM.jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-19",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.47 PM (1).jpeg",
+      "caption": "Operation Control Plan page 1 (OCP34417178) - automatic checks 1-7",
+      "observed": "'Plan de Controle d'Operation' table document with yellow header rows.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.20.47 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-20",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.47 PM.jpeg",
+      "caption": "Instruction de Nettoyage - 10-step cleaning procedure for machine",
+      "observed": "Work instruction document with several machine photos in a plastic sleeve; title not fully legible at thumbnail resolution.",
+      "match": "unclear",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.20.47 PM.jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-21",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (1).jpeg",
+      "caption": "Gage Instructions (GOP34413151) - OPD 0/90, pin gage table, micrometer photos",
+      "observed": "Gage instruction document with micrometer/pin photos and a data table.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "GAGE",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-22",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (2).jpeg",
+      "caption": "Instruction de Travail CVOR - load part, OCP checks, boxing steps (landscape)",
+      "observed": "Landscape work instruction in plastic sleeve held up in front of yellow bins.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (2).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-23",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (3).jpeg",
+      "caption": "Interrupted Cycle (BLC-style) - reset, homing, wash entry, lamp start (upside-down photo)",
+      "observed": "Upside-down instruction document with machine photos in sleeve.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (3).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-24",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (4).jpeg",
+      "caption": "Operation Control Plan page 2 - manual checks 8-15",
+      "observed": "Plan de Controle d'Operation table, second page.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (4).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-25",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (5).jpeg",
+      "caption": "Operation Control Plan page 3 - checks 16-18 (washed, dried, no residue)",
+      "observed": "Plan de Controle d'Operation table, third page.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (5).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-26",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (6).jpeg",
+      "caption": "Annex 1 - Customer to Nexteer PN cross-reference (large table)",
+      "observed": "Large multi-page PN cross-reference table (values not legible at thumbnail).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (6).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-27",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (7).jpeg",
+      "caption": "Annex 2 - Gage / fixture table (GA-780xxx pin numbers)",
+      "observed": "Gage/fixture number table document.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (7).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-28",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (8).jpeg",
+      "caption": "Instruction de Travail CVOR - full page with EP & OCP steps (landscape)",
+      "observed": "Landscape CVOR work instruction with step table and yellow highlights.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (8).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-29",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM (9).jpeg",
+      "caption": "Production Work Instruction - Work Place Organization / 5S checklist (landscape)",
+      "observed": "Landscape checklist document with colored columns.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM (9).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-30",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.00 PM.jpeg",
+      "caption": "Supplementary Instructions - Manual Lot Tracking screenshots (upside-down)",
+      "observed": "Upside-down document showing HMI screenshots (green/white screens).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.00 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-31",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (1).jpeg",
+      "caption": "Cleanup Instruction (GWI34413351) - photos of induction machine interior",
+      "observed": "'Cleaner'/'Cleanup' production work instruction with machine interior photos.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-32",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (10).jpeg",
+      "caption": "1st Level Maintenance (alt. SV 000006/114/115/90) - 17 steps, quench water, foam check",
+      "observed": "'Instruction de maintenance de niveau 1 (SV117 ...)' document.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (10).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-33",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (11).jpeg",
+      "caption": "(no content line in the PDF gallery)",
+      "observed": "Instruction document with machine photos and numbered steps; title partially legible ('... Check Instruction TP & CV' style, consistent with the Sensibilite check).",
+      "match": "caption-missing",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (11).jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-34",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (2).jpeg",
+      "caption": "Sensibilite Check Instruction TP & CV (GWI3441351) - clip connections, inductor touch alarm",
+      "observed": "Document with colored tables and small machine photos; title not legible at thumbnail resolution - content not confirmed.",
+      "match": "unclear",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (2).jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-35",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (3).jpeg",
+      "caption": "Change Over Instruction (CHO3440796-4) page 13 - coil, rings, bottom rings, Allen keys",
+      "observed": "Changeover document with coil/ring/tool photos in sleeve.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (3).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-36",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (4).jpeg",
+      "caption": "Change Over page 23 - master placement, teflon gap, Z2/Z3, Bell/STEM recipes",
+      "observed": "Changeover document page with master part photos.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (4).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-37",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (5).jpeg",
+      "caption": "Change Over page 23 (cont.) - Learn on Inducontrol, groups, single cycle, setup sheet",
+      "observed": "'EP VERIFICATION INSTRUCTIONS-EP' document with a photo of master parts on a tray.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (5).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-38",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (6).jpeg",
+      "caption": "EP Verification Instructions (EPR34409900) page 1/2 - geometry & 2D code error proofing",
+      "observed": "'EP VERIFICATION INSTRUCTIONS-EP' page with the green master-part-number table.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (6).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-39",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (7).jpeg",
+      "caption": "EP Verification page 2/2 - master part numbers by program (CDV, CMP, XS2, FCA, DB35)",
+      "observed": "'Hand Refractometer Instr...' document with sampling photos.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (7).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-40",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (8).jpeg",
+      "caption": "Hand Refractometer Instructions (GWI34413698) - sampling, x2 Aquaquench 251",
+      "observed": "'SUPPLEMENTARY INSTRUCTIONS (CRACK REACTION PLAN)' document with check-list and photos.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (8).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-41",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM (9).jpeg",
+      "caption": "Supplementary / Crack Reaction Plan (GWI34417543) - 14 checks + systemic actions",
+      "observed": "Boxing orientation standard: red BAD house / green GOOD house with box photos (upside-down).",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM (9).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-42",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.01 PM.jpeg",
+      "caption": "Supplementary Instructions - boxing orientation GOOD/BAD (red/green boxes, upside-down)",
+      "observed": "'Interrupted Cycle' production work instruction with machine photos.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.01 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-43",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (1).jpeg",
+      "caption": "Interrupted Cycle (RIC34402309) - manual mode, 3-min showers, hot-part glove warning",
+      "observed": "'STATUT OK VS NOK' standard: inductor coil alignment on part (OK centered / NOK offset).",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-44",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (10).jpeg",
+      "caption": "Fiche de Securite (alt. orientation) - same risk matrix",
+      "observed": "'Interrupted Cycle' PRO.01.00.10 Rev 3 (25.10.2020), doc RIC34401371 rev 16/12/2024/05, 3 steps: clean all errors / Safety Reset / Auto-Start x2, with button photos.",
+      "match": "mismatch",
+      "review": "full",
+      "camera": "Straight-on photo of a document in a plastic sleeve, slight skew, flash glare.",
+      "hidden": "Page corners under sleeve glare.",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (10).jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-45",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (2).jpeg",
+      "caption": "OK vs NOK - inductor coil alignment",
+      "observed": "'SAFETY' placard with a line diagram of a machine (LOTO-style placard).",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (2).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-46",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (3).jpeg",
+      "caption": "Interrupted Cycle (RIC34401371) - clear errors, Safety Reset, Auto-Start x2",
+      "observed": "EMMEPI metal machine plate with the network table: CP, MCP, ET1, ET2, PN_IO, IM1, IM2, CONV, 2D CAMERA, LASER SENSOR, STATION DE MARQUAGE, IO LINK 1/2/3 with 172.38.22.x / 192.168.214.x / 10.0.0.98 addresses (glare; individual digits should be re-confirmed).",
+      "match": "mismatch",
+      "review": "full",
+      "camera": "Close-up of wall-mounted metal plate; flash glare across the middle rows.",
+      "hidden": "Lower rows partly obscured by glare.",
+      "station": "NETWORK",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (3).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-47",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (4).jpeg",
+      "caption": "Safety LOTO placard - Draw Oven #5, E-1 + A-1, 2 locks required",
+      "observed": "'STATUT OK VS NOK' standard: part seating on fixture (straight vs tilted), two photos of a ball-stud part.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (4).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-48",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (5).jpeg",
+      "caption": "OK vs NOK - part seating on fixture (straight vs tilted)",
+      "observed": "'STATUT OK VS NOK' standard: dark heated surfaces with red annotation circles (scale/surface condition).",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (5).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-49",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (6).jpeg",
+      "caption": "OK vs NOK - bell quench surface condition",
+      "observed": "'STATUT OK VS NOK': two ring/bell surface photos (clean vs stained/wet pattern).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (6).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-50",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (7).jpeg",
+      "caption": "OK vs NOK - heated part / scale defects",
+      "observed": "'STATUT OK VS NOK': four photos of ball-stud parts showing heat-band discoloration extents.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (7).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-51",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (8).jpeg",
+      "caption": "Fiche de Securite au Poste de Travail (SOP34405838) - risks & PPE",
+      "observed": "Safety sheet with hazard photos and yellow warning triangles.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (8).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-52",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM (9).jpeg",
+      "caption": "Fiche de Securite (alt. orientation) - same risk matrix",
+      "observed": "Similar safety sheet held up (alternate orientation).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM (9).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-53",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.02 PM.jpeg",
+      "caption": "Inducontrol HMI - shower flow graph, Rejected status, threshold 300 L/min",
+      "observed": "'FICHE DE SECURITE AU POSTE DE TRAVAIL' full page (risks, PPE, alert text).",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.02 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-54",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (1).jpeg",
+      "caption": "Non-conforming material handling flow chart (landscape, blurry)",
+      "observed": "Landscape flowchart with blue/red/yellow blocks.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (1).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-55",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (10).jpeg",
+      "caption": "Fiche de Securite (rotated) - same content",
+      "observed": "SINUMERIK-style screen labeled 'CV 1' with a trend graph, green operating band and softkeys (flags GB/FR/... on the right); numeric threshold not legible.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "INDUCTION",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (10).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-56",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (2).jpeg",
+      "caption": "Gage Instructions + Non-conforming flow (two pages in sleeve)",
+      "observed": "Safety-sheet style document with photos and warning triangles (alternate sheet).",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (2).jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-57",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (3).jpeg",
+      "caption": "Non-conforming material handling flow chart (clearer)",
+      "observed": "Clearer landscape flowchart with colored blocks and a Nexteer header.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (3).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-58",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (4).jpeg",
+      "caption": "1st Level Maintenance (TPM34411499) - 8 steps, air valve, E-stop, 3 fans, 6-pcs belt check",
+      "observed": "TPM document with air valve / E-stop / handle photos and numbered steps.",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (4).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-59",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (5).jpeg",
+      "caption": "Instruction de Nettoyage (rotated, in sleeve)",
+      "observed": "Rotated work instruction in sleeve (cleanup-style document).",
+      "match": "match",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (5).jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-60",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (6).jpeg",
+      "caption": "Gage Instructions - Spline Check Flow for CV OR (GOP34413755) - decision flowchart",
+      "observed": "Document in sleeve with photos; title not legible at thumbnail resolution.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (6).jpeg", "category": "photographic", "confidence": "low", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-61",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (7).jpeg",
+      "caption": "Gage Instructions SG 699436 (GOP34413754) - Max HUB simulator, 4-step check",
+      "observed": "'GAGE INSTRUCTIONS - SPLINE CHECK FLOW FOR CV OR' decision flowchart document.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (7).jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-62",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (8).jpeg",
+      "caption": "Inducontrol process dashboard - V/I/P/F, showers, quench 34.6 C, RPM 112, Brix 3.7 %, conductivity 200, Job IDs, heat time 69 s",
+      "observed": "'GAGE INSTRUCTIONS : SG 699436' GOP34413754 Rev 1 (5/2/2025): Max HUB simulator steps 1-4 (align spline, 8 mm thickness gage, NoGo GA-780063, mark OK with 'V'), with four setup photos.",
+      "match": "mismatch",
+      "review": "full",
+      "camera": "Straight-on photo of a wall-mounted document in a sleeve.",
+      "hidden": "Nothing significant; full page visible.",
+      "station": "DOC",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (8).jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-63",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM (9).jpeg",
+      "caption": "Set Up Sheet (GWI34417348) - draw oven 163 +/-5 C x3 zones, blower/conveyor Hz",
+      "observed": "Main HMI dashboard: 'NEXTEER AUTOMOTIVE' header (SMITA/SAET/IBI logos); PROCESS PARAMETER fields (Voltage 0, Current 0, Power 0, Frequency 0, Bell Ext Shower 117.9, Bell Mid 34.0, Bell Int 0.0, Stem 0.0, Quench Temp 34.6, Rotation 112.0, Brix 3.7, DM Conductivity 200); BELL STN / STEM STN job IDs and heat times 69.0 / 0.0; 3D line model; TRACEABILITY / OPERATIONS / RECIPE buttons; timestamp 10/15/2026 6:02:43 AM.",
+      "match": "mismatch",
+      "review": "full",
+      "camera": "Straight-on screen photo; mild moire; left softkey column unlit.",
+      "hidden": "Sub-screens behind TRACEABILITY / OPERATIONS / RECIPE.",
+      "station": "HMI",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM (9).jpeg", "category": "photographic", "confidence": "high", "status": "unverified", "reviewed": "2026-10-15" }
+    },
+    {
+      "id": "PHOTO-64",
+      "file": "WhatsApp Image 2026-10-15 at 4.21.03 PM.jpeg",
+      "caption": "Fiche de Securite (rotated) - same content",
+      "observed": "'SET UP SHEET' production work instruction (draw oven) with zone temperature rows (163 +/-5 C style entries) and a fan/conveyor photo.",
+      "match": "mismatch",
+      "review": "contact-sheet",
+      "station": "OVEN",
+      "evidence": { "sourceId": "PHOTO:4.21.03 PM.jpeg", "category": "photographic", "confidence": "medium", "status": "unverified", "reviewed": "2026-10-15" }
+    }
+  ]
+}

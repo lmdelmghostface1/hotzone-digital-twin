@@ -1,0 +1,1639 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generated": "2026-10-17",
+    "station": "INDUCTION",
+    "source": "docs/HMI errors - 53 screening photographs of the CV1-CV4 SINUMERIK / Inducontrol alarm pages, supplied 2026-10-17",
+    "screens": 53,
+    "method": "Windows.Media.Ocr text recognition was run over all 53 images on 2026-10-17. The transcription is machine-made and is NOT verified against the controlled alarm list or against the machine.",
+    "pairingRule": "clear = the code and its text could be read together with corroboration (a detail pane spelling out 'code: text', the same pair on two or more screens, or a screen carrying a single alarm). probable = a single multi-alarm screen whose number-column and text-column runs have the same length and line up positionally, with no conflicting candidate seen. unclear = the runs do not line up or two screens give conflicting candidates - the raw OCR is preserved instead of guessing.",
+    "fixes": "Each entry carries fixStatus (open | in-progress | fixed | not-an-issue) so the maintenance follow-up can be tracked. These are conditions recorded on the real machine screens; the 3D model and its HMI simulation do not reproduce any of them yet.",
+    "note": "Codes are the SINUMERIK alarm numbers as read by OCR - leading digits and formatting must be confirmed in the controlled alarm list. seenInPhotos is an approximate OCR match count. Where a text is left empty the OCR could not recover it. Conflicts found so far (700306, 700329, 700509, 700603, 700826/BRIX-vs-BRAX) are recorded in the entry notes, not merged."
+  },
+  "entries": [
+    {
+      "id": "HMI-001",
+      "code": "3000",
+      "text": "Emergency stop",
+      "candidates": [
+        "Emergency stop"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg",
+        "docs/HMI errors/120363413976268198_0036.jpg",
+        "docs/HMI errors/120363413976268198_0038.jpg"
+      ],
+      "notes": "Standard SINUMERIK safety alarm; read next to its own row on 4 screens.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0008.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-002",
+      "code": "25201",
+      "text": "Axis Z1 drive fault",
+      "candidates": [
+        "Axis Z1 drive fault"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 2,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0027.jpg",
+        "docs/HMI errors/120363413976268198_0037.jpg"
+      ],
+      "notes": "Drive/axis alarm screen (0037) lists this with 26101 in a two-row list.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0027.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-003",
+      "code": "26101",
+      "text": "Axis A1 drive communication failure",
+      "candidates": [
+        "Axis A1 drive communication failure"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0037.jpg"
+      ],
+      "notes": "Same screen as 25201 (0037).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0037.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-004",
+      "code": "400262",
+      "text": "Failure of handheld unit",
+      "candidates": [
+        "Failure of handheld unit"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 22,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0001.jpg",
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0003.jpg",
+        "docs/HMI errors/120363413976268198_0009.jpg",
+        "docs/HMI errors/120363413976268198_0010.jpg",
+        "docs/HMI errors/120363413976268198_0011.jpg",
+        "docs/HMI errors/120363413976268198_0013.jpg",
+        "docs/HMI errors/120363413976268198_0014.jpg"
+      ],
+      "notes": "Recurs on 21 of the 53 screens (last row before the button bar on most). A standing condition (handheld unit not connected) is plausible but cannot be confirmed from photos alone.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0001.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-005",
+      "code": "700015",
+      "text": "DRIVES NOT POWERED UP (DB2.DBX181.7)",
+      "candidates": [
+        "DRIVES NOT POWERED UP (DB2.DBX181.7)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg",
+        "docs/HMI errors/120363413976268198_0038.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0008, 0030, 0038).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0008.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-006",
+      "code": "700016",
+      "text": "TRACK STATION INDUCTOR TOUCH (DB2.DBX182.0) CHECK E0.1 (FEED HOLD Z2-AXIS, A2 AXIS & CH2 READ IN DISABLE)",
+      "candidates": [
+        "TRACK STATION INDUCTOR TOUCH (DB2.DBX182.0) CHECK E0.1 (FEED HOLD Z2-AXIS, A2 AXIS & CH2 READ IN DISABLE)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0005.jpg",
+        "docs/HMI errors/120363413976268198_0006.jpg",
+        "docs/HMI errors/120363413976268198_0035.jpg"
+      ],
+      "notes": "Aligned on 3 screens. OCR reads the axis as '22-AXIS'; Z2 assumed from the sibling 700017 text.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0005.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-007",
+      "code": "700017",
+      "text": "STEM STATION INDUCTOR TOUCH (DB2.DBX182.1) CHECK E0.1 (FEED HOLD Z3-AXIS & CH3 READ IN DISABLE)",
+      "candidates": [
+        "STEM STATION INDUCTOR TOUCH (DB2.DBX182.1) CHECK E0.1 (FEED HOLD Z3-AXIS & CH3 READ IN DISABLE)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 2,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0009.jpg",
+        "docs/HMI errors/120363413976268198_0051.jpg"
+      ],
+      "notes": "Aligned on 2 screens (0009, 0051).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0009.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-008",
+      "code": "700101",
+      "text": "BELL STATION C-01 CYLINDER RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "BELL STATION C-01 CYLINDER RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Cylinder-proxy screen (0032) lists 700101..700111 against six cylinder texts in reverse order; the per-code cylinder index is not confirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-009",
+      "code": "700103",
+      "text": "BELL STATION C-02 CYLINDER RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "BELL STATION C-02 CYLINDER RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Same screen as 700101/700105; index not confirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-010",
+      "code": "700105",
+      "text": "BELL STATION C-03 CYLINDER RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "BELL STATION C-03 CYLINDER RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Same screen as 700101/700103; index not confirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-011",
+      "code": "700106",
+      "text": "LASER MARKING SLIDE RIGHT SIDE CYCLE INTERRUPT, CHECK I12.4, I13.7, I11.6",
+      "candidates": [
+        "LASER MARKING SLIDE RIGHT SIDE CYCLE INTERRUPT, CHECK I12.4, I13.7, I11.6"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0023.jpg"
+      ],
+      "notes": "Read on 0023 (6 codes / 6 texts, positional).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0023.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-012",
+      "code": "700107",
+      "text": "STEM STATION C-01 CYLINDER RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "STEM STATION C-01 CYLINDER RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Same cylinder-proxy screen (0032); index not confirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-013",
+      "code": "700109",
+      "text": "STEM STATION C-02 CYLINDER RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "STEM STATION C-02 CYLINDER RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "unclear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "On the cylinder-proxy screen (0032) this code lines up with a text whose cylinder index the OCR lost (\"PROXY STEM STATION C- TIMEOUT\"). C-02 is a guess from the sequence, not a reading. Code/text pairing unclear - the OCR melted the number and text columns on the screen. The verbatim OCR of all 53 screens is kept in docs/HMI errors/ocr-2026-10-17.txt so the pairing can be re-checked by eye.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-014",
+      "code": "700110",
+      "text": "LOADING SEQUENCE IS NOT INITIALISED (DB2.DBX189.2), CYCLE START DISABLE",
+      "candidates": [
+        "LOADING SEQUENCE IS NOT INITIALISED (DB2.DBX189.2), CYCLE START DISABLE",
+        "LOADING SEQUENCE IS NOT INITIALISED (DB2.DBX189.2) CYCLE START DISABLE, PRESS INITIALISED KEY ON MCP"
+      ],
+      "pairing": "unclear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0018.jpg"
+      ],
+      "notes": "0018 shows 700804 and 700110 with what appears to be the same text; the two codes cannot be told apart in the OCR. Code/text pairing unclear - the OCR melted the number and text columns on the screen. The verbatim OCR of all 53 screens is kept in docs/HMI errors/ocr-2026-10-17.txt so the pairing can be re-checked by eye.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0018.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-015",
+      "code": "700111",
+      "text": "STEM STATION C-02 CYLINDER RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "STEM STATION C-02 CYLINDER RETRACT PROXY TIMEOUT",
+        "STEM STATION C-0? CYLINDER RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "unclear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "On the cylinder-proxy screen (0032) this code lines up with a STEM cylinder text whose index the OCR lost; conflicts with 700109. Index not confirmed. Code/text pairing unclear - the OCR melted the number and text columns on the screen. The verbatim OCR of all 53 screens is kept in docs/HMI errors/ocr-2026-10-17.txt so the pairing can be re-checked by eye.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-016",
+      "code": "700113",
+      "text": "LOADING CONVEYOR SEPARATOR RETRACT PROXY TIMEOUT",
+      "candidates": [
+        "LOADING CONVEYOR SEPARATOR RETRACT PROXY TIMEOUT"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Aligned on 0032 (first row). 0019 shows the separate ADVANCE REED SWITCH TIME OUT (DB2.DBX189.4) CHECK E11.2 variant for a code the OCR did not capture.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-017",
+      "code": "700120",
+      "text": "LASER MARKING GRIPPER OPEN PROXY TIMEOUT (DB2.DBX190.4) CHECK E12.0",
+      "candidates": [
+        "LASER MARKING GRIPPER OPEN PROXY TIMEOUT (DB2.DBX190.4) CHECK E12.0"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg"
+      ],
+      "notes": "Read on 0002 (9 codes / 9 texts, positional); not seen on a second screen.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-018",
+      "code": "700129",
+      "text": "PROXY TIMEOUT - CYLINDER RETRACT",
+      "candidates": [
+        "PROXY TIMEOUT - CYLINDER RETRACT"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Aligned on 0032; the text does not name the cylinder.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-019",
+      "code": "700207",
+      "text": "LASER UNIT NOT READY, CYCLE START DISABLE (& EMPTY CYCLE START)",
+      "candidates": [
+        "LASER UNIT NOT READY, CYCLE START DISABLE (& EMPTY CYCLE START)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0009.jpg",
+        "docs/HMI errors/120363413976268198_0033.jpg",
+        "docs/HMI errors/120363413976268198_0035.jpg",
+        "docs/HMI errors/120363413976268198_0051.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0009, 0033, 0035, 0051).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0009.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-020",
+      "code": "700210",
+      "text": "LASER MARKING GRIPPER CYLINDER ADVANCE FEEDBACK TIMEOUT (DB2.DBX197.2) CHECK E12.5 (EMPTY CYCLE START)",
+      "candidates": [
+        "LASER MARKING GRIPPER CYLINDER ADVANCE FEEDBACK TIMEOUT (DB2.DBX197.2) CHECK E12.5 (EMPTY CYCLE START)"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0036.jpg"
+      ],
+      "notes": "Read on 0036 (positional, 5 codes / 5 texts).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0036.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-021",
+      "code": "700212",
+      "text": "STEM ADDITIONAL FLOW NOT ATTAINED (DB2.DBX197.4)",
+      "candidates": [
+        "STEM ADDITIONAL FLOW NOT ATTAINED (DB2.DBX197.4)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0003.jpg",
+        "docs/HMI errors/120363413976268198_0025.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0002, 0003, 0025).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-022",
+      "code": "700219",
+      "text": "JOB HEIGHT NOT WITHIN RANGE, JOB REJECTED",
+      "candidates": [
+        "JOB HEIGHT NOT WITHIN RANGE, JOB REJECTED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0048.jpg"
+      ],
+      "notes": "Read on 0048 (positional, 4 codes).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0048.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-023",
+      "code": "700304",
+      "text": "ORIENTATION CYLINDER RISE TIME OUT AFTER 2ND ATTEMPT, CHECK I15.2 (EMPTY CYCLE START & CH1 CYCLE STOP)",
+      "candidates": [
+        "ORIENTATION CYLINDER RISE TIME OUT AFTER 2ND ATTEMPT, CHECK I15.2 (EMPTY CYCLE START & CH1 CYCLE STOP)"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0017.jpg"
+      ],
+      "notes": "Read on 0017 (positional, 3 codes / 3 texts).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0017.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-024",
+      "code": "700306",
+      "text": "",
+      "candidates": [
+        "QUENCH WATER LEVEL OVER FLOW FEEDBACK SIGNAL DETECTED (machine ready signal withdrawn after the current cycle)",
+        "ORIENTATION CYLINDER ADVANCE FEEDBACK TIMEOUT (DB2.DBX204.6) CHECK E15.0"
+      ],
+      "pairing": "unclear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0010.jpg",
+        "docs/HMI errors/120363413976268198_0023.jpg",
+        "docs/HMI errors/120363413976268198_0028.jpg"
+      ],
+      "notes": "TWO CONFLICTING TEXTS PRESERVED: the detail pane on 0010 shows '700306: QUENCH WATER LEVEL OVER FLOW - FEEDBACK SIGNAL DETECTED. MACHINE READY SIGNAL WILL BE WITHDRAWN AFTER CURRENT CYCLE COMPLETION IN CASE IF CYCLE IS ACTIVE', while the list screens 0023 and 0028 pair 700306 with 'ORIENTATION CYLINDER ADVANCE FEEDBACK TIMEOUT (DB2.DBX204.6) CHECK E15.0'. Not merged - needs the controlled alarm list. Code/text pairing unclear - the OCR melted the number and text columns on the screen. The verbatim OCR of all 53 screens is kept in docs/HMI errors/ocr-2026-10-17.txt so the pairing can be re-checked by eye.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0010.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-025",
+      "code": "700313",
+      "text": "UNLOADING CONVEYOR JOB PUSHER RETRACT FEEDBACK TIMEOUT (DB2.DBX205.5) CHECK E19.5 (CH3 CYCLE STOP)",
+      "candidates": [
+        "UNLOADING CONVEYOR JOB PUSHER RETRACT FEEDBACK TIMEOUT (DB2.DBX205.5) CHECK E19.5 (CH3 CYCLE STOP)"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0001.jpg"
+      ],
+      "notes": "Read on 0001 only (5 codes / 5 texts, positional).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0001.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-026",
+      "code": "700327",
+      "text": "UNLOADING CONVEYOR MOTOR MPU TRIP (DB2.DBX207.3) CHECK E7.1",
+      "candidates": [
+        "UNLOADING CONVEYOR MOTOR MPU TRIP (DB2.DBX207.3) CHECK E7.1"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 2,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0038.jpg"
+      ],
+      "notes": "Aligned on 0008 and 0038; the OCR reads CHECK E11/E0.1 on 0030 for the same code.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0008.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-027",
+      "code": "700328",
+      "text": "INDUCONTROL GROUP NOT OK 1",
+      "candidates": [
+        "INDUCONTROL GROUP NOT OK 1"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 2,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0001.jpg",
+        "docs/HMI errors/120363413976268198_0029.jpg"
+      ],
+      "notes": "Aligned on 0001 and 0029.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0001.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-028",
+      "code": "700329",
+      "text": "INDUCONTROL GROUP NOT OK 2",
+      "candidates": [
+        "INDUCONTROL GROUP NOT OK 2",
+        "PAPERBAND FILTER NO PAPER CONTACT (DB2.DBX207.5) CHECK E9.3"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0003.jpg",
+        "docs/HMI errors/120363413976268198_0023.jpg",
+        "docs/HMI errors/120363413976268198_0028.jpg"
+      ],
+      "notes": "Aligned on 0023 and 0028. CONFLICT: the positional alignment of 0002 would give this code the text PAPERBAND FILTER NO PAPER CONTACT (DB2.DBX207.5) CHECK E9.3; both preserved, code-2 reading corroborated by two screens.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-029",
+      "code": "700330",
+      "text": "INDUCONTROL GROUP NOT OK 3",
+      "candidates": [
+        "INDUCONTROL GROUP NOT OK 3"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0029.jpg"
+      ],
+      "notes": "Read on 0029 (6 codes / 6 texts, positional); follows the NOT OK 1/2 pattern.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0029.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-030",
+      "code": "700332",
+      "text": "",
+      "candidates": [],
+      "pairing": "unclear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0045.jpg"
+      ],
+      "notes": "The Raised/Cleared alarm log (0045) shows <no text available> for every row of this code - the text cannot be recovered from the photos. Code/text pairing unclear - the OCR melted the number and text columns on the screen. The verbatim OCR of all 53 screens is kept in docs/HMI errors/ocr-2026-10-17.txt so the pairing can be re-checked by eye.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0045.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-031",
+      "code": "700402",
+      "text": "WITH HEAT IS SELECTED, BUT PUMPS ARE OFF - PRESS ALL PUMP ON (DB2.DBX212.2) E8.5",
+      "candidates": [
+        "WITH HEAT IS SELECTED, BUT PUMPS ARE OFF - PRESS ALL PUMP ON (DB2.DBX212.2) E8.5"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg",
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0025.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0008, 0025, 0030).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-032",
+      "code": "700403",
+      "text": "2D SCANNER READING ERROR, CURRENT JOB IS BEING REJECTED (DB2.DBX212.3)",
+      "candidates": [
+        "2D SCANNER READING ERROR, CURRENT JOB IS BEING REJECTED (DB2.DBX212.3)"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0025.jpg"
+      ],
+      "notes": "Read on 0025 (positional), and the text also appears in the 0019 text list. 0025 has one more text than code after row 4, so the row alignment there is not guaranteed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0025.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-033",
+      "code": "700408",
+      "text": "Z1, Z2 & Z3 AXES FEEDHOLD AS THE A1 AXIS IS NOT IN THE SAFE POSITION",
+      "candidates": [
+        "Z1, Z2 & Z3 AXES FEEDHOLD AS THE A1 AXIS IS NOT IN THE SAFE POSITION"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg"
+      ],
+      "notes": "Read on 0007 (positional, 10/10). The five feedhold texts (700408-700411, plus the plain Z-axis variant) are easy to swap; treat the axis letter/station in each as unconfirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-034",
+      "code": "700409",
+      "text": "A1-AXIS FEEDHOLD AS THE Z2-AXIS IS NOT IN THE SAFE POSITION",
+      "candidates": [
+        "A1-AXIS FEEDHOLD AS THE Z2-AXIS IS NOT IN THE SAFE POSITION"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg"
+      ],
+      "notes": "Same screen as 700408. Axis/letter unconfirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-035",
+      "code": "700410",
+      "text": "A1-AXIS FEEDHOLD AS THE Z-AXIS IS NOT IN THE SAFE POSITION",
+      "candidates": [
+        "A1-AXIS FEEDHOLD AS THE Z-AXIS IS NOT IN THE SAFE POSITION"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0026.jpg"
+      ],
+      "notes": "Read on 0026; the OCR lost the axis number (Z1/Z2/Z3 unknown).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0026.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-036",
+      "code": "700411",
+      "text": "A1 & A2-AXES FEEDHOLD AS THE Z1-AXIS IS NOT IN THE SAFE POSITION",
+      "candidates": [
+        "A1 & A2-AXES FEEDHOLD AS THE Z1-AXIS IS NOT IN THE SAFE POSITION"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg"
+      ],
+      "notes": "Same screen as 700408. Axis/letter unconfirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-037",
+      "code": "700415",
+      "text": "BELL STATION TAILSTOCK LOWER ACTIVE, A1-AXIS CAN NOT BE MOVED",
+      "candidates": [
+        "BELL STATION TAILSTOCK LOWER ACTIVE, A1-AXIS CAN NOT BE MOVED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg"
+      ],
+      "notes": "Read on 0007.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-038",
+      "code": "700416",
+      "text": "STEM STATION TAILSTOCK LOWER ACTIVE, A1-AXIS CAN NOT BE MOVED",
+      "candidates": [
+        "STEM STATION TAILSTOCK LOWER ACTIVE, A1-AXIS CAN NOT BE MOVED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0026.jpg"
+      ],
+      "notes": "Read on 0026.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0026.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-039",
+      "code": "700423",
+      "text": "A2-AXIS WAITING FOR PREVIOUS UNLOADING SEQUENCE TO BE COMPLETED",
+      "candidates": [
+        "A2-AXIS WAITING FOR PREVIOUS UNLOADING SEQUENCE TO BE COMPLETED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0026.jpg"
+      ],
+      "notes": "Read on 0026.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0026.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-040",
+      "code": "700424",
+      "text": "TRACEABILITY HANDSHAKING ERROR, CHECK THE TRACEABILITY NETWORK",
+      "candidates": [
+        "TRACEABILITY HANDSHAKING ERROR, CHECK THE TRACEABILITY NETWORK"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0013.jpg",
+        "docs/HMI errors/120363413976268198_0014.jpg",
+        "docs/HMI errors/120363413976268198_0026.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0013, 0014, 0026).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0013.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-041",
+      "code": "700425",
+      "text": "TRACEABILITY PERMISSION STATUS MISMATCH, PERMISSION NOT OK TO RUN",
+      "candidates": [
+        "TRACEABILITY PERMISSION STATUS MISMATCH, PERMISSION NOT OK TO RUN"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Aligned on 0032 (second row).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-042",
+      "code": "700429",
+      "text": "WITH HEAT IS SELECTED, BUT DC IS OFF - CONVERTER RDY TO CONTROL FBK MISSING (DB2.DBX215.5) CHECK E0.6",
+      "candidates": [
+        "WITH HEAT IS SELECTED, BUT DC IS OFF - CONVERTER RDY TO CONTROL FBK MISSING (DB2.DBX215.5) CHECK E0.6"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0026.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0008, 0026, 0030).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0008.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-043",
+      "code": "700431",
+      "text": "TRACK HEAT SELECTED BUT TRACK STN DC IS OFF OR TRACK CONVERTER READY TO CONTROL FEEDBACK IS MISSING, CYCLE START DISABLE",
+      "candidates": [
+        "TRACK HEAT SELECTED BUT TRACK STN DC IS OFF OR TRACK CONVERTER READY TO CONTROL FEEDBACK IS MISSING, CYCLE START DISABLE"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 2,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0026.jpg",
+        "docs/HMI errors/120363413976268198_0037.jpg"
+      ],
+      "notes": "Read on 0037 (third row from the bottom); the same text is in the 0026 list.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0026.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-044",
+      "code": "700509",
+      "text": "INITIALIZATION NOT DONE FOR AUTO CYCLE, PRESS AUTO INITIALIZE KEY IN MANUAL MODE: CYCLE START DISABLE (DB2.DBX221.1)",
+      "candidates": [
+        "INITIALIZATION NOT DONE FOR AUTO CYCLE, PRESS AUTO INITIALIZE KEY IN MANUAL MODE: CYCLE START DISABLE (DB2.DBX221.1)",
+        "LOADING & UN-LOADING CONVEYOR SEQUENCE NOT INITIALIZED, CYCLE START DISABLE"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 6,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0007.jpg",
+        "docs/HMI errors/120363413976268198_0011.jpg",
+        "docs/HMI errors/120363413976268198_0013.jpg",
+        "docs/HMI errors/120363413976268198_0014.jpg",
+        "docs/HMI errors/120363413976268198_0025.jpg"
+      ],
+      "notes": "Aligned on 0002 and 0025. CONFLICT: the positional alignment of 0011/0013/0014 puts LOADING & UN-LOADING CONVEYOR SEQUENCE NOT INITIALIZED, CYCLE START DISABLE on this code; both preserved - the 0002/0025 reading was explicit with its DB2.DBX221.1 reference.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-045",
+      "code": "700510",
+      "text": "MANUAL MODE SELECTED, CYCLE START DISABLE",
+      "candidates": [
+        "MANUAL MODE SELECTED, CYCLE START DISABLE"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0032.jpg"
+      ],
+      "notes": "Aligned on 0032 (last row) and read on 0010.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0032.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-046",
+      "code": "700519",
+      "text": "READ IN DISABLE AT STEM STATION WAITING FOR BELL HEAT COMPLETE",
+      "candidates": [
+        "READ IN DISABLE AT STEM STATION WAITING FOR BELL HEAT COMPLETE"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg"
+      ],
+      "notes": "Read on 0007 (first row).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-047",
+      "code": "700520",
+      "text": "READ IN DISABLE AT BELL STATION WAITING FOR A1 AXIS INDEXING",
+      "candidates": [
+        "READ IN DISABLE AT BELL STATION WAITING FOR A1 AXIS INDEXING"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg",
+        "docs/HMI errors/120363413976268198_0011.jpg",
+        "docs/HMI errors/120363413976268198_0013.jpg",
+        "docs/HMI errors/120363413976268198_0014.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0007, 0011, 0013, 0014).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-048",
+      "code": "700523",
+      "text": "READ IN DISABLE AT STEM STATION WAITING FOR INDEXING AT STEM",
+      "candidates": [
+        "READ IN DISABLE AT STEM STATION WAITING FOR INDEXING AT STEM"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0007.jpg",
+        "docs/HMI errors/120363413976268198_0011.jpg",
+        "docs/HMI errors/120363413976268198_0013.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0007, 0011, 0013).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0007.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-049",
+      "code": "700527",
+      "text": "CYCLE ACTIVATED",
+      "candidates": [
+        "CYCLE ACTIVATED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0026.jpg"
+      ],
+      "notes": "Read on 0026 (first row).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0026.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-050",
+      "code": "700529",
+      "text": "JOB NOT CLAMP AT STEM STATION",
+      "candidates": [
+        "JOB NOT CLAMP AT STEM STATION"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0003.jpg"
+      ],
+      "notes": "Read on 0003 (first row); the rest of that screen is not aligned (7 codes / 8 texts).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0003.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-051",
+      "code": "700601",
+      "text": "WAIT FOR JOB ABSENCE AT LOADING CONVEYOR",
+      "candidates": [
+        "WAIT FOR JOB ABSENCE AT LOADING CONVEYOR"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 3,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0003.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0002, 0008, 0030).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-052",
+      "code": "700603",
+      "text": "WAIT FOR ABSENCE AT LOADING/UNLOADING STN AFTER HEATING",
+      "candidates": [
+        "WAIT FOR ABSENCE AT LOADING/UNLOADING STN AFTER HEATING",
+        "TAILSTOCK ROTATION ON BELL MISSING CHECK I17.1"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 5,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0003.jpg",
+        "docs/HMI errors/120363413976268198_0007.jpg",
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0002, 0008, 0030). CONFLICT: the positional alignment of 0007 puts TAILSTOCK ROTATION ON BELL MISSING CHECK I17.1 on this code; both preserved.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-053",
+      "code": "700615",
+      "text": "PAPER BAND FILTER ROTATION FEEDBACK MISSING (DB2.DBX229.7) CHECK E9.5",
+      "candidates": [
+        "PAPER BAND FILTER ROTATION FEEDBACK MISSING (DB2.DBX229.7) CHECK E9.5"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 2,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0008.jpg"
+      ],
+      "notes": "Aligned on 3 screens (0002, 0008, 0030).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-054",
+      "code": "700618",
+      "text": "LASER UNIT NOT READY, CHECK I51.0 & I51.6; CYCLE START DISABLE",
+      "candidates": [
+        "LASER UNIT NOT READY, CHECK I51.0 & I51.6; CYCLE START DISABLE"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0025.jpg"
+      ],
+      "notes": "Read on 0025; text is nearly identical to 700207 - the two codes may be variants of the same interlock.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0025.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-055",
+      "code": "700623",
+      "text": "LASER MARKING COMPLETE FEEDBACK MISSING, CHECK I56.7, CYCLE START DISABLED",
+      "candidates": [
+        "LASER MARKING COMPLETE FEEDBACK MISSING, CHECK I56.7, CYCLE START DISABLED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0025.jpg"
+      ],
+      "notes": "Read on 0025.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0025.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-056",
+      "code": "700709",
+      "text": "STEM TAILSTOCK C-09 RAISE/LOWER REEDSWITCH SHORT, BOTH THE REEDSWITCH",
+      "candidates": [
+        "STEM TAILSTOCK C-09 RAISE/LOWER REEDSWITCH SHORT, BOTH THE REEDSWITCH"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0043.jpg"
+      ],
+      "notes": "Read on 0043 (only alarm on screen besides 400262). The sentence is cut off by the screen frame - the photo does not show the rest.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0043.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-057",
+      "code": "700721",
+      "text": "DRIVE NOT POWERED UP",
+      "candidates": [
+        "DRIVE NOT POWERED UP"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 6,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0009.jpg",
+        "docs/HMI errors/120363413976268198_0033.jpg",
+        "docs/HMI errors/120363413976268198_0035.jpg",
+        "docs/HMI errors/120363413976268198_0037.jpg",
+        "docs/HMI errors/120363413976268198_0048.jpg",
+        "docs/HMI errors/120363413976268198_0051.jpg"
+      ],
+      "notes": "Read on 0037 (bottom row). Note 700015 carries the \"DRIVES NOT POWERED UP (DB2.DBX181.7)\" text; the two may be related but are kept separate.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0009.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-058",
+      "code": "700722",
+      "text": "PROBLEM WITH PRESSURE PLATE LVDT, PLEASE CHECK THE ANALOG SENSOR",
+      "candidates": [
+        "PROBLEM WITH PRESSURE PLATE LVDT, PLEASE CHECK THE ANALOG SENSOR"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0005.jpg",
+        "docs/HMI errors/120363413976268198_0006.jpg",
+        "docs/HMI errors/120363413976268198_0023.jpg",
+        "docs/HMI errors/120363413976268198_0031.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0005, 0006, 0023, 0031).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0005.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-059",
+      "code": "700723",
+      "text": "PRESSURE PLATE JOB HEIGHT NOT WITHIN RANGE (DB2.DBX238.7)",
+      "candidates": [
+        "PRESSURE PLATE JOB HEIGHT NOT WITHIN RANGE (DB2.DBX238.7)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0009.jpg",
+        "docs/HMI errors/120363413976268198_0017.jpg",
+        "docs/HMI errors/120363413976268198_0033.jpg",
+        "docs/HMI errors/120363413976268198_0051.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0009, 0017, 0033, 0051).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0009.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-060",
+      "code": "700725",
+      "text": "DC OFF DURING AUTO CYCLE RUNNING, CONVERTER READY FEEDBACK MISSING (DB2.DBX239.1) STOP AND CALL MAINTENANCE",
+      "candidates": [
+        "DC OFF DURING AUTO CYCLE RUNNING, CONVERTER READY FEEDBACK MISSING (DB2.DBX239.1) STOP AND CALL MAINTENANCE"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0029.jpg"
+      ],
+      "notes": "Read on 0029 (positional, 6 codes / 6 texts).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0029.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-061",
+      "code": "700727",
+      "text": "STEM STN DC IS OFF OR STEM CONVERTER READY TO CONTROL FEEDBACK IS MISSING, CYCLE START DISABLE",
+      "candidates": [
+        "STEM STN DC IS OFF OR STEM CONVERTER READY TO CONTROL FEEDBACK IS MISSING, CYCLE START DISABLE"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0037.jpg"
+      ],
+      "notes": "Confirmed by the 0037 detail pane, which spells out \"700727: STEM ... CYCLE START DISABLE\", and by the 0037 list row.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0037.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-062",
+      "code": "700804",
+      "text": "LOADING SEQUENCE IS NOT INITIALISED (DB2.DBX189.2), PRESS INITIALISED KEY ON MCP, CYCLE START DISABLE",
+      "candidates": [
+        "LOADING SEQUENCE IS NOT INITIALISED (DB2.DBX189.2), PRESS INITIALISED KEY ON MCP, CYCLE START DISABLE"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0018.jpg"
+      ],
+      "notes": "Read on 0018 (header row of the screen). 700110 on the same screen carries a very similar text - see 700110.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0018.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-063",
+      "code": "700807",
+      "text": "QUENCH TEMPERATURE LOW LIMIT REACHED",
+      "candidates": [
+        "QUENCH TEMPERATURE LOW LIMIT REACHED"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0034.jpg"
+      ],
+      "notes": "Read on 0034 (only alarm on screen besides 400262).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0034.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-064",
+      "code": "700815",
+      "text": "LUBRICATION SENSOR FEEDBACK MISSING (DB2.DBX245.7) CHECK E19.1",
+      "candidates": [
+        "LUBRICATION SENSOR FEEDBACK MISSING (DB2.DBX245.7) CHECK E19.1"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0030.jpg"
+      ],
+      "notes": "Read on 0030 (positional) and the text also appears in the 0019 list.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0030.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-065",
+      "code": "700817",
+      "text": "I-M ENABLE PREVIOUS CODE PRESENT, JOB REJECTED",
+      "candidates": [
+        "I-M ENABLE PREVIOUS CODE PRESENT, JOB REJECTED"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 4,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0002.jpg",
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0025.jpg",
+        "docs/HMI errors/120363413976268198_0030.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0002, 0008, 0025, 0030). OCR reads \"LM ENABLE PRIORE CODE PRESENT JOB REJECTED\"; the \"I-M enable\" reading follows the 0025 wording and is not certain.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0002.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-066",
+      "code": "700819",
+      "text": "TRACK HAND GRIPPER OPEN/CLOSE BOTH PROXY FEEDBACK SENSE (DB2.DBX246.3)",
+      "candidates": [
+        "TRACK HAND GRIPPER OPEN/CLOSE BOTH PROXY FEEDBACK SENSE (DB2.DBX246.3)"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0048.jpg"
+      ],
+      "notes": "Read on 0048 (first row).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0048.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-067",
+      "code": "700826",
+      "text": "BRIX % OUT OF RANGE 3-3.5",
+      "candidates": [
+        "BRIX % OUT OF RANGE 3-3.5",
+        "BRAX % OUT OF RANGE: 3 - 3.5 (PHOTO-14 / AL-001)"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 11,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0001.jpg",
+        "docs/HMI errors/120363413976268198_0003.jpg",
+        "docs/HMI errors/120363413976268198_0005.jpg",
+        "docs/HMI errors/120363413976268198_0006.jpg",
+        "docs/HMI errors/120363413976268198_0008.jpg",
+        "docs/HMI errors/120363413976268198_0018.jpg",
+        "docs/HMI errors/120363413976268198_0023.jpg",
+        "docs/HMI errors/120363413976268198_0028.jpg"
+      ],
+      "notes": "Aligned on 10 screens, the most frequent alarm after 400262. CONFLICT: the earlier extraction AL-001 from PHOTO-14 reads \"BRAX % OUT OF RANGE: 3 - 3.5\" for this same alarm; both preserved (see NV-017).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0001.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-068",
+      "code": "700828",
+      "text": "INDUCONTROL NOT READY FOR ACQUISITION, CYCLE START DISABLED",
+      "candidates": [
+        "INDUCONTROL NOT READY FOR ACQUISITION, CYCLE START DISABLED"
+      ],
+      "pairing": "clear",
+      "fixStatus": "open",
+      "seenInPhotos": 6,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0001.jpg",
+        "docs/HMI errors/120363413976268198_0023.jpg",
+        "docs/HMI errors/120363413976268198_0025.jpg",
+        "docs/HMI errors/120363413976268198_0028.jpg",
+        "docs/HMI errors/120363413976268198_0029.jpg",
+        "docs/HMI errors/120363413976268198_0035.jpg"
+      ],
+      "notes": "Aligned on 4 screens (0001, 0023, 0028, 0029). 0035 shows the variant wording \"CYCLE START DISABLED, INDUCONTROL MASTER NOT READY TO RUN\".",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0001.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-069",
+      "code": "700920",
+      "text": "DM HIGH LEVEL TEMPERATURE REACH ALARM (CYCLE START DISABLE & CYCLE STOP)",
+      "candidates": [
+        "DM HIGH LEVEL TEMPERATURE REACH ALARM (CYCLE START DISABLE & CYCLE STOP)"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0018.jpg"
+      ],
+      "notes": "Read on 0018 only; the wording (and what DM stands for) is not confirmed.",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0018.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "HMI-070",
+      "code": "700923",
+      "text": "INDUCONTROL NOT OK GROUP 1, CONVERTER OFF DURING PROGRAM CYCLE RUNNING",
+      "candidates": [
+        "INDUCONTROL NOT OK GROUP 1, CONVERTER OFF DURING PROGRAM CYCLE RUNNING"
+      ],
+      "pairing": "probable",
+      "fixStatus": "open",
+      "seenInPhotos": 1,
+      "sources": [
+        "docs/HMI errors/120363413976268198_0026.jpg"
+      ],
+      "notes": "Read on 0026 (second row).",
+      "evidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0026.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    }
+  ]
+}

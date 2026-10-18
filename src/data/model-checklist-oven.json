@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generated": "2026-10-17",
+    "station": "OVEN",
+    "gate": "hotzone-rules fidelity-gate.md / MASTER_PROMPT section 5.7",
+    "scope": "Phase 2b increment 2 - DRAW OVEN (OP_100402, EQ-004) shell, conveyors, tray of ball studs and its control cabinet row only. GAGE is DEFERRED: no photograph of a physical gage station exists (only instruction documents PHOTO-21, SG 699436, gage/fixture table), so no fidelity gate can be formed. Unload station, remaining line cabinets and the CVOR inspection model stay in later increments.",
+    "note": "Statuses are self-assessed against PHOTO-12 (draw oven exit, contact-sheet review only, medium confidence) and PHOTO-11 (control cabinets, contact-sheet review only, medium confidence), plus documents Project_Document.pdf pages 2-4 (EQ-004, PF-008, PR-201..206) and page 8 (DC-010 set-up sheet). No dimension is MEASURED - no controlled drawings exist (NV-011); oven size, oven placement east of the induction machine, cabinet row placement, loading/exit conveyor lengths and every internal furnace detail are ASSUMED or ESTIMATED. Paint colours are estimated from reference-photo pixels (shell ~RGB 205,193,181 beige/cream, cabinets ~RGB 210,204,191 light grey); the plant warm/cool colour cast still differs. Photo captions were not trusted as descriptions (NV-007): the '3 zone controllers' and 'energy meter 354368' claims exist only in the PDF caption for PHOTO-11 and are flagged needs-verification. The oven has no entrance photo - the entrance end frame and loading conveyor are inference from line continuity (the Phase 2a induction model has no exit opening). L5 heat glow is a local demo placeholder until the Phase 3 signal bus. Comparison renders and objective metrics are in docs/compare/draw-oven/ (chosen: model_ov_v3 vs PHOTO-12, model_ovc_v5 vs PHOTO-11). Human visual sign-off (OC-14) accepted 2026-10-17; the Phase 2b increment-2 fidelity gate is cleared."
+  },
+  "items": [
+    {
+      "id": "OC-01",
+      "title": "overall silhouette and proportions",
+      "status": "partial",
+      "note": "Beige/cream rectangular oven body with a lower belt opening and a metal discharge belt read from PHOTO-12. Absolute length/width/height are ASSUMED - no dimensioned drawings (NV-011). Oven is placed east of the Phase 2a induction machine on the documented process sequence (PF-008 draw oven / tempering follows induction), with the exit face and control cabinets set so the two new poses can be photo-matched.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (3).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-02",
+      "title": "oven shell panels and end frames around the belt openings",
+      "status": "partial",
+      "note": "Roof, base pan, two side walls and exit/entrance end frames (header, apron, piers) built as separate panels with a belt opening at y 0.9..1.75 m. The exit face is photo-supported (PHOTO-12); the rear side wall, roof top and entrance end are never photographed - proportions ESTIMATED, rear-side details carried as CONCEPTUAL.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (3).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-03",
+      "title": "entrance and exit belt openings with internal chamber view",
+      "status": "partial",
+      "note": "Exit opening is visible in PHOTO-12 and built on the +X end face; the entrance opening is an INFERENCE from line continuity (the Phase 2a induction model has no exit opening, so the loading conveyor must enter the oven). Internal chamber liner is never photographed - its presence is supported only by PF-008 (draw oven / tempering) and its geometry is ASSUMED.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (3).jpeg (exit); line continuity inference (entrance)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-04",
+      "title": "exit conveyor, tray and ball-stud parts",
+      "status": "done",
+      "note": "Metal discharge belt leaving the opening, side rails, end roller, support legs, a tray carrying six ball-stud parts (instanced sphere + stem). All read from PHOTO-12: metal belt, tray and ball-stud parts are visible; part count (6) and tray size are ESTIMATED.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (3).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-05",
+      "title": "oven loading conveyor between induction machine and oven",
+      "status": "partial",
+      "note": "Belt bed, rails and four legs placed in the ~1.4 m gap between the induction machine face and the oven entrance at belt top 1.025 m (matched to IND-C-BELT and the wash conveyors). Never photographed - INFERENCE from line continuity plus PR-204 (oven loading conveyor setpoint 50 +/-2 Hz, which proves the conveyor exists).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf p.4 (PR-204 oven loading conveyor)",
+        "category": "document",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-06",
+      "title": "body legs, feet, cross rails, roof blower",
+      "status": "partial",
+      "note": "Six legs with levelling feet and two cross rails under the shell; axial blower housing + motor + duct on the roof. The legs and rails are not visible in the available photo (ESTIMATED). Blower EXISTENCE is document-supported (PR-202 axial blower 30 +/-1.5 Hz) but its shape, size and roof position are ASSUMED - no photo shows the oven roof.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf p.4 (PR-202 axial blower)",
+        "category": "document",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-07",
+      "title": "furnace interior: chamber liner and internal furnace belt",
+      "status": "partial",
+      "note": "Internal rear liner (also the L5 heat-glow material) and an internal belt at the same height as the external conveyors. Existence of a heated chamber with a conveyor is document-supported (PF-008 tempering step, PR-206 furnace conveyor 42 +/-2 Hz); geometry, insulation and finish are ASSUMED - never photographed.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf p.3 (PF-008); p.4 (PR-206)",
+        "category": "document",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-08",
+      "title": "control cabinet row: bodies, doors, handles, hinges",
+      "status": "done",
+      "note": "Four light-grey cabinets on a common plinth, each with a door panel, vertical handle and two hinges, standing in front of the oven. Read from PHOTO-11 (row of light-grey electrical cabinets). Count (4), widths, door split and the plinth are ESTIMATED; the row's position relative to the oven is ASSUMED - the photo does not show where the cabinets stand.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (2).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-09",
+      "title": "cabinet devices: indicator lights, push buttons, controllers, meter, OK sign",
+      "status": "partial",
+      "note": "Indicator lamps, push buttons and the green 'OK' sign are visible in PHOTO-11 (photographic). The '3 zone controllers' (Z1-Z3 displays) and 'energy meter 354368' come ONLY from the PDF caption for PHOTO-11 and were not confirmed in image review (NV-007) - modelled but flagged needs-verification with low confidence. Display positions, sizes and wording are ASSUMED.",
+      "evidence": {
+        "sourceId": "PDF caption \"3 zone controllers, energy meter 354368\" for PHOTO:4.20.44 PM (2).jpeg - not confirmed in image review (NV-007)",
+        "category": "needs-verification",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OC-10",
+      "title": "placards and nameplates: OP_100402, SV-000091, DRAW OVEN, CVOR #4, zone setpoints",
+      "status": "partial",
+      "note": "A placard is visible on the oven exit face in PHOTO-12 and the caption of PHOTO-64 confirms the machine is the draw oven / CVOR line. Placard TEXT comes from EQ-004 (OP_100402, SV-000091, 3 zones at 163 +/-5 C) and DC-010; 'DRAW OVEN' and 'CVOR #4' wording follows NT-003. Placard position, size and the '163C X3' setpoint label are ASSUMED - text is not legible at contact-sheet resolution.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf p.2 (EQ-004)",
+        "category": "document",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-11",
+      "title": "posted work instruction sheet and warning labels",
+      "status": "partial",
+      "note": "A white sheet posted on the oven exit pier and warning stickers on the exit apron and cabinet doors are visible in PHOTO-11/12 (photographic). The sheet's IDENTITY as the draw-oven set-up sheet is an inference from DC-010 (GWI34417348 set-up sheet) - the model says 'SET UP' because the wording is not legible; sheet size and exact position ASSUMED.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (3).jpeg (sheet and labels visible); Project_Document.pdf p.8 (DC-010 identity inference)",
+        "category": "inference",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-12",
+      "title": "heat visualisation (L5 chamber glow)",
+      "status": "partial",
+      "note": "Chamber liner emissive ramps when the local OVEN on/off demo state is on, mirroring the HEAT/QUENCH placeholders. This is an EDUCATIONAL visualisation driven by a local placeholder - not the plant program or any real temperature signal. The 163 +/-5 C setpoints behind it are document evidence (PR-201/203/205); the glow colour and ramp rate are ASSUMED.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf p.4 (PR-201, PR-203, PR-205 zone temperatures)",
+        "category": "document",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-13",
+      "title": "comparison renders committed",
+      "status": "done",
+      "note": "Committed in docs/compare/draw-oven/: model_ov_v3 (pose ov-ref-primary vs PHOTO-12, metrics luma 128.6 vs 117.5, edge density 3.50 vs 12.16, hist_cos(gray) 0.686, rgb_cos R 0.80/G 0.70/B 0.47) and model_ovc_v5 (pose ovc-ref-primary vs PHOTO-11, luma 152.9 vs 164.3, edge density 2.92 vs 8.23, hist_cos(gray) 0.562), plus capture-only model_overview.png of the whole line (110,212 triangles, budget 350k) and all earlier v1-v5 iterations with side/overlay/metrics. Cabinet framing was iterated v1-v5 (hist_cos(gray) 0.190 -> 0.562) after the shell/cabinet paint colours were set from reference-photo pixels. Metrics are evidence, not a fidelity score - the plant warm/cool colour cast and the photo framing still differ.",
+      "evidence": {
+        "sourceId": "docs/compare/draw-oven/ (model_ov_v1..v3, model_ovc_v1..v5, model_overview)",
+        "category": "inference",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      }
+    },
+    {
+      "id": "OC-14",
+      "title": "human visual sign-off of comparison renders",
+      "status": "done",
+      "note": "DONE 2026-10-17. The executing model has no image input and cannot visually self-verify, so this sign-off is external human evidence (same pattern as MC-14 and WC-14). Accepted: docs/compare/draw-oven/model_ov_v3_side.png reviewed against PHOTO-12 and model_ovc_v5_side.png against PHOTO-11. Phase 2b increment-2 fidelity gate cleared.",
+      "evidence": {
+        "sourceId": "human review of docs/compare/draw-oven/model_ov_v3_side.png and model_ovc_v5_side.png (accept 2026-10-17)",
+        "category": "external",
+        "confidence": "medium",
+        "status": "verified",
+        "reviewed": "2026-10-17"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3001 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generated": "2026-10-15",
+    "project": "Nexteer Plant 78 Hot Zone CV joint line - digital twin (training simulator)",
+    "sourceDoc": {
+      "sourceId": "Project_Document.pdf",
+      "path": "docs/sources/Project_Document.pdf",
+      "pages": 75,
+      "textPages": "1-12",
+      "photoPages": "13-75",
+      "nature": "Structured document compiled 15 Oct 2026 from 65 shop-floor photographs. NOT controlled master documentation.",
+      "disclaimer": "Verify against master controlled copies before operational use."
+    },
+    "statusRule": "As of Phase 1 every item is status 'unverified' because no source in hand is a controlled master document. Category and confidence carry the nuance.",
+    "observedValueRule": "Screenshot values (kind 'hmi-observed') are observed values only - NOT setpoints, limits or fault conditions."
+  },
+  "items": [
+    {
+      "id": "EQ-001",
+      "kind": "equipment",
+      "name": "Wash Station (TP & CV)",
+      "value": "OP_40010 / OP_400102; ALK-CAST 12.7 fluid; 54 +/-3 C; 27 s cycle; pressure max 3.5 bar / min 0.5 bar",
+      "notes": "Part cleaning before heat treatment.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "2",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-002",
+      "kind": "equipment",
+      "name": "Wash Blank (OR)",
+      "value": "OP_100102; CV OR #4; SV-000088",
+      "notes": "Blank wash prior to induction. Photo-confirmed at file '4.20.41 PM.jpeg' (station placard OP_100102 / CV OR #4 / SV-000088 visible).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "2",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-003",
+      "kind": "equipment",
+      "name": "Induction Heat Treatment Machine (CV 1-CV 4)",
+      "value": "Bell & Stem induction hardening; Siemens SINUMERIK (labeled 700826); dual-channel NC (BELL / STEM); Inducontrol HMI",
+      "notes": "Manufacturer of the induction machine itself is NOT stated in the sources.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "2",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-004",
+      "kind": "equipment",
+      "name": "Draw Oven (Tempering Furnace)",
+      "value": "OP_100402 Draw Oven CVOR #4; SV-000091; 3 zones @ 163 +/-5 C; make: Therelek Engineers",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "2",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-005",
+      "kind": "equipment",
+      "name": "Laser Marking Station",
+      "value": "2D DataMatrix / part marking; IP 172.38.22.39",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "2",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-006",
+      "kind": "equipment",
+      "name": "2D Camera / Code Reader",
+      "value": "DataMatrix verification; Keyence-style reader; AutoID Network Navigator (SR-20AH, IP 172.38.22.37)",
+      "notes": "Document calls the reader 'Keyence-style'; exact manufacturer model beyond SR-20AH not established.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-007",
+      "kind": "equipment",
+      "name": "Gage / OPD Check Station",
+      "value": "Dimensional verification (OPD, spline); micrometer + pin gages; Go/NoGo spline gages",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EQ-008",
+      "kind": "equipment",
+      "name": "Unload / Boxing Station",
+      "value": "Hot Zone reject bin + good-part boxing with 2D scan",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-001",
+      "kind": "process-step",
+      "name": "Blank Loading",
+      "value": "Blank Loading",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-002",
+      "kind": "process-step",
+      "name": "Blank Wash",
+      "value": "Blank Wash (OP_100102)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-003",
+      "kind": "process-step",
+      "name": "2D Code Scan / Lot Tracking",
+      "value": "2D Code Scan / Lot Tracking",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-004",
+      "kind": "process-step",
+      "name": "Induction Bell Heat",
+      "value": "Induction Station: Bell Heat (OP_100302/10030 per source)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-005",
+      "kind": "process-step",
+      "name": "Bell Quench",
+      "value": "Quench after Bell heat",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-006",
+      "kind": "process-step",
+      "name": "Induction Stem Heat",
+      "value": "Stem Heat",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-007",
+      "kind": "process-step",
+      "name": "Stem Quench",
+      "value": "Quench after Stem heat",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-008",
+      "kind": "process-step",
+      "name": "Draw Oven / Tempering",
+      "value": "Draw Oven / Tempering (OP_100402) - 163 C x 3 zones",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-009",
+      "kind": "process-step",
+      "name": "Cooling / Unloading",
+      "value": "Cooling / Unloading",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-010",
+      "kind": "process-step",
+      "name": "OPD & Spline Gage Check",
+      "value": "OPD & Spline Gage Check",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-011",
+      "kind": "process-step",
+      "name": "Final Inspection (OCP)",
+      "value": "Final Inspection (OCP)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PF-012",
+      "kind": "process-step",
+      "name": "Boxing and WIP transfer",
+      "value": "Boxing (scan 2D code) -> WIP Trolley",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-001",
+      "kind": "parameter",
+      "name": "Z2 Axis Position - Bowl",
+      "value": "~123.5-144 mm (part-dependent)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-002",
+      "kind": "parameter",
+      "name": "Z2 Axis Position - Stem",
+      "value": "~22-112.8 mm",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-003",
+      "kind": "parameter",
+      "name": "Z Axis Scan Speed - Bowl",
+      "value": "9000 mm/min",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-004",
+      "kind": "parameter",
+      "name": "Z Axis Scan Speed - Stem",
+      "value": "9000 mm/min",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-005",
+      "kind": "parameter",
+      "name": "Stop Time - Bowl",
+      "value": "4-6.5 +/-0.5 s",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-006",
+      "kind": "parameter",
+      "name": "Stop Time - Stem",
+      "value": "4.3-5.6 +/-0.5 s",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-007",
+      "kind": "parameter",
+      "name": "Voltage % - Bowl",
+      "value": "65-85 +/-5",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-008",
+      "kind": "parameter",
+      "name": "Voltage % - Stem",
+      "value": "75-85 +/-5",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-009",
+      "kind": "parameter",
+      "name": "Capacitor Selection - Bowl",
+      "value": "7 (part-dependent)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-010",
+      "kind": "parameter",
+      "name": "Capacitor Selection - Stem",
+      "value": "7 (part-dependent)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-011",
+      "kind": "parameter",
+      "name": "Bowl Frequency",
+      "value": "15 +/-1 kHz",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-012",
+      "kind": "parameter",
+      "name": "Stem Frequency",
+      "value": "not listed in source (table cell blank)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-013",
+      "kind": "parameter",
+      "name": "Bell External Shower",
+      "value": "100-105 LPM",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-014",
+      "kind": "parameter",
+      "name": "Bell Middle Shower",
+      "value": "35 +/-5 LPM",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-015",
+      "kind": "parameter",
+      "name": "Quench Water line (as transcribed)",
+      "value": "'Quench Water 251, >5 bar zone Verte Same'",
+      "notes": "Transcription garbled in the PDF. Likely refers to AQUAQUENCH 251 and a >5 bar green-zone indication, but not confirmed. See NV-009.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "needs-verification",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-016",
+      "kind": "parameter",
+      "name": "Coil centering gap check (setup sheet note)",
+      "value": "'Exact Z2/Z3 positions to be verified with 1.5 mm Tlenlon [sic] gap check during setup.'",
+      "notes": "Conflicts with changeover instruction (1 mm teflon gap). See NV-003.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "needs-verification",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-017",
+      "kind": "policy",
+      "name": "Operator edit policy (setup sheet)",
+      "value": "Highlighted (yellow) fields on the Setup Sheet are the only parameters the operator may change; all others require Engineering / ME intervention.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-101",
+      "kind": "parameter",
+      "name": "Washing Temperature",
+      "value": "54 +/-3 C",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-102",
+      "kind": "parameter",
+      "name": "Washing Fluid",
+      "value": "ALK-CAST 12.7",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-103",
+      "kind": "parameter",
+      "name": "Chemical Concentration (setup sheet)",
+      "value": "2.8 % (measured via conductivity meter / refractometer)",
+      "notes": "Conflicts with control-plan refractometer check 3.5-9.5 %. Both values preserved. See NV-001.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-104",
+      "kind": "parameter",
+      "name": "Drying Air Pressure",
+      "value": "max 6 bar / min 4 bar",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-105",
+      "kind": "parameter",
+      "name": "Washer Fluid Pressure",
+      "value": "max 3.5 bar / min 0.5 bar",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-106",
+      "kind": "parameter",
+      "name": "Washer Cycle Time",
+      "value": "27 s (correct cycle time)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "3",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-201",
+      "kind": "parameter",
+      "name": "Draw Oven Zone 1 temperature",
+      "value": "163 +/-5 C",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-202",
+      "kind": "parameter",
+      "name": "Draw Oven axial blower",
+      "value": "30 +/-1.5 Hz",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-203",
+      "kind": "parameter",
+      "name": "Draw Oven Zone 2 temperature",
+      "value": "163 +/-5 C",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-204",
+      "kind": "parameter",
+      "name": "Draw Oven loading conveyor",
+      "value": "50 +/-2 Hz",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-205",
+      "kind": "parameter",
+      "name": "Draw Oven Zone 3 temperature",
+      "value": "163 +/-5 C",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PR-206",
+      "kind": "parameter",
+      "name": "Draw Oven furnace conveyor",
+      "value": "42 +/-2 Hz",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-001",
+      "kind": "control-check",
+      "name": "CP1 Wash fluid pressure",
+      "value": "Automatic PLC check 100 %: max 3.5 / min 0.5 bar",
+      "notes": "Control plan OCP34417178 Rev 06 (20/05/2025).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-002",
+      "kind": "control-check",
+      "name": "CP2 Lot number",
+      "value": "Automatic PLC check each box: Correct PN scanned",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-003",
+      "kind": "control-check",
+      "name": "CP3 Wash fluid temperature",
+      "value": "Automatic PLC check 100 %: 54 +/-3 C",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-004",
+      "kind": "control-check",
+      "name": "CP4 Wash fluid level (tank)",
+      "value": "Automatic PLC check 100 %: between Min/Max",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-005",
+      "kind": "control-check",
+      "name": "CP5 Drying air nozzle pressure",
+      "value": "Automatic PLC check 100 %: max 6 / min 4 bar",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-006",
+      "kind": "control-check",
+      "name": "CP6 Cycle time",
+      "value": "Automatic PLC check 100 %: correct 27 s",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-007",
+      "kind": "control-check",
+      "name": "CP7 Washer filter",
+      "value": "Automatic PLC check 100 %: not clogged (machine alarm)",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-008",
+      "kind": "control-check",
+      "name": "CP8 Wash fluid pressure (visual)",
+      "value": "Manual operator check 100 % shift/changeover: max 3.5 / min 0.5 bar",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-009",
+      "kind": "control-check",
+      "name": "CP9 Lot scanning (scanner)",
+      "value": "Manual operator check: Correct PN",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-010",
+      "kind": "control-check",
+      "name": "CP10 Wash fluid temperature",
+      "value": "Manual operator check: 54 +/-3 C",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-011",
+      "kind": "control-check",
+      "name": "CP11 Fluid level in totes",
+      "value": "Manual operator check: Min/Max",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-012",
+      "kind": "control-check",
+      "name": "CP12 Drying air pressure",
+      "value": "Manual operator check: max 6 / min 4 bar",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-013",
+      "kind": "control-check",
+      "name": "CP13 Chemical reference",
+      "value": "Manual operator check: ALK Cast 12.7",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-014",
+      "kind": "control-check",
+      "name": "CP14 Fluid concentration (refractometer)",
+      "value": "Manual operator check: 3.5-9.5 % (x2 for Aquaquench 251)",
+      "notes": "Conflicts with setup sheet 2.8 %. See NV-001.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-015",
+      "kind": "control-check",
+      "name": "CP15 Part loading on conveyor",
+      "value": "Manual operator check: Present / Conforming / No damage",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-016",
+      "kind": "control-check",
+      "name": "CP16 Part washed",
+      "value": "Manual operator check: no chips or oil",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-017",
+      "kind": "control-check",
+      "name": "CP17 Part dried",
+      "value": "Manual operator check: no residual moisture",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-018",
+      "kind": "control-check",
+      "name": "CP18 No residue / contaminants",
+      "value": "Manual operator check: clean surface",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CP-019",
+      "kind": "control-check",
+      "name": "Control plan reaction plan",
+      "value": "Stop production, quarantine parts, do not ship, follow QA.01.00.00 'Non-conforming Material Management'.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EP-001",
+      "kind": "control-check",
+      "name": "Geometry EP",
+      "value": "Run master parts from table (page 2/2 of EP instructions) and confirm they are rejected.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EP-002",
+      "kind": "control-check",
+      "name": "2D Code EP step 1",
+      "value": "Run a good part -> must be accepted, PN correct.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EP-003",
+      "kind": "control-check",
+      "name": "2D Code EP step 2",
+      "value": "Run a blank (no 2D code, laser disabled) -> must be rejected.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "4",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EP-004",
+      "kind": "control-check",
+      "name": "2D Code EP step 3",
+      "value": "Run master with damaged 2D code (laser disabled) -> must be rejected.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EP-005",
+      "kind": "control-check",
+      "name": "2D Code EP step 4",
+      "value": "Run already heat-treated part of same PN -> must be rejected.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "EP-006",
+      "kind": "policy",
+      "name": "EP location and failure reaction",
+      "value": "EP verification is performed before the DataMatrix reader at induction station entrance. On EP failure: inform Team Leader + call ME; do not start production until EP is positive.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GD-001",
+      "kind": "procedure",
+      "name": "OPD measurement plan",
+      "value": "Measure OPD over 2 gage pins on a lot of 5 parts before heat treatment and after heat treatment (same parts, 0 deg and 90 deg angles).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GD-002",
+      "kind": "parameter",
+      "name": "OPD pin diameters",
+      "value": "per program table (e.g. 2.00-2.002 mm)",
+      "notes": "Stated as an example in the source; actual pins are part-dependent. See NV-014.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GD-003",
+      "kind": "procedure",
+      "name": "Spline Go/NoGo decision rule",
+      "value": "Go gage full length -> Good part. NoGo freely in full length -> Scrap / re-evaluate by QA, PE & ME. If NoGo goes only 20 % max -> keep as good part.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GD-004",
+      "kind": "procedure",
+      "name": "OPD part marking",
+      "value": "Mark bearing face with a dot; parts numbered 1-5.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GS-001",
+      "kind": "procedure",
+      "name": "Gage SG 699436 step 1",
+      "value": "Align gage spline with part spline; let part descend by own weight.",
+      "notes": "Gage instructions GOP34413754 Rev 1 (5/2/2025). Photo-confirmed at file '4.21.03 PM (8).jpeg'.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GS-002",
+      "kind": "procedure",
+      "name": "Gage SG 699436 step 2",
+      "value": "Check 8 mm thickness gage between thread end and gage surface -> if thickness gage bigger than distance, reject.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GS-003",
+      "kind": "procedure",
+      "name": "Gage SG 699436 step 3",
+      "value": "Check with NoGo gage GA-780063 -> gage must not go.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "GS-004",
+      "kind": "procedure",
+      "name": "Gage SG 699436 step 4",
+      "value": "Mark OK part with 'V' and place in WIP trolley.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-001",
+      "kind": "quality-standard",
+      "name": "OK/NOK Inductor / coil alignment",
+      "value": "OK: coil centered on part axis. NOK: coil offset / tilted.",
+      "notes": "VAS34402926_001 / NPS.00.01.02, Zone: Hot Zone. Photo-confirmed at file '4.21.02 PM (1).jpeg'.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-002",
+      "kind": "quality-standard",
+      "name": "OK/NOK Part seating on fixture",
+      "value": "OK: part fully seated, centered. NOK: part tilted, off-center.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-003",
+      "kind": "quality-standard",
+      "name": "OK/NOK Bell quench shower contact",
+      "value": "OK: uniform water pattern. NOK: uneven / blocked nozzles.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-004",
+      "kind": "quality-standard",
+      "name": "OK/NOK Heated part color (bell)",
+      "value": "OK: uniform straw/gray. NOK: spot overheating, scale, cracks.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-005",
+      "kind": "quality-standard",
+      "name": "OK/NOK Stem heat zone",
+      "value": "OK: clean heat band, no burn. NOK: discoloration beyond band.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-006",
+      "kind": "quality-standard",
+      "name": "OK/NOK 2D code after mark",
+      "value": "OK: readable, correct PN. NOK: damaged, missing, wrong PN.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "QN-007",
+      "kind": "quality-standard",
+      "name": "OK/NOK Unloading orientation",
+      "value": "OK: parts placed in big Hot Zone reject box / good box correctly. NOK: parts dumped loosely.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-000",
+      "kind": "procedure",
+      "name": "Crack Reaction Plan - immediate action",
+      "value": "If cracks appear: stop machine, inform TL / QT / TE, then execute checks CR-001..CR-014.",
+      "notes": "GWI34417543 Rev 5 (10/03/2025).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-001",
+      "kind": "procedure-step",
+      "name": "Crack check 1",
+      "value": "Check quench concentration (manual refractometer).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-002",
+      "kind": "procedure-step",
+      "name": "Crack check 2",
+      "value": "Check quench drain due date.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-003",
+      "kind": "procedure-step",
+      "name": "Crack check 3",
+      "value": "Check quench condition / contamination.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-004",
+      "kind": "procedure-step",
+      "name": "Crack check 4",
+      "value": "Check paper filter presence & function.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-005",
+      "kind": "procedure-step",
+      "name": "Crack check 5",
+      "value": "Check oil skimmer presence & function.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-006",
+      "kind": "procedure-step",
+      "name": "Crack check 6",
+      "value": "Check shower flow, orientation, alignment, clogging.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-007",
+      "kind": "procedure-step",
+      "name": "Crack check 7",
+      "value": "Check coil position, centering, alignment, condition.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-008",
+      "kind": "procedure-step",
+      "name": "Crack check 8",
+      "value": "Check coil internal shower tube.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-009",
+      "kind": "procedure-step",
+      "name": "Crack check 9",
+      "value": "Check process parameters.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-010",
+      "kind": "procedure-step",
+      "name": "Crack check 10",
+      "value": "Check rings change follow-up.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-011",
+      "kind": "procedure-step",
+      "name": "Crack check 11",
+      "value": "Check METLab results (case depth at 4 mm).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-012",
+      "kind": "procedure-step",
+      "name": "Crack check 12",
+      "value": "Check region S (heat, scratch, other surface defect).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-013",
+      "kind": "procedure-step",
+      "name": "Crack check 13",
+      "value": "Check MPI machine parameters (model, recipe, concentration, lighting).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-014",
+      "kind": "procedure-step",
+      "name": "Crack check 14",
+      "value": "Check blank chemical composition & blank part defects.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "CR-015",
+      "kind": "policy",
+      "name": "Crack systemic actions",
+      "value": "CRIB tool receiving inspection; coil condition control every last shift of the week; shower orientation/alignment control in PM2.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-001",
+      "kind": "procedure",
+      "name": "Start-Stop Instruction (STR34407290 / PRO.01.00.10)",
+      "value": "Power on -> check E-stops -> pull air valve -> HMI boot -> Reset -> Homing. Shutdown: push air valve, E-stop buttons, main power off.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-002",
+      "kind": "procedure",
+      "name": "Interrupted Cycle (RIC34402309 / RIC34401371)",
+      "value": "Manual mode -> run pumps + all showers 3 min -> open doors, remove parts (reuse non-HT, scrap HT parts) -> Reset x2 -> restart. For simpler line: clear errors -> Safety Reset -> Auto-Start x2.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PS-1371-1",
+      "kind": "procedure-step",
+      "name": "RIC34401371 step 1",
+      "value": "If the cycle is interrupted, clean all errors. ('Si le cycle est interrompu, supprimer toutes les erreurs')",
+      "notes": "Read directly from photo '4.21.02 PM (10).jpeg' (doc PRO.01.00.10 Rev 3 25.10.2020, RIC34401371, revision date 16/12/2024/05).",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.02 PM (10).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PS-1371-2",
+      "kind": "procedure-step",
+      "name": "RIC34401371 step 2",
+      "value": "Click on Reset button (Safety Reset). ('Appuyer sur Safety Reset')",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.02 PM (10).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PS-1371-3",
+      "kind": "procedure-step",
+      "name": "RIC34401371 step 3",
+      "value": "Click on Auto-Start button 2 times. ('Appuyer sur le bouton Auto-Start 2 fois')",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.02 PM (10).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-003",
+      "kind": "procedure",
+      "name": "Cleanup Instruction (GWI34413351)",
+      "value": "Start-of-shift general check; Friday deep clean exterior; cover all openings; clean polycarbonate screens with mild soap; no abrasives; no pressure jets near motors/electrical; avoid solvents.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-004",
+      "kind": "procedure",
+      "name": "Change Over Instruction (CHO3440796-4)",
+      "value": "Verify PN & mounted coil; change inductor, rings, bottom rings with correct Allen keys; disconnect/reconnect DM water & cooling; use teflon 1 mm gap for coil centering; load new recipe & verify Z2/Z3; run Learn on InduControl; fill Setup Check Sheet.",
+      "notes": "1 mm teflon gap conflicts with setup-sheet 1.5 mm note (PR-016 / NV-003).",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-005",
+      "kind": "procedure",
+      "name": "Sensibilite Check TP & CV (GWI3441351)",
+      "value": "Connect clips coil<->base / coil<->tail stock; close door, release E-stop, reset; verify 'inductor touch' alarm on HMI for STEM and BOWL on both TP and CV. If NOK -> inform TL, Maintenance & TE immediately.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-006",
+      "kind": "procedure",
+      "name": "Washer Nozzles Check (VAS34402948)",
+      "value": "Air-compress nozzles always horizontal; verify parts fully pass blow-off zone; if jammed, adjust nozzle angle so pieces pass smoothly; take before/after photos.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-007",
+      "kind": "procedure",
+      "name": "Hand Refractometer (GWI34413698)",
+      "value": "Run pumps 30 min for homogeneous concentration; zero the refractometer; sample from front-door port; for AQUAQUENCH 251 multiply reading x2 for concentration %.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-008",
+      "kind": "procedure",
+      "name": "Traceability Manual Lot (BLC34402308)",
+      "value": "Directory Screen -> TRACEABILITY -> MANUAL LOT TRACKING -> select PN -> enter lot # twice (or scan label JUK) -> submit.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-009",
+      "kind": "procedure",
+      "name": "Non-Conforming Flow Chart",
+      "value": "Detect suspect product -> identify & label -> inform Team Leader / Technician Quality -> re-verify -> re-introduce only if conforming; else quarantine.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PC-010",
+      "kind": "safety",
+      "name": "Fiche de Securite au Poste de Travail (SOP34405838 / EHS.12.00.03)",
+      "value": "Risks: HMI impact, box-on-hold impact, AQUAQUENCH spill/slip, laser exposure, crushing/burns from moving/hot parts, noise >85 dB. PPE: gloves, safety shoes, anti-noise, safety glasses. Alert on safety-latch malfunction.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-001",
+      "kind": "ip-device",
+      "name": "NCU CP",
+      "value": "192.168.214.1",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-002",
+      "kind": "ip-device",
+      "name": "MCP",
+      "value": "192.168.214.192",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-003",
+      "kind": "ip-device",
+      "name": "IPC Ethernet 1",
+      "value": "192.168.214.241",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-004",
+      "kind": "ip-device",
+      "name": "IPC Ethernet 2",
+      "value": "10.0.0.98",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-005",
+      "kind": "ip-device",
+      "name": "NCU PN-IO",
+      "value": "172.38.22.33",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-006",
+      "kind": "ip-device",
+      "name": "IM1",
+      "value": "172.38.22.34",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-007",
+      "kind": "ip-device",
+      "name": "IM2",
+      "value": "172.38.22.35",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-008",
+      "kind": "ip-device",
+      "name": "Converter CMS",
+      "value": "172.38.22.36",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-009",
+      "kind": "ip-device",
+      "name": "2D Camera",
+      "value": "172.38.22.37",
+      "notes": "Same address as DataMatrix Reader (IP-014). See NV-002. Subnet mask and gateway are NOT documented.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-010",
+      "kind": "ip-device",
+      "name": "Laser Sensor",
+      "value": "172.38.22.38",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-011",
+      "kind": "ip-device",
+      "name": "Laser Marking Station",
+      "value": "172.38.22.39",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-012",
+      "kind": "ip-device",
+      "name": "IO Link 1",
+      "value": "172.38.22.40",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-013",
+      "kind": "ip-device",
+      "name": "IO Link 2",
+      "value": "172.38.22.41",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-014",
+      "kind": "ip-device",
+      "name": "IO Link 3",
+      "value": "172.38.22.42",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-015",
+      "kind": "ip-device",
+      "name": "DataMatrix Reader (AutoID, SR-20AH)",
+      "value": "172.38.22.37",
+      "notes": "Shares address with 2D Camera (IP-009). Preserved as documented. See NV-002.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "IP-016",
+      "kind": "note",
+      "name": "IP table photo corroboration",
+      "value": "EMMEPI machine plate photographed at file '4.21.02 PM (3).jpeg' shows the same address families (192.168.214.x, 10.0.0.98, 172.38.22.x incl. 2D CAMERA, IO LINK 1/2/3).",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.02 PM (3).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "HM-001",
+      "kind": "hmi",
+      "name": "SINUMERIK control (labeled CV 4)",
+      "value": "Dual-channel NC programs NC/MPF/BELL and NC/MPF/STEM; machine label '700826'; panel label 'CV 4'.",
+      "notes": "Photo-confirmed at file '4.20.44 PM.jpeg' and '4.20.43 PM (1).jpeg'.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "AL-001",
+      "kind": "alarm",
+      "name": "BRAX % OUT OF RANGE: 3 - 3.5",
+      "value": "Alarm text observed on SINUMERIK status line (photo '4.20.44 PM.jpeg').",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "AL-002",
+      "kind": "alarm",
+      "name": "Wait: Read-in enable missing",
+      "value": "Status text on CHAN2 (NC/MPF/BELL) in photo '4.20.44 PM.jpeg'.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "AL-003",
+      "kind": "alarm",
+      "name": "F12 dwell time still 5.9s",
+      "value": "Status text on CHAN3 (NC/MPF/STEM) in photo '4.20.44 PM.jpeg'.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-001",
+      "kind": "nc-line",
+      "name": "STEM N530",
+      "value": "N530 G01 Z3=R203 F=R303 ; Z3-AXIS STAGE3",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-002",
+      "kind": "nc-line",
+      "name": "STEM N540",
+      "value": "N540 G4 F=R403 ; STOP TIME",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-003",
+      "kind": "nc-line",
+      "name": "STEM N550",
+      "value": "N550 STOPRE",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-004",
+      "kind": "nc-line",
+      "name": "STEM N560",
+      "value": "N560 IF $A_IN[23]==1 GOTOF END1 ; QUENCH MODE",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-005",
+      "kind": "nc-line",
+      "name": "STEM N570",
+      "value": "N570 STOPRE",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-006",
+      "kind": "nc-line",
+      "name": "STEM N580",
+      "value": "N580 R29=4 ; VOLTAGE ON",
+      "notes": "Read as 'R29=4' in the photo. An earlier project reference note transcribed 'R29=-4'. See NV-004.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "needs-verification",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-007",
+      "kind": "nc-line",
+      "name": "BELL N1158",
+      "value": "N1158 M10 : AID FOR COMPLETING LOADING, U[NLOADING]... STEM & BELL HEAT (end of line partially cut off in photo)",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-008",
+      "kind": "nc-line",
+      "name": "BELL N1170",
+      "value": "N1170 M32 : HEATING OFF COMMAND",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-009",
+      "kind": "nc-line",
+      "name": "BELL N1190",
+      "value": "N1190 M34 : FIXTURE ROTATION OFF COMMAND",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NC-010",
+      "kind": "nc-line",
+      "name": "BELL N1130 (illegible)",
+      "value": "N1130 G4F3: 20102020? (blurred, not transcribed as fact)",
+      "notes": "See NV-005.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "needs-verification",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-001",
+      "kind": "hmi-observed",
+      "name": "SINUMERIK Z2 position (observed)",
+      "value": "5.000 mm (dist-to-go 0.000)",
+      "notes": "Observed screenshot value only - not a setpoint or limit.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-002",
+      "kind": "hmi-observed",
+      "name": "SINUMERIK A2 position (observed)",
+      "value": "60.000 deg (dist-to-go 0.000)",
+      "notes": "Observed screenshot value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-003",
+      "kind": "hmi-observed",
+      "name": "SINUMERIK Z3 position (observed)",
+      "value": "134.000 mm (dist-to-go 0.000)",
+      "notes": "Observed screenshot value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-004",
+      "kind": "hmi-observed",
+      "name": "Voltage %U (observed)",
+      "value": "0",
+      "notes": "Observed on Inducontrol dashboard photo '4.21.03 PM (9).jpeg'. Not a setpoint, limit or fault condition.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-005",
+      "kind": "hmi-observed",
+      "name": "Current %A (observed)",
+      "value": "0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-006",
+      "kind": "hmi-observed",
+      "name": "Power %kU (observed)",
+      "value": "0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-007",
+      "kind": "hmi-observed",
+      "name": "Frequency %kHz (observed)",
+      "value": "0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-008",
+      "kind": "hmi-observed",
+      "name": "Bell Ext Shower LPM (observed)",
+      "value": "117.9",
+      "notes": "Observed value only; outside recipe band 100-105 LPM (PR-013). Being outside the band is NOT asserted as a fault. See NV-010.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-009",
+      "kind": "hmi-observed",
+      "name": "Bell Mid Shower LPM (observed)",
+      "value": "34.0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-010",
+      "kind": "hmi-observed",
+      "name": "Bell Int Shower LPM (observed)",
+      "value": "0.0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-011",
+      "kind": "hmi-observed",
+      "name": "Stem Shower LPM (observed)",
+      "value": "0.0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-012",
+      "kind": "hmi-observed",
+      "name": "Quench Temp degC (observed)",
+      "value": "34.6",
+      "notes": "Observed value only - not a setpoint, limit or fault condition.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-013",
+      "kind": "hmi-observed",
+      "name": "Rotation RPM (observed)",
+      "value": "112.0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-014",
+      "kind": "hmi-observed",
+      "name": "Brix Value % (observed)",
+      "value": "3.7",
+      "notes": "Observed value only. Compare with control-plan band 3.5-9.5 % (CP-014) and setup sheet 2.8 % (PR-103) - see NV-001.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-015",
+      "kind": "hmi-observed",
+      "name": "DM Conductivity uS/cm (observed)",
+      "value": "200",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-016",
+      "kind": "hmi-observed",
+      "name": "Bell STN Job ID (observed)",
+      "value": "38249404262880049104",
+      "notes": "Observed digit string read from photo; re-check against a sharper photo before trusting individual digits.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-017",
+      "kind": "hmi-observed",
+      "name": "Stem STN Job ID (observed)",
+      "value": "38249404262880048904",
+      "notes": "Observed digit string read from photo; re-check before trusting individual digits.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-018",
+      "kind": "hmi-observed",
+      "name": "Bell Heat Time s (observed)",
+      "value": "69.0",
+      "notes": "Observed value only. PDF section 5.2 independently transcribes 'Heat Time 69.0 s (Bell) / 0.0 s (Stem)'.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "OB-019",
+      "kind": "hmi-observed",
+      "name": "Stem Heat Time s (observed)",
+      "value": "0.0",
+      "notes": "Observed value only.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "HM-002",
+      "kind": "hmi",
+      "name": "Inducontrol dashboard structure",
+      "value": "Header 'NEXTEER AUTOMOTIVE'; logos SMITA / SAET / IBI; 'PROCESS PARAMETER' section with labelled fields (VOLTAGE %U, CURRENT %A, POWER %kU, FREQUENCY %kHz, BELL EXT/MID/INT SHOWER LPM, STEM SHOWER LPM, QUENCH TEMP degC, ROTATION RPM, BRIX VALUE %, DM CONDUCTIVITY uS/cm); BELL STN / STEM STN rows with JOB ID and HEAT TIME (SEC); 3D line model; buttons TRACEABILITY / OPERATIONS / RECIPE; timestamp.",
+      "notes": "Read directly from photo '4.21.03 PM (9).jpeg' (full-size review).",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "HM-003",
+      "kind": "hmi",
+      "name": "AutoID Network Navigator features",
+      "value": "Live view, auto focus, tuning banks 1-5, DataMatrix symbology, exposure 94-153 us, HDR / Expand filters, matching-level graphs.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "HM-004",
+      "kind": "hmi",
+      "name": "Main HMI navigation buttons",
+      "value": "TRACEABILITY / OPERATIONS / RECIPE with 'PRESS' indicators; 3D line model on dashboard.",
+      "notes": "Photo-confirmed at file '4.21.03 PM (9).jpeg'.",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (9).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "HM-005",
+      "kind": "hmi-observed",
+      "name": "Shower-flow trend screen (observed)",
+      "value": "Screen labeled 'CV 1' shows a trend graph with a green operating band and softkeys; claimed threshold '300 L/min' from the PDF caption is NOT legible in the actual photo file.",
+      "notes": "Observed trend screen; see NV-013. Photo file 4.21.03 PM (10).jpeg (contact-sheet review).",
+      "evidence": {
+        "sourceId": "PHOTO:4.21.03 PM (10).jpeg",
+        "category": "needs-verification",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "SF-001",
+      "kind": "safety",
+      "name": "LOTO energy source E-1 Main Electric",
+      "value": "Turn off & lock electrical disconnect; verify pilot light off.",
+      "notes": "Placard photographed relates to 'Continuous Draw Oven #5'. Simulation is educational; the approved site procedure governs real work.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "SF-002",
+      "kind": "safety",
+      "name": "LOTO energy source A-1 Air (Compressor)",
+      "value": "Turn off & lock safety valve; manually test air movements.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "SF-003",
+      "kind": "safety",
+      "name": "LOTO lock count",
+      "value": "2 locks required for complete controlled energy state. Notify affected personnel before servicing.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PP-001",
+      "kind": "part-program",
+      "name": "Part programs and sizes covered",
+      "value": "Programs (non-exhaustive): CMP, CDV, XS2, FCA, DB35, XJI - sizes 23 st, 25 st, 26 st, 34UF, 66UF, 34GU. Customer PN <-> Nexteer PN cross-reference in Annex 1. EP master PN table (page 2/2) links part length (+/-0.5 mm / +/-0.25 mm) to master part numbers.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "RL-001",
+      "kind": "role",
+      "name": "Operator (OP)",
+      "value": "Follow work instructions; change only yellow-marked setup parameters; perform 100 % manual checks; load/scan parts; react to alarms per instruction.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "RL-002",
+      "kind": "role",
+      "name": "Team Leader (TL)",
+      "value": "First escalation point for NOK sensibility check, EP failure, interrupted cycle, non-conforming material.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "RL-003",
+      "kind": "role",
+      "name": "Maintenance (1st level)",
+      "value": "Execute TPM sheets (TPM34411007, TPM34411499); check valves, E-stops, air pressure, water levels, filters, nozzles.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "RL-004",
+      "kind": "role",
+      "name": "Manufacturing Engineer (ME / TE)",
+      "value": "Approve non-yellow parameter changes; correct EP failures; validate changeovers.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "RL-005",
+      "kind": "role",
+      "name": "Quality (QT / QA)",
+      "value": "Control plan audits; gage/OPD correlation; non-conforming disposition per QA.01.00.00.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "RL-006",
+      "kind": "role",
+      "name": "Metrology",
+      "value": "OPD & spline gage correlation; METLab case-depth results.",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-001",
+      "kind": "document",
+      "name": "PRO.01.00.10 Start-Stop Instruction",
+      "value": "Rev 3 - 25.10.2021",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-002",
+      "kind": "document",
+      "name": "PRO.01.00.10 Washer Nozzles Check",
+      "value": "15.01.2017",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-003",
+      "kind": "document",
+      "name": "PRO.01.00.10 Cleanup Instruction",
+      "value": "25.10.2019",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-004",
+      "kind": "document",
+      "name": "PRO.01.00.10 Hand Refractometer",
+      "value": "25.10.2020",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-005",
+      "kind": "document",
+      "name": "PRO.01.00.10 Interrupted Cycle",
+      "value": "25.10.2020",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-006",
+      "kind": "document",
+      "name": "PRO.01.00.11 EP Verification Instructions",
+      "value": "Rev 03 - 22.09.2021 / Rev 006 - 01.07.2025",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-007",
+      "kind": "document",
+      "name": "PRO.01.00.21 Spline Check Flow (Gage)",
+      "value": "Rev 2 - 26.12.2019",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-008",
+      "kind": "document",
+      "name": "PRO.01.00.07 Supplementary Instructions (Boxing)",
+      "value": "05.02.2020",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-009",
+      "kind": "document",
+      "name": "PRO.01.00.01 Operation Control Plan",
+      "value": "Rev 3 - 05.03.2020 / Rev 06 - 20.05.2025",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-010",
+      "kind": "document",
+      "name": "GWI34417348 Set Up Sheet (Draw Oven)",
+      "value": "05/12/2014 / 01",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-011",
+      "kind": "document",
+      "name": "GWI34413351 Cleanup",
+      "value": "23/05/2022 / 02",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-012",
+      "kind": "document",
+      "name": "GWI3441351 Sensibilite Check",
+      "value": "14/11/2015",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-013",
+      "kind": "document",
+      "name": "GWI34413698 Hand Refractometer",
+      "value": "6/7/2022 / 02",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-014",
+      "kind": "document",
+      "name": "GWI34417543 Crack Reaction Plan",
+      "value": "10/03/2025 / 5",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-015",
+      "kind": "document",
+      "name": "CHO3440796 Change Over",
+      "value": "02/2024",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-016",
+      "kind": "document",
+      "name": "RIC34402309 / RIC34401371 Interrupted Cycle",
+      "value": "2022 / 2024",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-017",
+      "kind": "document",
+      "name": "STR34407290 Start-Stop",
+      "value": "4/9/2022 / 02",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-018",
+      "kind": "document",
+      "name": "BLC34402308 Manual Lot Traceability",
+      "value": "12/11/2024 / 03",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-019",
+      "kind": "document",
+      "name": "OCP34417178 Operation Control Plan",
+      "value": "Rev 06 - 20/05/2025",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-020",
+      "kind": "document",
+      "name": "EPR34409900 EP Verification",
+      "value": "Rev 006 - 01-07-2025",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-021",
+      "kind": "document",
+      "name": "GOP34413151 / GOP34413755 Gage Instructions",
+      "value": "Rev 01 / 1",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "8",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-022",
+      "kind": "document",
+      "name": "GOP34413754 Gage SG 699436",
+      "value": "Rev 1 - 5/2/2025",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "9",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-023",
+      "kind": "document",
+      "name": "SOP34405838 / EHS.12.00.03 Fiche de Securite",
+      "value": "Rev 01 - 01.08.2024 / 11.03.2024",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "9",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-024",
+      "kind": "document",
+      "name": "VAS34402926_001 / NPS.00.01.02 OK vs NOK Standards",
+      "value": "21/02/2025 / 15.06.2022",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "9",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-025",
+      "kind": "document",
+      "name": "VAS34402948 Washer Nozzles Check",
+      "value": "16/2/2017",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "9",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-026",
+      "kind": "document",
+      "name": "TPM34411007 / TPM34411499 1st Level Maintenance",
+      "value": "03-01-2023",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "9",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "DC-027",
+      "kind": "document",
+      "name": "M.01.17.00 1st Level Maintenance (alt.)",
+      "value": "Rev 1 - 03-01-2023",
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "9",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NT-001",
+      "kind": "note",
+      "name": "Wash station photo evidence",
+      "value": "File '4.20.41 PM.jpeg' shows OP_100102 Wash blanks CV OR #4 SV-000088 placard, stainless conveyor with blank parts, mounted green handheld barcode scanner, red light curtain, E-stop, and an 'A-1' air-point sign.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.41 PM.jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NT-002",
+      "kind": "note",
+      "name": "Induction station interior photo evidence",
+      "value": "Files '4.20.42 PM (2).jpeg', '4.20.42 PM (3).jpeg', '4.20.42 PM (4).jpeg', '4.20.43 PM' and '4.20.44 PM (1).jpeg' show (through glass / mesh): vertical gold anodized cylinders with rods, a black servo motor, blue/green/orange/red hoses, a workpiece seated on a fixture with quench spray, yellow painted structural frames, a silver cylindrical unit (transformer?), cable bundles and a red/orange cover plate. No dimensioned geometry is available.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.42 PM (3).jpeg",
+        "category": "photographic",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NT-003",
+      "kind": "note",
+      "name": "Draw oven exit photo evidence",
+      "value": "File '4.20.44 PM (3).jpeg' shows a beige/cream oven with 'Draw Oven CVOR #4' placard, metal belt carrying ball-stud parts on a tray exiting the oven, and a posted instruction sheet.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.44 PM (3).jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NT-004",
+      "kind": "note",
+      "name": "Washer enclosure photo evidence",
+      "value": "File '4.20.42 PM.jpeg' shows a long stainless washer enclosure with several hinged doors, viewing windows and yellow spray nozzles inside.",
+      "evidence": {
+        "sourceId": "PHOTO:4.20.42 PM.jpeg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "NT-005",
+      "kind": "note",
+      "name": "No overall exterior photo of the induction machine",
+      "value": "The current 64-photo set contains close-ups through access glass/mesh and control-screen photos, but no verified wide exterior elevation of the induction machine. See NV-011.",
+      "evidence": {
+        "sourceId": "PHOTO:contact-sheets-2026-10-15",
+        "category": "needs-verification",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    }
+  ]
+}

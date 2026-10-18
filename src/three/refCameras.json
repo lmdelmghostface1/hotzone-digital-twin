@@ -1,0 +1,334 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "generated": "2026-10-15",
+    "station": "INDUCTION",
+    "units": "metres",
+    "note": "No controlled drawings exist (NV-011). Poses are APPROXIMATE reconstructions from the named photographs, not measured camera data. Every model proportion is ESTIMATED or ASSUMED - none MEASURED."
+  },
+  "primaryReference": "PHOTO-10",
+  "cameras": [
+    {
+      "id": "ref-primary",
+      "label": "Approximate front view through the wire-mesh guard",
+      "referencePhotoId": "PHOTO-10",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (1).jpeg",
+      "position": [
+        0.22,
+        1.32,
+        2.35
+      ],
+      "target": [
+        0,
+        1.12,
+        0.55
+      ],
+      "fov": 42,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "ref-window",
+      "label": "Approximate view through the front access window (quench active)",
+      "referencePhotoId": "PHOTO-04",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM (3).jpeg",
+      "position": [
+        -0.45,
+        1.35,
+        2.35
+      ],
+      "target": [
+        -0.1,
+        1,
+        0.2
+      ],
+      "fov": 46,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "ref-interior",
+      "label": "Approximate interior close-up (pneumatics, red cover)",
+      "referencePhotoId": "PHOTO-03",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM (2).jpeg",
+      "position": [
+        0.55,
+        1.45,
+        1.75
+      ],
+      "target": [
+        0.1,
+        1.15,
+        0.1
+      ],
+      "fov": 50,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "wb-ref-primary",
+      "label": "Approximate three-quarter view of the blank wash station (front-right, above conveyor)",
+      "referencePhotoId": "PHOTO-01",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.41 PM.jpeg",
+      "position": [
+        -5.6,
+        1.8,
+        2.3
+      ],
+      "target": [
+        -7,
+        1.2,
+        -0.15
+      ],
+      "fov": 46,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "wt-ref-primary",
+      "label": "Approximate front view of the TP/CV washer tunnel doors",
+      "referencePhotoId": "PHOTO-06",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.42 PM.jpeg",
+      "position": [
+        -4.1,
+        1.6,
+        3
+      ],
+      "target": [
+        -4.1,
+        1.3,
+        -0.15
+      ],
+      "fov": 42,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "ov-ref-primary",
+      "label": "Approximate three-quarter view of the draw oven exit (beige exit face, tray of parts on the belt)",
+      "referencePhotoId": "PHOTO-12",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (3).jpeg",
+      "position": [
+        7.45,
+        1.8,
+        1.5
+      ],
+      "target": [
+        5.6,
+        1.05,
+        -0.15
+      ],
+      "fov": 46,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "ovc-ref-primary",
+      "label": "Approximate front view of the draw oven control cabinet row",
+      "referencePhotoId": "PHOTO-11",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.44 PM (2).jpeg",
+      "position": [
+        3.9,
+        1.28,
+        4
+      ],
+      "target": [
+        3.9,
+        1.42,
+        1.75
+      ],
+      "fov": 47,
+      "poseTag": "ESTIMATED"
+    },
+    {
+      "id": "line-wide",
+      "label": "Free wide overview of the built line from the blank wash to the draw oven (not photo-matched)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        0.5,
+        4.2,
+        12.5
+      ],
+      "target": [
+        0,
+        1.2,
+        -0.15
+      ],
+      "fov": 42,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "line-overview",
+      "label": "Free overview of the whole built line (not photo-matched)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        -3.5,
+        3.6,
+        9
+      ],
+      "target": [
+        -3.5,
+        1.2,
+        -0.15
+      ],
+      "fov": 40,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "wp-closeup",
+      "label": "Free close-up of the CV OR workpiece on the induction fixture, from inside the machine enclosure (not photo-matched)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        0.3,
+        1.3,
+        0.02
+      ],
+      "target": [
+        0.02,
+        1.1,
+        -0.15
+      ],
+      "fov": 38,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "wp-ref-part",
+      "label": "Photo-match attempt against PHOTO-09 from outside the induction enclosure (the reference shows the part through the machine opening, which the model does not reproduce - the part is hidden behind the shell and door glass)",
+      "referencePhotoId": "PHOTO-09",
+      "file": "WhatsApp Image 2026-10-15 at 4.20.43 PM.jpeg",
+      "position": [
+        0.75,
+        1.5,
+        1.2
+      ],
+      "target": [
+        0.05,
+        1.1,
+        -0.15
+      ],
+      "fov": 40,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "le-line-end",
+      "label": "Free three-quarter view of the line end - cooling conveyor, boxing bench, box houses and WIP trolley (not photo-matched: no photograph of this station exists)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        8,
+        2.8,
+        3.8
+      ],
+      "target": [
+        11,
+        0.7,
+        0.2
+      ],
+      "fov": 46,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "le-closeup",
+      "label": "Free close-up of the boxing bench, scanner, tray and the GOOD / BAD box houses (not photo-matched)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        9.6,
+        1.7,
+        3
+      ],
+      "target": [
+        11.4,
+        0.75,
+        0.4
+      ],
+      "fov": 42,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "id-stations",
+      "label": "Free three-quarter view of the identification stations - laser marking enclosure and the 2D code reader on the induction feed belt (not photo-matched: neither station is photographed)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        0.9,
+        2.2,
+        3.2
+      ],
+      "target": [
+        -1.7,
+        1.0,
+        -0.05
+      ],
+      "fov": 48,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "rd-closeup",
+      "label": "Free close-up of the 2D code reader head over the belt and the AutoID operator panel (not photo-matched)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        0.6,
+        1.85,
+        2.6
+      ],
+      "target": [
+        -0.95,
+        1.3,
+        0.35
+      ],
+      "fov": 42,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "iso-default",
+      "label": "Free isometric inspection pose (not photo-matched)",
+      "referencePhotoId": null,
+      "file": null,
+      "position": [
+        3.4,
+        2.6,
+        3.8
+      ],
+      "target": [
+        0,
+        1,
+        0
+      ],
+      "fov": 40,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "gage-station",
+      "label": "Free view of the conceptual GO/NO-GO gage bench and the demo operator at the unload end (not photo-matched - NV-016)",
+      "position": [
+        11.1,
+        1.7,
+        3.0
+      ],
+      "target": [
+        9.9,
+        1.1,
+        0.6
+      ],
+      "fov": 45,
+      "file": null,
+      "poseTag": "ASSUMED"
+    },
+    {
+      "id": "line-overview",
+      "label": "Free wide overview of the whole line including the gage bench and operator (not photo-matched)",
+      "position": [
+        2.0,
+        6.5,
+        9.5
+      ],
+      "target": [
+        2.0,
+        1.0,
+        -0.15
+      ],
+      "fov": 55,
+      "file": null,
+      "poseTag": "ASSUMED"
+    }
+  ]
+}

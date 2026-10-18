@@ -1,0 +1,33 @@
+{
+  "luma": {
+    "model": {
+      "mean": 62.07,
+      "stddev": 36.93
+    },
+    "reference": {
+      "mean": 113.94,
+      "stddev": 55.64
+    }
+  },
+  "edge_density": {
+    "model": 12.16,
+    "reference": 8.08
+  },
+  "rgb_mean": {
+    "model": [
+      60.9,
+      61.9,
+      66.8
+    ],
+    "reference": [
+      121.8,
+      112.2,
+      102.2
+    ]
+  },
+  "hist_cosine_gray": 0.7065,
+  "hist_cosine_r": 0.5187,
+  "hist_cosine_g": 0.7527,
+  "hist_cosine_b": 0.8662,
+  "note": "Objective metrics only; fidelity requires human visual review. Not a match score - framing/pose differ from the photo."
+}
