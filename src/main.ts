@@ -40,6 +40,13 @@ app.innerHTML = `
       disabled
     ></button>
     <button
+      id="fs-btn"
+      type="button"
+      class="vp-btn fs-btn"
+      title="Fullscreen: rotate the simulator to landscape (works on Android; on iOS use the system rotation lock)"
+      aria-label="Fullscreen with landscape lock"
+    >⛶ landscape</button>
+    <button
       id="ev-btn"
       type="button"
       class="vp-btn"
@@ -77,6 +84,32 @@ if (forcePill) {
   };
   updateForcePill();
   setInterval(updateForcePill, 500);
+}
+
+// fullscreen + landscape lock: on Android this turns the simulator sideways
+// even when the system rotation lock is on; on iOS the fullscreen request
+// still maximises the viewport and the system rotation lock governs rotation
+// (Safari does not implement screen.orientation.lock).
+const fsBtn = document.getElementById('fs-btn');
+if (fsBtn) {
+  fsBtn.addEventListener('click', async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+        await (screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> }).lock?.('landscape');
+        fsBtn.textContent = 'exit landscape';
+        fsBtn.setAttribute('aria-label', 'Exit fullscreen');
+      } else {
+        (screen.orientation as ScreenOrientation & { unlock?: () => void }).unlock?.();
+        await document.exitFullscreen();
+        fsBtn.textContent = '⛶ landscape';
+        fsBtn.setAttribute('aria-label', 'Fullscreen with landscape lock');
+      }
+    } catch {
+      // lock unsupported (iOS/desktop rotation): fall back to plain fullscreen
+      if (!document.fullscreenElement) fsBtn.textContent = 'exit landscape';
+    }
+  });
 }
 
 window.addEventListener('keydown', (e) => {

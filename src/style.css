@@ -988,6 +988,11 @@ body:has(.vp-capture) #app {
 }
 nav[aria-label] button[aria-pressed='true'] { background: var(--accent); color: #0b0d10; }
 
+.fs-btn {
+  display: none;
+  flex: none;
+}
+
 /* ===================== UI/UX polish + mobile pass ===================== */
 
 /* desktop refinements: motion + steadier panels */
@@ -1054,6 +1059,11 @@ nav[aria-label] button[aria-pressed='true'] { background: var(--accent); color: 
   }
   #ev-btn {
     padding: 10px 14px;
+    font-size: 13px;
+  }
+  .fs-btn {
+    display: inline-block;
+    padding: 10px 12px;
     font-size: 13px;
   }
   #force-pill {
