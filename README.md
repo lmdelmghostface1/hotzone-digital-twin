@@ -27,7 +27,10 @@ should be copied into any real system.
 
 ## Run it
 
-**Live (free Cloudflare Pages):** https://hotzone-cv-twin.iamtilose.workers.dev/
+**Live (free Cloudflare Workers/Pages):** https://hotzone-digital-twin.iamtilose.workers.dev/
+
+Mobile-friendly: on phones the machine panel becomes a bottom sheet, the drawer is a
+full-screen sheet with scrollable tabs, and the scene toolbar is a single scrollable row.
 
 ```bash
 npm install

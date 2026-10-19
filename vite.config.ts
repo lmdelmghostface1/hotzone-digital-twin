@@ -55,9 +55,17 @@ function referencePhotos(): Plugin {
   };
 }
 
+function cloudflarePlugin(): Plugin | null {
+  // The CF plugin attaches its own dev server, which conflicts with the
+  // vitest server ("There is already a server associated with the config").
+  // Unit tests never need the CF handlers anyway.
+  if (process.env.VITEST) return null;
+  return cloudflare();
+}
+
 export default defineConfig({
   base: './',
-  plugins: [referencePhotos(), cloudflare()],
+  plugins: [referencePhotos(), cloudflarePlugin()].filter((p): p is Plugin => p !== null),
   build: {
     target: 'es2022',
     chunkSizeWarningLimit: 1200

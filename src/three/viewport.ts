@@ -145,6 +145,18 @@ export function mountViewport(container: HTMLElement): void {
   stageEl = stage;
   mountMachinePanel(stage);
 
+  // first-run affordance: how to interact with the scene; fades after the
+  // first machine selection or 12 s, whichever comes first
+  const hintChip = el('div', 'sr-announce-chip', 'tap a machine to select it · drag to rotate · pinch to zoom');
+  stage.appendChild(hintChip);
+  const retireHint = (): void => {
+    hintChip.classList.add('fade');
+    setTimeout(() => hintChip.remove(), 600);
+    canvas.removeEventListener('pointerup', retireHint);
+  };
+  canvas.addEventListener('pointerup', retireHint, { once: false });
+  setTimeout(() => hintChip.classList.add('fade'), 12000);
+
   const palette = makePalette();
   const station = buildLine(palette);
   // jsdom (tests) and very old browsers have no WebGL; degrade gracefully
@@ -645,6 +657,16 @@ function mountMachinePanel(stage: HTMLElement): void {
 function updateMachinePanel(camera: THREE.PerspectiveCamera): void {
   if (!machinePanel || !machineHelper || !selectedMachine || !api) return;
   if (!machineHelper.visible) return;
+  // mobile: the panel becomes a bottom sheet, no anchor tracking needed
+  if (window.innerWidth <= 720) {
+    machinePanel.style.transform = 'none';
+    machinePanel.style.left = '12px';
+    machinePanel.style.right = '12px';
+    machinePanel.style.top = 'auto';
+    machinePanel.style.bottom = '12px';
+    machinePanel.style.display = 'block';
+    return;
+  }
   const box = machineHelper.box;
   const anchor = new THREE.Vector3(
     (box.min.x + box.max.x) / 2,

@@ -184,6 +184,24 @@ status-label throttle, 0 console errors).
 Tagged as `v0.7.0-training-release`: training simulator only, not validated for production;
 next acceptance step is Nexteer-provided controlled documentation.
 
+## Post-release polish (UI/UX + mobile)
+
+- Live URL moved to https://hotzone-digital-twin.iamtilose.workers.dev/ (Cloudflare Workers
+  Pages direct upload; the temporary `hotzone-cv-twin` worker was removed). Deploy once per
+  release with `npx wrangler deploy --assets dist` after `npm run build`.
+- **Mobile (≤ 720 px)**: machine panel becomes a bottom sheet (safe-area aware), Evidence
+  drawer full-screen with horizontally scrollable tabs, scene toolbar collapses to one
+  scrollable row with bigger touch targets, top bar condenses but the mandatory disclaimer
+  pill stays visible, `100dvh` shell. First-run chip teaches "tap a machine · drag · pinch"
+  and fades after the first scene interaction.
+- **Desktop**: drawer slide-in animation (respects `prefers-reduced-motion`), machine panels
+  get an internally scrollable clamp (already clamped panel logic is unchanged).
+- Build-side: the Cloudflare Vite plugin is skipped under Vitest (server conflict), tests stay
+  137 green.
+- Verified: mobile + desktop headless smokes (bottom sheet position, drawer geometry, tab
+  scroll, Escape, hint chip retirement, desktop anchored panel regression, 0 console errors);
+  validator/build/tests green; live URL returns the app.
+
 ## Phase status
 
 | phase | scope | status | notes |
