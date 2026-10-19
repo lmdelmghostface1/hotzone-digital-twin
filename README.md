@@ -28,6 +28,7 @@ should be copied into any real system.
 ## Run it
 
 **Live (free Cloudflare Workers/Pages):** https://hotzone-digital-twin.iamtilose.workers.dev/
+(the old `hotzone-cv-twin.iamtilose.workers.dev` URL was a temporary worker and is gone)
 
 Mobile-friendly: on phones the machine panel becomes a bottom sheet, the drawer is a
 full-screen sheet with scrollable tabs, and the scene toolbar is a single scrollable row.
