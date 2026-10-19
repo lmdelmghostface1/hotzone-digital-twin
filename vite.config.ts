@@ -10,6 +10,8 @@ import {
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 const assetSources = [
@@ -55,7 +57,7 @@ function referencePhotos(): Plugin {
 
 export default defineConfig({
   base: './',
-  plugins: [referencePhotos()],
+  plugins: [referencePhotos(), cloudflare()],
   build: {
     target: 'es2022',
     chunkSizeWarningLimit: 1200

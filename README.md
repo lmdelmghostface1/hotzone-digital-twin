@@ -27,16 +27,21 @@ should be copied into any real system.
 
 ## Run it
 
+**Live (free Cloudflare Pages):** https://hotzone-cv-twin.iamtilose.workers.dev/
+
 ```bash
 npm install
 npm run dev          # dev server (e.g. http://localhost:4200/)
 npm run build        # evidence validator + tsc + vite build (build fails on missing/malformed evidence)
 npm run test         # vitest unit tests (137 as of the phase 7 checkpoint)
-npm run preview      # serve the production build
+npm run deploy       # build + wrangler pages deploy (Cloudflare account required, `npx wrangler login` once)
+npm run preview      # build + local wrangler dev
 ```
 
 Optional: `npm run docs:generate`, `npm run render:compare` (3D comparison renders against
-reference photos, requires the Playwright chromium + managed WebGL).
+reference photos, requires the Playwright chromium + managed WebGL). The GitHub repo lives at
+https://github.com/lmdelm/hotzone-digital-twin (source only; deployment is via Cloudflare Pages
+direct upload, `deploy.yml` workflow kept local as a future GitHub Pages alternative).
 
 ## What is in the app
 
