@@ -111,6 +111,41 @@ human-readable status summary of those registers; when it disagrees with them, t
 LOTO note → fault tab → inject FAULT-LASER → FORCED pill → hint → recovery → history with
 writes/hints → crack drill self-certified, 0 console errors).
 
+## Phase 6 — learning mode (informational counters)
+
+**Done**
+
+- **Honesty first (NV-024)**: the controlled sources contain NO pass/fail criteria, grading
+  scheme or per-station mandatory procedure list for assessing operators — so none is invented.
+  The new needs-verification entry NV-024 records that absence; real scoring can only be
+  built if/when criteria arrive from a controlled copy.
+- **`src/sim/learning.ts`**: session summary built from what the trainee actually did —
+  wall-clock session length; procedure actions (steps completed incl. how many were
+  self-certified manual, refused out-of-order clicks, procedures started/finished); drills
+  (total / recovered / self-certified / abandoned, average recovery in simulated seconds,
+  total hints, faults touched); live sim state (forced signals, active alarms, running drill).
+  Data is shared with the UI via the same singletons (`procedureSession`, `drills`).
+- **Procedure tracker metrics** (`src/sim/procedures.ts`): `sessionStats()` counters that
+  intentionally survive procedure resets (they record session actions, not step state), plus
+  the shared `procedureSession` singleton now used by the Evidence drawer.
+- **Drill records gained an `abandoned` flag** (faults.ts) so an abandoned drill is no longer
+  indistinguishable from a real recovery in history/scoring.
+- **Learning mode tab in the Evidence drawer**: live session card, sim-state card, per-drill
+  table, with explicit honesty wording (counters are informational; self-certification is
+  honest handling not validation; drill timing uses simulated time; reload resets).
+- The faults-tab policy line now points at Learning mode/NV-024 instead of promising scoring.
+
+**Not done / limits**
+
+- No pass/fail thresholds, grades, trainee profiles or persistence yet (NV-024; Phase 7 can
+  add profiles/review if requested) — everything resets on reload, by design I cannot invent
+  evaluation semantics.
+- Counters never leave the browser (no logging, no network - never touch a real network rule).
+
+**Verified**: evidence validator OK (24 NV entries incl. NV-024), 137 unit tests, build +
+`tsc --noEmit` clean, headless learning-tab smoke (procedure step → drill → Learning tab shows
+session/counter/forced='none'/running='none'/drill row, 0 console errors).
+
 ## Phase status
 
 | phase | scope | status | notes |
@@ -121,7 +156,7 @@ writes/hints → crack drill self-certified, 0 console errors).
 | 3 | simulation + part lifecycle | **done** | deterministic fixed-step `LineSim`, tracked parts (serial/2D/lot/recipe/state/temp/history), operator + conceptual GO/NO-GO gage, camera zoom/fit. All driven by one typed signal bus. |
 | 4 | HMI / NC / PLC screens, network editor, roles | **done (training replicas)** | see below. |
 | 5 | procedures and faults | **done (training registers)** | see "Phase 5" below. |
-| 6 | learning mode | **not started** | scoring/assessment data arrives here. |
+| 6 | learning mode | **done (informational counters, no scoring)** | see "Phase 6" below. |
 | 7 | polish and release | **not started** | |
 
 Per the project rules, work stops after each phase with a runnable checkpoint. **Phase 6 is

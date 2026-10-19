@@ -26,9 +26,11 @@ import {
   procedures,
   proceduresMeta,
   ProcedureTracker,
-  procedureById
+  procedureById,
+  procedureSession
 } from '../sim/procedures';
 import { drills, faultDefs, faultsMeta } from '../sim/faults';
+import { learning } from '../sim/learning';
 import { hmi as hmiSim } from '../sim/runtime';
 import type {
   ExtractionFile,
@@ -79,7 +81,7 @@ function evidenceBadge(e: ExtractionItem['evidence']): string {
     <span class="badge src">${esc(e.sourceId)}${e.page ? ' p.' + esc(e.page) : ''} Â· ${esc(e.reviewed)}</span>`;
 }
 
-type DrawerTab = 'extraction' | 'needs' | 'photos' | 'hmi' | 'sources' | 'procedures' | 'faults';
+type DrawerTab = 'extraction' | 'needs' | 'photos' | 'hmi' | 'sources' | 'procedures' | 'faults' | 'learning';
 
 export function mountEvidenceDrawer(container: HTMLElement): void {
   const state = {
@@ -304,10 +306,11 @@ export function mountEvidenceDrawer(container: HTMLElement): void {
     hmi: `HMI errors (${hmi.entries.length})`,
     sources: 'Sources & evidence',
     procedures: `Procedures (${procedures.length})`,
-    faults: `Faults & drills (${faultDefs.length})`
+    faults: `Faults & drills (${faultDefs.length})`,
+    learning: 'Learning mode'
   };
 
-  const tracker = new ProcedureTracker();
+  const tracker: ProcedureTracker = procedureSession;
   let fdMessage = '';
   let fdTimerMsg = '';
   let drillTimer: ReturnType<typeof setInterval> | null = null;
@@ -487,10 +490,50 @@ export function mountEvidenceDrawer(container: HTMLElement): void {
       .join('');
     return `<p class="policy">${esc(faultsMeta.policy)}</p>${drillBox}
       <div class="card"><header><strong>drill history</strong></header>
-        <p class="policy">scoring/assessment data (accuracy, violations) arrives with learning mode (Phase 6); today the drill records simulated time, hint use and related signal writes only.</p>
+        <p class="policy">scoring thresholds are not documented (needs-verification NV-024) - the drill history and the Learning mode tab report informational counters only.</p>
         ${histRows || '<p class="notes">no finished drills yet</p>'}
       </div>
       ${cards}`;
+  }
+
+  function renderLearning(): string {
+    const s = learning.summary();
+    const drillRows = drills
+      .history()
+      .map((r) => {
+        const el = (r.state === 'injected' ? hmiSim.t - r.injectedAt : r.recoveredAt - r.injectedAt).toFixed(1);
+        const kind = r.selfCertified ? 'self-certified' : r.abandoned ? 'abandoned (fault stays)' : 'recovered';
+        return `<tr><td class="mono">${esc(r.faultId)}</td><td>${esc(kind)}</td><td>${el} s</td><td>${r.hintsUsed}</td><td>${r.signalWrites}</td></tr>`;
+      })
+      .join('');
+    return `<p class="policy">Learning mode (Phase 6) reports INFORMATIONAL training counters about what you did this session on the simulated line. No pass/fail thresholds or grades: the evaluation criteria for the real line are not in the controlled sources (needs-verification NV-024). Nothing is persisted - reloading resets the session.</p>
+    <div class="cards">
+      <article class="card"><header><strong>session</strong><span class="pc-prog" data-learn-role="session">${esc(s.sessionLength)} (wall clock)</span></header>
+        <table class="kv">
+          <tr><th>procedure steps completed</th><td data-learn-role="p-ok">${s.procedures.completedSteps} (${s.procedures.selfCertifiedSteps} self-certified manual)</td></tr>
+          <tr><th>procedure order blocks</th><td data-learn-role="p-block">${s.procedures.blockedAttempts} (out-of-order clicks that were refused)</td></tr>
+          <tr><th>procedures started / finished</th><td data-learn-role="p-proc">${s.procedures.started} / ${s.procedures.finished} (of ${s.procedures.total} in the register)</td></tr>
+          <tr><th>drills run</th><td data-learn-role="d-total">${s.drills.total} (${s.drills.recovered} recovered, ${s.drills.selfCertified} self-certified, ${s.drills.abandoned} abandoned)</td></tr>
+          <tr><th>avg drill recovery</th><td data-learn-role="d-avg">${s.drills.avgElapsedSimS.toFixed(1)} simulated s / ${s.drills.hintsUsed} hints total</td></tr>
+          <tr><th>faults drilled</th><td>${esc(s.drills.faultsTouched.join(', ') || 'none')}</td></tr>
+        </table>
+        <p class="notes">self-certification is honest handling, not validation: the simulator cannot verify manual/physical steps or the crack reaction (honesty rules). Drill timing uses simulated time, so wall-clock pauses do not show up as slow recoveries.</p>
+      </article>
+      <article class="card"><header><strong>sim state right now</strong></header>
+        <table class="kv">
+          <tr><th>forced signals</th><td class="mono" data-learn-role="forced">${esc(s.sim.forcedSignals.join(', ') || 'none')}</td></tr>
+          <tr><th>active alarms</th><td class="mono" data-learn-role="alarms">${esc(s.sim.activeAlarms.join(', ') || 'none')}</td></tr>
+          <tr><th>drill running</th><td class="mono" data-learn-role="running">${esc(s.sim.drillRunning ?? 'none')}</td></tr>
+        </table>
+        <p class="notes">forced signals while NOT in a drill are training flexibility of the class (machine panels), not violations - escalation rules are not documented.</p>
+      </article>
+      ${drillRows ? `<article class="card"><header><strong>this session's drills</strong></header>
+        <div class="table-wrap"><table>
+          <thead><tr><th>fault</th><th>result</th><th>elapsed</th><th>hints</th><th>signal writes</th></tr></thead>
+          <tbody>${drillRows}</tbody>
+        </table></div></article>` : ''}
+    </div>
+    <p class="policy">Phase 7 can add trainee profiles and persistent review; today this tab is a live read of the session.</p>`;
   }
 
   function contentHtml(): string {
@@ -502,6 +545,7 @@ export function mountEvidenceDrawer(container: HTMLElement): void {
       case 'sources': return renderSources();
       case 'procedures': return renderProcedures();
       case 'faults': return renderFaults();
+      case 'learning': return renderLearning();
     }
   }
 

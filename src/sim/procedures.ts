@@ -25,6 +25,17 @@ export function procedureById(id: string): ProcedureDef | null {
   return procedures.find((p) => p.id === id) ?? null;
 }
 
+/** training-metrics counters (Phase 6 learning mode): counts trainee
+ *  ACTIONS this session - not pass/fail scores (criteria not documented;
+ *  NV-024). They survive procedure resets on purpose. */
+export interface ProcedureStats {
+  completedSteps: number;
+  selfCertifiedSteps: number;
+  blockedAttempts: number;
+  proceduresStarted: number;
+  proceduresFinished: number;
+}
+
 export interface ProcState {
   /** step ids completed in document order */
   done: Set<string>;
@@ -35,6 +46,18 @@ export interface ProcState {
 
 export class ProcedureTracker {
   private state = new Map<string, ProcState>();
+  private stats: ProcedureStats = {
+    completedSteps: 0,
+    selfCertifiedSteps: 0,
+    blockedAttempts: 0,
+    proceduresStarted: 0,
+    proceduresFinished: 0
+  };
+  private finished = new Set<string>();
+
+  sessionStats(): ProcedureStats {
+    return { ...this.stats };
+  }
 
   stateOf(procId: string): ProcState {
     let s = this.state.get(procId);
@@ -69,18 +92,31 @@ export class ProcedureTracker {
     if (!step) return { ok: false, message: `unknown step ${stepId}` };
     const cur = this.currentStep(procId);
     if (cur && cur.id !== stepId) {
+      this.stats.blockedAttempts++;
       return {
         ok: false,
         message: `blocked: the documented order next requires "${cur.id}" (source order preserved, no skipping)`
       };
     }
     if (!cur) {
+      this.stats.blockedAttempts++;
       return { ok: false, message: 'blocked: every step is already completed' };
     }
     const s = this.stateOf(procId);
     s.done.add(stepId);
-    s.started = true;
-    if (step.manual) s.selfCertified.add(stepId);
+    if (!s.started) {
+      s.started = true;
+      this.stats.proceduresStarted++;
+    }
+    this.stats.completedSteps++;
+    if (step.manual) {
+      s.selfCertified.add(stepId);
+      this.stats.selfCertifiedSteps++;
+    }
+    if (s.done.size === proc.steps.length && !this.finished.has(procId)) {
+      this.finished.add(procId);
+      this.stats.proceduresFinished++;
+    }
     return {
       ok: true,
       message: step.manual
@@ -94,3 +130,7 @@ export class ProcedureTracker {
     else this.state.clear();
   }
 }
+
+/** long-lived session tracker (Phase 6): the drawer and learning mode share
+ *  these metrics; tests may still instantiate their own trackers */
+export const procedureSession: ProcedureTracker = new ProcedureTracker();

@@ -449,6 +449,21 @@
         "status": "unverified",
         "reviewed": "2026-10-18"
       }
+    },
+    {
+      "id": "NV-024",
+      "title": "No documented pass/fail criteria for training drills or procedures",
+      "status": "open",
+      "description": "Learning mode (Phase 6) reports informational counters only (steps completed, order blocks, drill recovery time, hints, abandoned drills). The controlled sources contain no evaluation thresholds, grading scheme or mandatory procedure list per station for assessing operators, so none is invented. If such criteria exist in a controlled document, close this item by transcribing them and only then turn the counters into real scoring.",
+      "relatedItemIds": [],
+      "evidence": {
+        "sourceId": "absence of evaluation criteria in the extracted plant document (all PC/CR/GS/GD/SF items are step lists, none defines scoring) - inference, unverified",
+        "page": "n/a",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-19"
+      }
     }
   ]
 }

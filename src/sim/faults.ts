@@ -45,6 +45,8 @@ export interface DrillRecord {
   hintsUsed: number;
   /** crack drills: trainee self-certified the documented plan */
   selfCertified: boolean;
+  /** abandoned by the trainee (fault left in place: manual recovery) */
+  abandoned?: boolean;
 }
 
 export interface DrillManager {
@@ -191,6 +193,7 @@ class DrillManagerImpl implements DrillManager {
       // do NOT auto-clear the fault for the trainee: recovery stays manual
       rec.state = 'recovered';
       rec.recoveredAt = hmi.t;
+      rec.abandoned = true;
       this.past.push(rec);
       this.record = null;
     }
