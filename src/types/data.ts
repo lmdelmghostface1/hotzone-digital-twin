@@ -108,3 +108,75 @@ export interface HmiFile {
   };
   entries: HmiEntry[];
 }
+
+export interface ProcedureStepDef {
+  id: string;
+  sourceItem: string;
+  instruction: string;
+  manual: boolean;
+  evidence: EvidenceLike;
+}
+
+export interface ProcedureDef {
+  id: string;
+  title: string;
+  documentRef: string;
+  note: string;
+  safetyNote: string;
+  manualActionNote: string;
+  steps: ProcedureStepDef[];
+  sourceItems: string[];
+  evidence: EvidenceLike;
+}
+
+export interface ProceduresFile {
+  meta: {
+    project: string;
+    policy: string;
+    safetyDisclaimer: string;
+    scoring: string;
+  };
+  procedures: ProcedureDef[];
+}
+
+export interface FaultReactionStep {
+  id: string;
+  name: string;
+  instruction: string;
+  manual: boolean;
+}
+
+export interface FaultDef {
+  id: string;
+  label: string;
+  category: string;
+  station: string;
+  machine: string;
+  trigger: { via: string; signal: string | null; forced: string };
+  alarm: { id: string; code: string; text: string } | null;
+  symptoms: string[];
+  reaction:
+    | {
+        kind: 'training-scenario';
+        note: string;
+        steps: FaultReactionStep[];
+        stepsEvidence: EvidenceLike;
+      }
+    | {
+        kind: 'documented';
+        note: string;
+        procedureId: string;
+        stepsEvidence: EvidenceLike;
+      };
+  alarmEvidence: EvidenceLike | null;
+  evidence: EvidenceLike;
+}
+
+export interface FaultsFile {
+  meta: {
+    project: string;
+    policy: string;
+    safetyDisclaimer: string;
+  };
+  faults: FaultDef[];
+}

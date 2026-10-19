@@ -11,14 +11,23 @@ import lineEndChecklist from '../data/model-checklist-lineend.json';
 import identificationChecklist from '../data/model-checklist-identification.json';
 import gageChecklist from '../data/model-checklist-gage.json';
 import camerasJson from './refCameras.json';
-import { LineSim } from '../sim/lineSim';
-import { SignalBus } from '../sim/bus';
 import { buildPartMarker } from './actors';
-import { HmiSim } from '../hmi/hmiSim';
+import * as runtime from '../sim/runtime';
+import {
+  collectMachineMeshes,
+  machineBoxOf,
+  machineEvidenceSummary,
+  machineForObj,
+  type Machine
+} from './machines';
+import { buildMachineControls, tickMachineControls } from '../hmi/machineControls';
+import { openScreenOverlay } from '../hmi/screenOverlay';
+import type { ScreenId } from '../hmi/controlScreens';
+import { drills } from '../sim/faults';
 
-const bus = new SignalBus();
-const sim = new LineSim(bus);
-const hmi = new HmiSim(bus);
+const sim = runtime.sim;
+const bus = runtime.bus;
+const hmi = runtime.hmi;
 let simMarkers: { group: THREE.Group; material: THREE.MeshStandardMaterial }[] = [];
 let simGroup: THREE.Group | null = null;
 let markersBuilt = false;
@@ -48,6 +57,12 @@ rootEl.className = 'vp-outer';
 
 let api: SceneApi | null = null;
 let raf = 0;
+
+// anchored machine panel (UI/UX rebuild step 2)
+let stageEl: HTMLElement | null = null;
+let machinePanel: HTMLElement | null = null;
+let machineHelper: THREE.Box3Helper | null = null;
+let selectedMachine: Machine | null = null;
 
 const state: DemoState = {
   heat: 0,
@@ -127,10 +142,24 @@ export function mountViewport(container: HTMLElement): void {
   canvas.className = 'vp-canvas';
   stage.appendChild(canvas);
   rootEl.append(toolbar, stage, side);
+  stageEl = stage;
+  mountMachinePanel(stage);
 
   const palette = makePalette();
   const station = buildLine(palette);
-  api = createScene(canvas, station, { poseId: capturePose ?? 'iso-default' });
+  // jsdom (tests) and very old browsers have no WebGL; degrade gracefully
+  // instead of killing the whole app - the registers stay viewable.
+  try {
+    api = createScene(canvas, station, { poseId: capturePose ?? 'iso-default' });
+    machineHelper = new THREE.Box3Helper(
+      new THREE.Box3(new THREE.Vector3(), new THREE.Vector3()),
+      0x4da3ff
+    );
+    machineHelper.visible = false;
+    api.scene.add(machineHelper);
+  } catch {
+    toolbar.appendChild(el('span', 'vp-hint', 'no WebGL here - 3D scene unavailable'));
+  }
 
   // Phase 3: part markers travelling the line live on their own group so the
   // layer toggles never hide them.
@@ -145,9 +174,12 @@ export function mountViewport(container: HTMLElement): void {
     simMarkers.push(mk);
   }
   markersBuilt = true;
-  (window as unknown as { __sim?: unknown; __hmi?: unknown }).__sim = sim;
-  (window as unknown as { __sim?: unknown; __hmi?: unknown }).__hmi = hmi;
-  buildToolbar(toolbar);
+  (window as unknown as { __sim?: unknown; __hmi?: unknown; __bus?: unknown; __drills?: unknown }).__sim = sim;
+  (window as unknown as { __sim?: unknown; __hmi?: unknown; __bus?: unknown; __drills?: unknown }).__hmi = hmi;
+  (window as unknown as { __sim?: unknown; __hmi?: unknown; __bus?: unknown; __drills?: unknown }).__bus = bus;
+  (window as unknown as { __sim?: unknown; __hmi?: unknown; __bus?: unknown; __drills?: unknown }).__drills = drills;
+  (window as unknown as { __api?: SceneApi }).__api = api ?? undefined;
+  buildToolbar(toolbar, () => side.classList.toggle('open'));
   const { selectPart, refreshList } = buildSide(side, station);
 
   canvas.addEventListener('pointerup', (ev) => {
@@ -158,11 +190,16 @@ export function mountViewport(container: HTMLElement): void {
     const hit = api.pick(x, y);
     api.selectObject(hit);
     selectPart(hit ? String(hit.userData.id) : null);
+    // machine-level selection drives the anchored panel (step 2)
+    selectMachine(machineForObj(hit), station.root);
   });
 
   resizeToContainer();
-  const ro = new ResizeObserver(() => resizeToContainer());
-  ro.observe(stage);
+  // jsdom has no ResizeObserver; skip live-resize there
+  if (typeof ResizeObserver === 'function') {
+    const ro = new ResizeObserver(() => resizeToContainer());
+    ro.observe(stage);
+  }
 
   refreshList();
   startLoop(station);
@@ -179,7 +216,7 @@ function resizeToContainer(): void {
   api.resize(stage.clientWidth, stage.clientHeight);
 }
 
-function buildToolbar(toolbar: HTMLElement): void {
+function buildToolbar(toolbar: HTMLElement, togglePanels: () => void): void {
   const addCheckbox = (label: string, layer: string, checked = true): void => {
     const l = el('label', 'vp-check');
     const cb = document.createElement('input');
@@ -223,6 +260,7 @@ function buildToolbar(toolbar: HTMLElement): void {
   mkBtn('zoom +', () => api?.zoom(0.8));
   mkBtn('zoom −', () => api?.zoom(1.25));
   mkBtn('fit', () => api?.fit());
+  mkBtn('screens', () => openScreenOverlay('main'));
 
   const hint = el('span', 'vp-hint', 'drag rotate · wheel or zoom +/− · right-drag pan');
   toolbar.appendChild(hint);
@@ -252,6 +290,8 @@ function buildToolbar(toolbar: HTMLElement): void {
     const list = rootEl.querySelector('.vp-partlist') as HTMLElement | null;
     if (list) list.querySelectorAll('button.active').forEach((b) => b.classList.remove('active'));
   });
+
+  mkBtn('panels', togglePanels);
 
   const stats = el('span', 'vp-stats', 'triangles: … · fps: …');
   stats.id = 'vp-stats';
@@ -535,6 +575,112 @@ function escapeHtml(s: string): string {
   );
 }
 
+// --- anchored machine panel (step 2) ------------------------------------
+
+/** select a clickable machine; shows the Box3Helper around it and pins the
+ *  anchored panel to its top-centre. null deselects. */
+function selectMachine(machine: Machine | null, stationRoot: THREE.Object3D): void {
+  selectedMachine = machine;
+  if (!machinePanel || !stageEl) return;
+
+  if (!selectedMachine || !api || !machineHelper) {
+    if (machineHelper) machineHelper.visible = false;
+    machinePanel.style.display = 'none';
+    return;
+  }
+
+  const box = machineBoxOf(stationRoot, selectedMachine);
+  if (!box) {
+    machineHelper.visible = false;
+    machinePanel.style.display = 'none';
+    return;
+  }
+  machineHelper.box.copy(box);
+  machineHelper.visible = true;
+
+  const parts = collectMachineMeshes(stationRoot, selectedMachine);
+  const summary = machineEvidenceSummary(parts);
+  const cats = summary.categories
+    .map((c) => `<span class="badge status-unverified">${escapeHtml(c)}</span>`)
+    .join(' ');
+  machinePanel.innerHTML = `
+    <div class="vp-mh">
+      <strong>${escapeHtml(selectedMachine.label)}</strong>
+      <span class="mono small">${escapeHtml(selectedMachine.id)}</span>
+      <button class="vp-btn vp-mclose" type="button" aria-label="close">×</button>
+    </div>
+    <div class="vp-m-stats">components: <b>${summary.parts}</b> · ${cats}</div>
+    <div class="vp-m-note">${escapeHtml(selectedMachine.note)}</div>
+    <div class="vp-m-ctl"></div>`;
+  machinePanel.style.display = 'block';
+  const ctlHost = machinePanel.querySelector('.vp-m-ctl') as HTMLElement;
+  const unoperable =
+    selectedMachine.station === 'WORKPIECE'
+      ? 'The part is carried by the simulated line only; no operator control exists on the part itself.'
+      : undefined;
+  buildMachineControls(ctlHost, selectedMachine.station, unoperable);
+  // step 4: machine panels open the screen replica that observes this machine
+  machinePanel.querySelectorAll<HTMLButtonElement>('[data-mscreen]').forEach((b) => {
+    b.addEventListener('click', () => {
+      openScreenOverlay(b.dataset.mscreen as ScreenId | undefined);
+    });
+  });
+  machinePanel.querySelector('.vp-mclose')?.addEventListener('click', () => {
+    selectMachine(null, stationRoot);
+    api?.selectObject(null);
+  });
+}
+
+function mountMachinePanel(stage: HTMLElement): void {
+  if (machinePanel) machinePanel.remove();
+  machinePanel = document.createElement('div');
+  machinePanel.className = 'vp-machine';
+  machinePanel.style.display = 'none';
+  stage.appendChild(machinePanel);
+}
+
+/** project the selected machine's anchor into screen space and pin the panel;
+ *  the whole panel rect is kept inside the stage so no button can end up
+ *  clipped under the toolbar */
+function updateMachinePanel(camera: THREE.PerspectiveCamera): void {
+  if (!machinePanel || !machineHelper || !selectedMachine || !api) return;
+  if (!machineHelper.visible) return;
+  const box = machineHelper.box;
+  const anchor = new THREE.Vector3(
+    (box.min.x + box.max.x) / 2,
+    box.max.y + 0.15,
+    (box.min.z + box.max.z) / 2
+  ).project(camera);
+  if (Math.abs(anchor.z) > 1) {
+    machinePanel.style.display = 'none';
+    return;
+  }
+  machinePanel.style.transform = 'none';
+  const w = stageEl?.clientWidth ?? 0;
+  const h = stageEl?.clientHeight ?? 0;
+  const panelW = machinePanel.offsetWidth || 260;
+  const panelH = machinePanel.offsetHeight || 200;
+  const px = (anchor.x * 0.5 + 0.5) * w;
+  const py = (-anchor.y * 0.5 + 0.5) * h;
+  machinePanel.style.left = `${clampNum(px - panelW / 2, 8, Math.max(8, w - panelW - 8))}px`;
+  const aboveTop = py - 12 - panelH;
+  const top = aboveTop >= 8 ? aboveTop : Math.min(py + 12, Math.max(8, h - panelH - 8));
+  machinePanel.style.top = `${clampNum(top, 8, Math.max(8, h - panelH - 8))}px`;
+  machinePanel.style.display = 'block';
+}
+
+function clampNum(v: number, min: number, max: number): number {
+  if (max < min) return min;
+  return Math.min(Math.max(v, min), max);
+}
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && machinePanel && selectedMachine) {
+    machinePanel.style.display = 'none';
+  }
+});
+
+
 // belt / bench geometry used to place the travelling parts (matches the model)
 const MARK_LINE_Z = -0.15;
 const MARK_BELT_Y = 1.055;
@@ -605,6 +751,11 @@ function updateActors(station: BuiltLine, dt: number): void {
   if (histTimer >= 0.3) {
     histTimer = 0;
     renderHmiAlarms();
+    drills.poll();
+    if (machinePanel && selectedMachine) {
+      const ctlHost = machinePanel.querySelector('.vp-m-ctl') as HTMLElement | null;
+      if (ctlHost) tickMachineControls(ctlHost, selectedMachine.station);
+    }
     const histEl = document.getElementById('vp-simhist');
     const lead = sim.parts.find((p) => p.stage !== 'BOXED' && p.stage !== 'REJECTED');
     if (histEl) {
@@ -818,6 +969,7 @@ function startLoop(station: BuiltLine): void {
     const dt = Math.min(clock.getDelta(), 0.1);
     if (bus.asBool('line.run')) update(dt);
     api?.render();
+    if (api) updateMachinePanel(api.camera);
     frames += 1;
     fpsFrames += 1;
     fpsTime += dt;

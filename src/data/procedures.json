@@ -1,0 +1,1409 @@
+{
+  "meta": {
+    "project": "Nexteer Plant 78 Hot Zone CV joint line - digital twin (training simulator)",
+    "policy": "Every step is a verbatim segment of the extracted procedure register (src/data/initial-extraction.json items PC-*, CR-*, GS-*, GD-*, SF-*). Steps that are physical actions outside the simulator (LOTO locks, refractometer sampling, coil changes, gage handling) are flagged manual; the simulator does NOT perform or verify them - they are self-certified training actions. No steps are reconstructed from general knowledge; nothing here is validated for operational use.",
+    "safetyDisclaimer": "For LOTO and other safety-critical procedures the simulation is educational only - the approved site procedure governs real work.",
+    "scoring": "not implemented; assessment/progress tracking arrives with learning mode (Phase 6)."
+  },
+  "procedures": [
+    {
+      "id": "PROC-START-STOP",
+      "title": "Start / Stop instruction (STR34407290 / PRO.01.00.10)",
+      "documentRef": "STR34407290 / PRO.01.00.10",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-001.1",
+          "sourceItem": "PC-001",
+          "instruction": "Power on",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-001.2",
+          "sourceItem": "PC-001",
+          "instruction": "check E-stops",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-001.3",
+          "sourceItem": "PC-001",
+          "instruction": "pull air valve",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-001.4",
+          "sourceItem": "PC-001",
+          "instruction": "HMI boot",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-001.5",
+          "sourceItem": "PC-001",
+          "instruction": "Reset",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-001.6",
+          "sourceItem": "PC-001",
+          "instruction": "Homing. Shutdown: push air valve, E-stop buttons, main power off.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-001"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-INTERRUPTED-CYCLE",
+      "title": "Interrupted Cycle (RIC34402309 / RIC34401371)",
+      "documentRef": "RIC34402309 / RIC34401371",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-002.1",
+          "sourceItem": "PC-002",
+          "instruction": "Manual mode",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-002.2",
+          "sourceItem": "PC-002",
+          "instruction": "run pumps + all showers 3 min",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-002.3",
+          "sourceItem": "PC-002",
+          "instruction": "open doors, remove parts (reuse non-HT, scrap HT parts)",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-002.4",
+          "sourceItem": "PC-002",
+          "instruction": "Reset x2",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-002.5",
+          "sourceItem": "PC-002",
+          "instruction": "restart. For simpler line: clear errors",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-002.6",
+          "sourceItem": "PC-002",
+          "instruction": "Safety Reset",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-002.7",
+          "sourceItem": "PC-002",
+          "instruction": "Auto-Start x2.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-002"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-CLEANUP",
+      "title": "Cleanup Instruction (GWI34413351)",
+      "documentRef": "GWI34413351",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-003.1",
+          "sourceItem": "PC-003",
+          "instruction": "Start-of-shift general check",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-003.2",
+          "sourceItem": "PC-003",
+          "instruction": "Friday deep clean exterior",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-003.3",
+          "sourceItem": "PC-003",
+          "instruction": "cover all openings",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-003.4",
+          "sourceItem": "PC-003",
+          "instruction": "clean polycarbonate screens with mild soap",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-003.5",
+          "sourceItem": "PC-003",
+          "instruction": "no abrasives",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-003.6",
+          "sourceItem": "PC-003",
+          "instruction": "no pressure jets near motors/electrical",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-003.7",
+          "sourceItem": "PC-003",
+          "instruction": "avoid solvents.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-003"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-CHANGEOVER",
+      "title": "Change Over Instruction (CHO3440796-4)",
+      "documentRef": "CHO3440796-4",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-004.1",
+          "sourceItem": "PC-004",
+          "instruction": "Verify PN & mounted coil",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-004.2",
+          "sourceItem": "PC-004",
+          "instruction": "change inductor, rings, bottom rings with correct Allen keys",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-004.3",
+          "sourceItem": "PC-004",
+          "instruction": "disconnect/reconnect DM water & cooling",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-004.4",
+          "sourceItem": "PC-004",
+          "instruction": "use teflon 1 mm gap for coil centering",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-004.5",
+          "sourceItem": "PC-004",
+          "instruction": "load new recipe & verify Z2/Z3",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-004.6",
+          "sourceItem": "PC-004",
+          "instruction": "run Learn on InduControl",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-004.7",
+          "sourceItem": "PC-004",
+          "instruction": "fill Setup Check Sheet.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-004"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-SENSIBILITE",
+      "title": "Sensibilite Check TP & CV (GWI3441351)",
+      "documentRef": "GWI3441351",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-005.1",
+          "sourceItem": "PC-005",
+          "instruction": "Connect clips coil<->base / coil<->tail stock",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-005.2",
+          "sourceItem": "PC-005",
+          "instruction": "close door, release E-stop, reset",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-005.3",
+          "sourceItem": "PC-005",
+          "instruction": "verify 'inductor touch' alarm on HMI for STEM and BOWL on both TP and CV. If NOK -> inform TL, Maintenance & TE immediately.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-005"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-WASHER-NOZZLES",
+      "title": "Washer Nozzles Check (VAS34402948)",
+      "documentRef": "VAS34402948",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-006.1",
+          "sourceItem": "PC-006",
+          "instruction": "Air-compress nozzles always horizontal",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-006.2",
+          "sourceItem": "PC-006",
+          "instruction": "verify parts fully pass blow-off zone",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-006.3",
+          "sourceItem": "PC-006",
+          "instruction": "if jammed, adjust nozzle angle so pieces pass smoothly",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-006.4",
+          "sourceItem": "PC-006",
+          "instruction": "take before/after photos.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-006"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-REFRACTOMETER",
+      "title": "Hand Refractometer (GWI34413698)",
+      "documentRef": "GWI34413698",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-007.1",
+          "sourceItem": "PC-007",
+          "instruction": "Run pumps 30 min for homogeneous concentration",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-007.2",
+          "sourceItem": "PC-007",
+          "instruction": "zero the refractometer",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-007.3",
+          "sourceItem": "PC-007",
+          "instruction": "sample from front-door port",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-007.4",
+          "sourceItem": "PC-007",
+          "instruction": "for AQUAQUENCH 251 multiply reading x2 for concentration %.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-007"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-MANUAL-LOT",
+      "title": "Traceability Manual Lot (BLC34402308)",
+      "documentRef": "BLC34402308",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-008.1",
+          "sourceItem": "PC-008",
+          "instruction": "Directory Screen",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-008.2",
+          "sourceItem": "PC-008",
+          "instruction": "TRACEABILITY",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-008.3",
+          "sourceItem": "PC-008",
+          "instruction": "MANUAL LOT TRACKING",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-008.4",
+          "sourceItem": "PC-008",
+          "instruction": "select PN",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-008.5",
+          "sourceItem": "PC-008",
+          "instruction": "enter lot # twice (or scan label JUK)",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-008.6",
+          "sourceItem": "PC-008",
+          "instruction": "submit.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-008"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-NC-FLOW",
+      "title": "Non-Conforming Flow Chart",
+      "documentRef": "flow chart (Project_Document.pdf p.6 / item PC-009)",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-009.1",
+          "sourceItem": "PC-009",
+          "instruction": "Detect suspect product",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-009.2",
+          "sourceItem": "PC-009",
+          "instruction": "identify & label",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-009.3",
+          "sourceItem": "PC-009",
+          "instruction": "inform Team Leader / Technician Quality",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-009.4",
+          "sourceItem": "PC-009",
+          "instruction": "re-verify",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "PC-009.5",
+          "sourceItem": "PC-009",
+          "instruction": "re-introduce only if conforming; else quarantine.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-009"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "6",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-LOTO",
+      "title": "LOTO (E-1 + A-1, 2 locks)",
+      "documentRef": "site LOTO energy sources E-1 / A-1 (items SF-001..SF-003)",
+      "note": "lock count from SF-003: 2 locks for a complete controlled energy state; notify affected personnel before servicing.",
+      "safetyNote": "SAFETY-CRITICAL: this simulation is educational only - the approved site procedure governs real work. Never perform LOTO training actions on live equipment.",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "SF-001S",
+          "sourceItem": "SF-001",
+          "instruction": "Turn off & lock electrical disconnect; verify pilot light off.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "7",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "SF-002S",
+          "sourceItem": "SF-002",
+          "instruction": "Turn off & lock safety valve; manually test air movements.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "7",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "SF-003S",
+          "sourceItem": "SF-003",
+          "instruction": "2 locks required for complete controlled energy state. Notify affected personnel before servicing.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "7",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "SF-001",
+        "SF-002",
+        "SF-003"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-WORKSTATION-SAFETY",
+      "title": "Fiche de Securite au Poste de Travail (SOP34405838 / EHS.12.00.03)",
+      "documentRef": "SOP34405838 / EHS.12.00.03",
+      "note": "reference material from the workstation safety sheet; no step sequence is documented beyond this text.",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "PC-010S",
+          "sourceItem": "PC-010",
+          "instruction": "Risks: HMI impact, box-on-hold impact, AQUAQUENCH spill/slip, laser exposure, crushing/burns from moving/hot parts, noise >85 dB. PPE: gloves, safety shoes, anti-noise, safety glasses. Alert on safety-latch malfunction.",
+          "manual": false,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "7",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "PC-010"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "7",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-OPD-SPLINE-GAGE",
+      "title": "OPD / spline gage - SG 699436 (GOP34413151/755/754)",
+      "documentRef": "GOP34413151 / 755 / 754",
+      "note": "decision rules from GD-003: Go gage full length = Good part; NoGo passing full length = Scrap / re-evaluate. Mark OK parts with V (GD-004).",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "GS-001S",
+          "sourceItem": "GS-001",
+          "instruction": "Align gage spline with part spline; let part descend by own weight.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "GS-002S",
+          "sourceItem": "GS-002",
+          "instruction": "Check 8 mm thickness gage between thread end and gage surface -> if thickness gage bigger than distance, reject.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "GS-003S",
+          "sourceItem": "GS-003",
+          "instruction": "Check with NoGo gage GA-780063 -> gage must not go.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "GS-004S",
+          "sourceItem": "GS-004",
+          "instruction": "Mark OK part with 'V' and place in WIP trolley.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "GS-001",
+        "GS-002",
+        "GS-003",
+        "GS-004"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-OPD-MEASUREMENT",
+      "title": "OPD measurement plan (before / after heat treatment)",
+      "documentRef": "GOP34413151 (plan per GD-001)",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "GD-001S",
+          "sourceItem": "GD-001",
+          "instruction": "Measure OPD over 2 gage pins on a lot of 5 parts before heat treatment and after heat treatment (same parts, 0 deg and 90 deg angles).",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "GD-001"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-OPD-MARKING",
+      "title": "OPD part marking (lot of 5, bearing face dot)",
+      "documentRef": "GOP34413151 (per GD-004)",
+      "note": "",
+      "safetyNote": "",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "GD-004.1",
+          "sourceItem": "GD-004",
+          "instruction": "Mark bearing face with a dot",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "GD-004.2",
+          "sourceItem": "GD-004",
+          "instruction": "parts numbered 1-5.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "GD-004"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    },
+    {
+      "id": "PROC-CRACK-REACTION",
+      "title": "Crack Reaction Plan (GWI34417543)",
+      "documentRef": "GWI34417543",
+      "note": "event-based reaction: stop the machine and inform TL / QT / TE first, then execute the documented checks CR-001..CR-014 and the follow-up control CR-015.",
+      "safetyNote": "a crack reaction touches product containment: verify against the controlled master plan before operational use.",
+      "manualActionNote": "steps marked manual are physical actions outside the simulator; they are self-certified training actions, not verified by the simulation.",
+      "steps": [
+        {
+          "id": "CR-000S",
+          "sourceItem": "CR-000",
+          "instruction": "If cracks appear: stop machine, inform TL / QT / TE, then execute checks CR-001..CR-014.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-001S",
+          "sourceItem": "CR-001",
+          "instruction": "Check quench concentration (manual refractometer).",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-002S",
+          "sourceItem": "CR-002",
+          "instruction": "Check quench drain due date.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-003S",
+          "sourceItem": "CR-003",
+          "instruction": "Check quench condition / contamination.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-004S",
+          "sourceItem": "CR-004",
+          "instruction": "Check paper filter presence & function.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-005S",
+          "sourceItem": "CR-005",
+          "instruction": "Check oil skimmer presence & function.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-006S",
+          "sourceItem": "CR-006",
+          "instruction": "Check shower flow, orientation, alignment, clogging.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-007S",
+          "sourceItem": "CR-007",
+          "instruction": "Check coil position, centering, alignment, condition.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-008S",
+          "sourceItem": "CR-008",
+          "instruction": "Check coil internal shower tube.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-009S",
+          "sourceItem": "CR-009",
+          "instruction": "Check process parameters.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-010S",
+          "sourceItem": "CR-010",
+          "instruction": "Check rings change follow-up.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-011S",
+          "sourceItem": "CR-011",
+          "instruction": "Check METLab results (case depth at 4 mm).",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "5",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-012S",
+          "sourceItem": "CR-012",
+          "instruction": "Check region S (heat, scratch, other surface defect).",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-013S",
+          "sourceItem": "CR-013",
+          "instruction": "Check MPI machine parameters (model, recipe, concentration, lighting).",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-014S",
+          "sourceItem": "CR-014",
+          "instruction": "Check blank chemical composition & blank part defects.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        },
+        {
+          "id": "CR-015S",
+          "sourceItem": "CR-015",
+          "instruction": "CRIB tool receiving inspection; coil condition control every last shift of the week; shower orientation/alignment control in PM2.",
+          "manual": true,
+          "evidence": {
+            "sourceId": "Project_Document.pdf",
+            "page": "6",
+            "category": "document",
+            "confidence": "high",
+            "status": "unverified",
+            "reviewed": "2026-10-15"
+          }
+        }
+      ],
+      "sourceItems": [
+        "CR-000",
+        "CR-001",
+        "CR-002",
+        "CR-003",
+        "CR-004",
+        "CR-005",
+        "CR-006",
+        "CR-007",
+        "CR-008",
+        "CR-009",
+        "CR-010",
+        "CR-011",
+        "CR-012",
+        "CR-013",
+        "CR-014",
+        "CR-015"
+      ],
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    }
+  ]
+}

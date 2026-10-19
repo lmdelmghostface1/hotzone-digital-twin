@@ -69,6 +69,7 @@ const items = extraction.items ?? [];
 if (!Array.isArray(items) || items.length === 0) {
   errors.push('initial-extraction.json: items array missing or empty');
 }
+const itemById = new Map();
 const seenIds = new Set();
 for (const item of items) {
   const where = `item ${String(item.id ?? '(no id)')}`;
@@ -78,6 +79,7 @@ for (const item of items) {
   if (typeof item.kind !== 'string' || item.kind.length === 0) {
     errors.push(`${where}: kind missing`);
   }
+  itemById.set(item.id, item);
   if (typeof item.name !== 'string' || item.name.length === 0) {
     errors.push(`${where}: name missing`);
   }
@@ -246,11 +248,124 @@ for (const entry of extEntries) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Phase 5: procedures + faults registers
+// ---------------------------------------------------------------------------
+
+const procedures = JSON.parse(
+  readFileSync(join(root, 'src', 'data', 'procedures.json'), 'utf8')
+);
+const proceduresList = procedures.procedures ?? [];
+if (!Array.isArray(proceduresList) || proceduresList.length === 0) {
+  errors.push('procedures.json: procedures array missing or empty');
+}
+for (const key of ['project', 'policy', 'safetyDisclaimer', 'scoring']) {
+  if (typeof procedures.meta?.[key] !== 'string' || procedures.meta[key].length === 0) {
+    errors.push(`procedures.json: meta.${key} missing`);
+  }
+}
+const seenProc = new Set();
+for (const proc of proceduresList) {
+  const where = `procedure ${String(proc.id ?? '(no id)')}`;
+  if (typeof proc.id !== 'string' || proc.id.length === 0) errors.push(`${where}: id missing`);
+  else if (seenProc.has(proc.id)) errors.push(`${where}: duplicate id`);
+  else seenProc.add(proc.id);
+  if (typeof proc.title !== 'string' || proc.title.length === 0) errors.push(`${where}: title missing`);
+  if (!Array.isArray(proc.steps) || proc.steps.length === 0) {
+    errors.push(`${where}: steps missing or empty`);
+    continue;
+  }
+  // verbatim + order check against the extraction register
+  const byItem = new Map();
+  for (const step of proc.steps) {
+    const sWhere = `${where} step ${String(step.id ?? '?')}`;
+    if (typeof step.sourceItem !== 'string' || step.sourceItem.length === 0) {
+      errors.push(`${sWhere}: sourceItem missing`);
+      continue;
+    }
+    const src = itemById.get(step.sourceItem);
+    if (!src) {
+      errors.push(`${sWhere}: sourceItem ${step.sourceItem} not in extraction register`);
+      continue;
+    }
+    if (typeof step.manual !== 'boolean') errors.push(`${sWhere}: manual must be boolean`);
+    if (typeof step.instruction !== 'string' || step.instruction.trim().length === 0) {
+      errors.push(`${sWhere}: instruction missing`);
+      continue;
+    }
+    // the instruction must appear in the source value in documented order
+    let pos = byItem.get(step.sourceItem)?.pos ?? 0;
+    const inst = step.instruction.trim();
+    const found = src.value.indexOf(inst, pos);
+    if (found < 0) {
+      errors.push(`${sWhere}: instruction not found (verbatim) in ${step.sourceItem} value`);
+    } else {
+      pos = found + inst.length;
+    }
+    byItem.set(step.sourceItem, { pos });
+    errors.push(...checkEvidence(sWhere, step.evidence));
+  }
+}
+
+const faults = JSON.parse(readFileSync(join(root, 'src', 'data', 'faults.json'), 'utf8'));
+const faultsList = faults.faults ?? [];
+if (!Array.isArray(faultsList) || faultsList.length === 0) {
+  errors.push('faults.json: faults array missing or empty');
+}
+for (const key of ['project', 'policy', 'safetyDisclaimer']) {
+  if (typeof faults.meta?.[key] !== 'string' || faults.meta[key].length === 0) {
+    errors.push(`faults.json: meta.${key} missing`);
+  }
+}
+// signals are parsed from the typed bus source so the trigger cannot drift
+const busSrc = readFileSync(join(root, 'src', 'sim', 'bus.ts'), 'utf8');
+const busKeys = new Set(
+  [...busSrc.matchAll(/key:\s*'([^']+)+'/g)].map((m) => m[1])
+);
+const seenFault = new Set();
+for (const fault of faultsList) {
+  const where = `fault ${String(fault.id ?? '(no id)')}`;
+  if (typeof fault.id !== 'string' || fault.id.length === 0) errors.push(`${where}: id missing`);
+  else if (seenFault.has(fault.id)) errors.push(`${where}: duplicate id`);
+  else seenFault.add(fault.id);
+  for (const k of ['label', 'category', 'station', 'machine']) {
+    if (typeof fault[k] !== 'string' || fault[k].length === 0) {
+      errors.push(`${where}: ${k} missing`);
+    }
+  }
+  if (fault.trigger?.signal != null && !busKeys.has(fault.trigger.signal)) {
+    errors.push(`${where}: trigger.signal ${String(fault.trigger.signal)} is not a typed bus signal`);
+  }
+  const react = fault.reaction;
+  if (!react || !['training-scenario', 'documented'].includes(react.kind)) {
+    errors.push(`${where}: reaction.kind invalid`);
+  } else {
+    if (typeof react.note !== 'string' || react.note.length === 0) {
+      errors.push(`${where}: reaction.note missing`);
+    }
+    if (react.kind === 'documented' && !proceduresList.some((p) => p.id === react.procedureId)) {
+      errors.push(`${where}: documented reaction references missing procedure ${String(react.procedureId)}`);
+    }
+    if (react.kind === 'training-scenario' && (!Array.isArray(react.steps) || react.steps.length === 0)) {
+      errors.push(`${where}: training-scenario remedy steps missing`);
+    }
+  }
+  if (fault.alarm) {
+    const reg = hmiEntries.find((e) => e.id === fault.alarm.id);
+    if (!reg) errors.push(`${where}: alarm ${String(fault.alarm.id)} not in HMI register`);
+    else if (reg.code !== fault.alarm.code || reg.text !== fault.alarm.text) {
+      errors.push(`${where}: alarm code/text does not match the HMI register verbatim`);
+    }
+    errors.push(...checkEvidence(`${where}.alarmEvidence`, fault.alarmEvidence));
+  }
+  errors.push(...checkEvidence(`${where}`, fault.evidence));
+}
+
 if (errors.length > 0) {
   console.error(`evidence validation FAILED (${errors.length} problem(s)):`);
   for (const e of errors) console.error(`  - ${e}`);
   process.exit(1);
 }
 console.log(
-  `evidence validation OK: ${items.length} items, ${entries.length} needs-verification entries, ${photos.length} reference photos, ${clItems} checklist items across ${checklistFiles.length} checklist file(s), ${hmiEntries.length} HMI error entries, ${extEntries.length} external research entries, all with valid evidence.`
+  `evidence validation OK: ${items.length} items, ${entries.length} needs-verification entries, ${photos.length} reference photos, ${clItems} checklist items across ${checklistFiles.length} checklist file(s), ${hmiEntries.length} HMI error entries, ${extEntries.length} external research entries, ${proceduresList.length} procedures, ${faultsList.length} faults, all with valid evidence.`
 );

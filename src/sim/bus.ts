@@ -22,9 +22,16 @@ export type SignalKey =
   | 'amb.heating'
   | 'amb.quenching'
   | 'amb.washing'
-  | 'amb.tempering';
+  | 'amb.tempering'
+  | 'nc.readInEnable'
+  | 'nc.braxPct'
+  | 'nc.dwellS'
+  | 'io.doorClosed'
+  | 'io.airPressureOk'
+  | 'io.epResult'
+  | 'io.quenchFlowOk';
 
-export type SignalUnit = 'bool' | 'ratio' | 'mm';
+export type SignalUnit = 'bool' | 'ratio' | 'mm' | 'pct' | 's';
 
 export interface SignalDef {
   key: SignalKey;
@@ -46,7 +53,14 @@ export const SIGNALS: SignalDef[] = [
   { key: 'amb.heating', label: 'Ambient: heating glow', unit: 'bool', default: false, note: 'illustrative scene glow only, not a process setpoint' },
   { key: 'amb.quenching', label: 'Ambient: quench spray', unit: 'bool', default: false, note: 'illustrative scene spray only, not a process setpoint' },
   { key: 'amb.washing', label: 'Ambient: wash spray', unit: 'bool', default: true, note: 'illustrative scene spray only, not a process setpoint' },
-  { key: 'amb.tempering', label: 'Ambient: oven glow', unit: 'bool', default: true, note: 'illustrative scene glow only, not a process setpoint' }
+  { key: 'amb.tempering', label: 'Ambient: oven glow', unit: 'bool', default: true, note: 'illustrative scene glow only, not a process setpoint' },
+  { key: 'nc.readInEnable', label: 'NC read-in enable', unit: 'bool', default: true, note: 'simulated NC signal; AL-002 "Read-in enable missing" (NV-022)' },
+  { key: 'nc.braxPct', label: 'NC BRAX %', unit: 'pct', default: 3.25, note: 'simulated; observed band 3-3.5 (AL-001). Range is not a validated limit.' },
+  { key: 'nc.dwellS', label: 'NC F12 dwell (s)', unit: 's', default: 5.9, note: 'simulated; observed status "F12 dwell time still 5.9s" (AL-003)' },
+  { key: 'io.doorClosed', label: 'IO door closed', unit: 'bool', default: true, note: 'simulated interlock input' },
+  { key: 'io.airPressureOk', label: 'IO air pressure OK', unit: 'bool', default: true, note: 'simulated interlock input' },
+  { key: 'io.epResult', label: 'IO EP result OK', unit: 'bool', default: true, note: 'simulated error-proofing result (EPR34409900)' },
+  { key: 'io.quenchFlowOk', label: 'IO quench flow OK', unit: 'bool', default: true, note: 'simulated interlock input' }
 ];
 
 export interface SignalRecord {
@@ -61,6 +75,7 @@ export class SignalBus {
   private values = new Map<SignalKey, boolean | number>();
   private forcedKeys = new Set<SignalKey>();
   private log: SignalRecord[] = [];
+  private writeCounts = new Map<SignalKey, number>();
   private t = 0;
   private maxLog = 300;
 
@@ -127,11 +142,18 @@ export class SignalBus {
     for (const d of SIGNALS) this.values.set(d.key, d.default);
     this.forcedKeys.clear();
     this.log = [];
+    this.writeCounts = new Map();
     this.t = 0;
+  }
+
+  /** monotonic per-signal write counter (survives log eviction; used by fault drills) */
+  writesOf(key: SignalKey): number {
+    return this.writeCounts.get(key) ?? 0;
   }
 
   private push(rec: SignalRecord): void {
     this.log.push(rec);
+    this.writeCounts.set(rec.key, (this.writeCounts.get(rec.key) ?? 0) + 1);
     if (this.log.length > this.maxLog) this.log.shift();
   }
 }

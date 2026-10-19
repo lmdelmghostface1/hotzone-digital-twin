@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "project": "Nexteer Plant 78 Hot Zone CV joint line - digital twin (training simulator)",
+    "policy": "Six teaching faults reuse the fault/alarm pairings built for the HMI mimic; the pairings themselves are an educational inference (NV-022). Alarm texts and codes are verbatim from the extracted register (src/data/hmi-errors.json). Faults marked training-scenario have NO documented reaction plan: remedies are simulated actions (unforce/ack) and are never presented as the plant's official recovery.",
+    "safetyDisclaimer": "Educational training scenarios only. Verify against master controlled copies before operational use."
+  },
+  "faults": [
+    {
+      "id": "FAULT-LASER",
+      "label": "Laser unit not ready",
+      "category": "process",
+      "station": "MARKING",
+      "machine": "laser marking station",
+      "trigger": {
+        "via": "hmi fault \"laserDisabled\" (machine panel fault button / PLC force / sim condition)",
+        "signal": "laser.enabled",
+        "forced": "false (switched off)"
+      },
+      "alarm": {
+        "id": "HMI-019",
+        "code": "700207",
+        "text": "LASER UNIT NOT READY, CYCLE START DISABLE (& EMPTY CYCLE START)"
+      },
+      "symptoms": [
+        "laser unit not ready / marking disabled",
+        "parts arrive unmarked and are rejected at the reader (reader alarm HMI-032 is a separate fault)"
+      ],
+      "reaction": {
+        "kind": "training-scenario",
+        "note": "No official reaction plan for this fault exists in the controlled sources; this remedy is a TRAINING SCENARIO and must not be presented as the plant's official recovery. Verify against master controlled copies before operational use.",
+        "steps": [
+          {
+            "id": "R.1",
+            "name": "read the alarm",
+            "instruction": "The alarm text is verbatim from the extracted register (photographic evidence).",
+            "manual": false
+          },
+          {
+            "id": "R.2",
+            "name": "check the machine on the 3D line",
+            "instruction": "Select the laser marking station on the 3D line; the machine panel shows the FORCED indicator for laser.enabled.",
+            "manual": false
+          },
+          {
+            "id": "R.3",
+            "name": "clear the trigger (simulated)",
+            "instruction": "Unforce laser.enabled on the machine panel (or unforce-all on the PLC screens), watch the alarm clear and the FORCED indicator disappear. This is the simulated recovery condition - not a documented plant procedure step.",
+            "manual": false
+          }
+        ],
+        "stepsEvidence": {
+          "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+          "category": "inference",
+          "confidence": "low",
+          "status": "unverified",
+          "reviewed": "2026-10-18"
+        }
+      },
+      "alarmEvidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0009.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      },
+      "evidence": {
+        "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-18"
+      }
+    },
+    {
+      "id": "FAULT-SCAN",
+      "label": "2D scanner reading error",
+      "category": "process",
+      "station": "READER",
+      "machine": "2D code reader",
+      "trigger": {
+        "via": "hmi fault \"damagedCode\" (machine panel fault button / PLC force / sim condition)",
+        "signal": "fault.damagedCode",
+        "forced": "true"
+      },
+      "alarm": {
+        "id": "HMI-032",
+        "code": "700403",
+        "text": "2D SCANNER READING ERROR, CURRENT JOB IS BEING REJECTED (DB2.DBX212.3)"
+      },
+      "symptoms": [
+        "the tracked job is rejected by the reader"
+      ],
+      "reaction": {
+        "kind": "training-scenario",
+        "note": "No official reaction plan for this fault exists in the controlled sources; this remedy is a TRAINING SCENARIO and must not be presented as the plant's official recovery. Verify against master controlled copies before operational use.",
+        "steps": [
+          {
+            "id": "R.1",
+            "name": "read the alarm",
+            "instruction": "The alarm text is verbatim from the extracted register (photographic evidence).",
+            "manual": false
+          },
+          {
+            "id": "R.2",
+            "name": "check the machine on the 3D line",
+            "instruction": "Select the 2D code reader on the 3D line; the machine panel shows the FORCED indicator for fault.damagedCode.",
+            "manual": false
+          },
+          {
+            "id": "R.3",
+            "name": "clear the trigger (simulated)",
+            "instruction": "Unforce fault.damagedCode on the machine panel (or unforce-all on the PLC screens), watch the alarm clear and the FORCED indicator disappear. This is the simulated recovery condition - not a documented plant procedure step.",
+            "manual": false
+          }
+        ],
+        "stepsEvidence": {
+          "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+          "category": "inference",
+          "confidence": "low",
+          "status": "unverified",
+          "reviewed": "2026-10-18"
+        }
+      },
+      "alarmEvidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0025.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      },
+      "evidence": {
+        "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-18"
+      }
+    },
+    {
+      "id": "FAULT-SIZE",
+      "label": "Job height not within range",
+      "category": "process",
+      "station": "GAGE",
+      "machine": "gage station + operator (conceptual)",
+      "trigger": {
+        "via": "hmi fault \"gageForceNok\" (machine panel fault button / PLC force / sim condition)",
+        "signal": "gage.offsetMm",
+        "forced": "0.03 mm"
+      },
+      "alarm": {
+        "id": "HMI-022",
+        "code": "700219",
+        "text": "JOB HEIGHT NOT WITHIN RANGE, JOB REJECTED"
+      },
+      "symptoms": [
+        "the current job is rejected at the gage with a NO-GO result"
+      ],
+      "reaction": {
+        "kind": "training-scenario",
+        "note": "No official reaction plan for this fault exists in the controlled sources; this remedy is a TRAINING SCENARIO and must not be presented as the plant's official recovery. Verify against master controlled copies before operational use.",
+        "steps": [
+          {
+            "id": "R.1",
+            "name": "read the alarm",
+            "instruction": "The alarm text is verbatim from the extracted register (photographic evidence).",
+            "manual": false
+          },
+          {
+            "id": "R.2",
+            "name": "check the machine on the 3D line",
+            "instruction": "Select the gage station + operator (conceptual) on the 3D line; the machine panel shows the FORCED indicator for gage.offsetMm.",
+            "manual": false
+          },
+          {
+            "id": "R.3",
+            "name": "clear the trigger (simulated)",
+            "instruction": "Unforce gage.offsetMm on the machine panel (or unforce-all on the PLC screens), watch the alarm clear and the FORCED indicator disappear. This is the simulated recovery condition - not a documented plant procedure step.",
+            "manual": false
+          }
+        ],
+        "stepsEvidence": {
+          "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+          "category": "inference",
+          "confidence": "low",
+          "status": "unverified",
+          "reviewed": "2026-10-18"
+        }
+      },
+      "alarmEvidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0048.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      },
+      "evidence": {
+        "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-18"
+      }
+    },
+    {
+      "id": "FAULT-CONVEYOR",
+      "label": "Unloading conveyor motor trip",
+      "category": "process",
+      "station": "UNLOAD",
+      "machine": "cooling / unload conveyor",
+      "trigger": {
+        "via": "hmi fault \"conveyorStop\" (machine panel fault button / PLC force / sim condition)",
+        "signal": "conv.stop",
+        "forced": "true"
+      },
+      "alarm": {
+        "id": "HMI-026",
+        "code": "700327",
+        "text": "UNLOADING CONVEYOR MOTOR MPU TRIP (DB2.DBX207.3) CHECK E7.1"
+      },
+      "symptoms": [
+        "unloading conveyor stopped",
+        "boxed parts stop being processed on the bench"
+      ],
+      "reaction": {
+        "kind": "training-scenario",
+        "note": "No official reaction plan for this fault exists in the controlled sources; this remedy is a TRAINING SCENARIO and must not be presented as the plant's official recovery. Verify against master controlled copies before operational use.",
+        "steps": [
+          {
+            "id": "R.1",
+            "name": "read the alarm",
+            "instruction": "The alarm text is verbatim from the extracted register (photographic evidence).",
+            "manual": false
+          },
+          {
+            "id": "R.2",
+            "name": "check the machine on the 3D line",
+            "instruction": "Select the cooling / unload conveyor on the 3D line; the machine panel shows the FORCED indicator for conv.stop.",
+            "manual": false
+          },
+          {
+            "id": "R.3",
+            "name": "clear the trigger (simulated)",
+            "instruction": "Unforce conv.stop on the machine panel (or unforce-all on the PLC screens), watch the alarm clear and the FORCED indicator disappear. This is the simulated recovery condition - not a documented plant procedure step.",
+            "manual": false
+          }
+        ],
+        "stepsEvidence": {
+          "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+          "category": "inference",
+          "confidence": "low",
+          "status": "unverified",
+          "reviewed": "2026-10-18"
+        }
+      },
+      "alarmEvidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0008.jpg",
+        "category": "photographic",
+        "confidence": "medium",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      },
+      "evidence": {
+        "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-18"
+      }
+    },
+    {
+      "id": "FAULT-HEAT",
+      "label": "DM high level temperature",
+      "category": "process",
+      "station": "INDUCTION",
+      "machine": "induction heating machine (bell heat)",
+      "trigger": {
+        "via": "hmi fault \"heatFault\" (machine panel fault button / PLC force / sim condition)",
+        "signal": "fault.heat",
+        "forced": "true"
+      },
+      "alarm": {
+        "id": "HMI-069",
+        "code": "700920",
+        "text": "DM HIGH LEVEL TEMPERATURE REACH ALARM (CYCLE START DISABLE & CYCLE STOP)"
+      },
+      "symptoms": [
+        "temperature alarm in the heating stage while a bell part is heating"
+      ],
+      "reaction": {
+        "kind": "training-scenario",
+        "note": "No official reaction plan for this fault exists in the controlled sources; this remedy is a TRAINING SCENARIO and must not be presented as the plant's official recovery. Verify against master controlled copies before operational use.",
+        "steps": [
+          {
+            "id": "R.1",
+            "name": "read the alarm",
+            "instruction": "The alarm text is verbatim from the extracted register (photographic evidence).",
+            "manual": false
+          },
+          {
+            "id": "R.2",
+            "name": "check the machine on the 3D line",
+            "instruction": "Select the induction heating machine (bell heat) on the 3D line; the machine panel shows the FORCED indicator for fault.heat.",
+            "manual": false
+          },
+          {
+            "id": "R.3",
+            "name": "clear the trigger (simulated)",
+            "instruction": "Unforce fault.heat on the machine panel (or unforce-all on the PLC screens), watch the alarm clear and the FORCED indicator disappear. This is the simulated recovery condition - not a documented plant procedure step.",
+            "manual": false
+          }
+        ],
+        "stepsEvidence": {
+          "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+          "category": "inference",
+          "confidence": "low",
+          "status": "unverified",
+          "reviewed": "2026-10-18"
+        }
+      },
+      "alarmEvidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0018.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      },
+      "evidence": {
+        "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-18"
+      }
+    },
+    {
+      "id": "FAULT-QUENCH",
+      "label": "Quench temperature low limit",
+      "category": "process",
+      "station": "INDUCTION",
+      "machine": "induction heating machine (quench)",
+      "trigger": {
+        "via": "hmi fault \"quenchFault\" (machine panel fault button / PLC force / sim condition)",
+        "signal": "fault.quench",
+        "forced": "true"
+      },
+      "alarm": {
+        "id": "HMI-063",
+        "code": "700807",
+        "text": "QUENCH TEMPERATURE LOW LIMIT REACHED"
+      },
+      "symptoms": [
+        "quench temperature alarm while quenching is active"
+      ],
+      "reaction": {
+        "kind": "training-scenario",
+        "note": "No official reaction plan for this fault exists in the controlled sources; this remedy is a TRAINING SCENARIO and must not be presented as the plant's official recovery. Verify against master controlled copies before operational use.",
+        "steps": [
+          {
+            "id": "R.1",
+            "name": "read the alarm",
+            "instruction": "The alarm text is verbatim from the extracted register (photographic evidence).",
+            "manual": false
+          },
+          {
+            "id": "R.2",
+            "name": "check the machine on the 3D line",
+            "instruction": "Select the induction heating machine (quench) on the 3D line; the machine panel shows the FORCED indicator for fault.quench.",
+            "manual": false
+          },
+          {
+            "id": "R.3",
+            "name": "clear the trigger (simulated)",
+            "instruction": "Unforce fault.quench on the machine panel (or unforce-all on the PLC screens), watch the alarm clear and the FORCED indicator disappear. This is the simulated recovery condition - not a documented plant procedure step.",
+            "manual": false
+          }
+        ],
+        "stepsEvidence": {
+          "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+          "category": "inference",
+          "confidence": "low",
+          "status": "unverified",
+          "reviewed": "2026-10-18"
+        }
+      },
+      "alarmEvidence": {
+        "sourceId": "docs/HMI errors/120363413976268198_0034.jpg",
+        "category": "photographic",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-17"
+      },
+      "evidence": {
+        "sourceId": "docs/NEEDS_VERIFICATION.md (NV-022)",
+        "category": "inference",
+        "confidence": "low",
+        "status": "unverified",
+        "reviewed": "2026-10-18"
+      }
+    },
+    {
+      "id": "FAULT-CRACK",
+      "label": "Cracks appear on parts",
+      "category": "quality-event",
+      "station": "MPI/METLab (off-line)",
+      "machine": "MPI / METLab stations (off-line; not modelled as 3D machines)",
+      "trigger": {
+        "via": "educational trigger only: imported/CLI (no on-line sensor in the simulated line)",
+        "signal": null,
+        "forced": "no"
+      },
+      "alarm": null,
+      "symptoms": [
+        "visual crack indication (MPI) or METLab finding",
+        "no HMI alarm is claimed - detection is off-line per the register"
+      ],
+      "reaction": {
+        "kind": "documented",
+        "note": "Reaction follows the documented Crack Reaction Plan (GWI34417543) extracted as CR-000 + CR-001..CR-015; source order preserved.",
+        "procedureId": "PROC-CRACK-REACTION",
+        "stepsEvidence": {
+          "sourceId": "Project_Document.pdf",
+          "page": "5",
+          "category": "document",
+          "confidence": "high",
+          "status": "unverified",
+          "reviewed": "2026-10-15"
+        }
+      },
+      "alarmEvidence": null,
+      "evidence": {
+        "sourceId": "Project_Document.pdf",
+        "page": "5",
+        "category": "document",
+        "confidence": "high",
+        "status": "unverified",
+        "reviewed": "2026-10-15"
+      }
+    }
+  ]
+}
