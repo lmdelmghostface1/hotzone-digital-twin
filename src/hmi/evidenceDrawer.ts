@@ -553,17 +553,19 @@ export function mountEvidenceDrawer(container: HTMLElement): void {
     const tabs = (Object.keys(tabLabels) as DrawerTab[])
       .map(
         (t) =>
-          `<button data-tab="${t}"${state.tab === t ? ' class="active"' : ''}>${esc(tabLabels[t])}</button>`
+          `<button type="button" data-tab="${t}" aria-pressed="${state.tab === t}"${
+            state.tab === t ? ' class="active"' : ''
+          }>${esc(tabLabels[t])}</button>`
       )
       .join('');
     container.innerHTML = `
       <header>
         <strong>Evidence &amp; registers</strong>
         <span class="ev-sub">${esc(extraction.meta.project)}</span>
-        <button id="ev-close" type="button" class="vp-btn">close Ã—</button>
+        <button id="ev-close" type="button" class="vp-btn" aria-label="Close the evidence registers drawer">close Ã×</button>
       </header>
       <p class="ev-disclaimer" role="alert">Verify against master controlled copies before operational use.</p>
-      <nav>${tabs}</nav>
+      <nav aria-label="Evidence registers sections">${tabs}</nav>
       <div id="ev-content">${contentHtml()}</div>`;
 
     container.querySelectorAll<HTMLButtonElement>('nav button').forEach((b) => {

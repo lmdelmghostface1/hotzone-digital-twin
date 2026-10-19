@@ -1,58 +1,80 @@
-# Hot Zone CV joint line — digital twin (Phase 1)
+# Nexteer Plant 78 Hot Zone CV joint line — digital twin (training simulator)
 
-Virtual **training simulator** for the Nexteer Plant 78 Hot Zone CV joint line
-(TRIPOT housing / CVOR). Built from a photo compilation, **not** controlled master
-documentation.
+**Verify against master controlled copies before operational use.**
 
-> **Verify against master controlled copies before operational use.**
+A virtual TRAINING simulator for the Nexteer Plant 78 Hot Zone line (TRIPOT housing / CV OR).
+It is built from a PDF of 65 shop-floor photographs, which is **not** the controlled master
+documentation. Nothing here is validated for production and none of the numbers/replicas
+should be copied into any real system.
 
-## Status: Phase 1 checkpoint (extraction and architecture)
+## Honest limits (read first)
 
-Done in this checkpoint:
-
-- Source material collected and reviewed: `docs/sources/Project_Document.pdf` (75 pp.)
-  and all 64 reference photographs in `docs/reference/photos/`.
-- **213 extracted items** (equipment, process, recipes, control plan, procedures, IP
-  table, alarms, NC lines, observed HMI values, documents…) in
-  `src/data/initial-extraction.json`, each with an `evidence` object.
-- **15 needs-verification entries** (`src/data/needs-verification.json`) — conflicts
-  preserved, never merged (NV-001 washer concentration, NV-007 caption mismatches,
-  NV-011 missing induction-machine reference photo, …).
-- **64-photo reference sheet** (`src/data/reference-sheet.json`) recording PDF caption vs
-  reviewed observed content, match flags, camera/occlusion notes and evidence.
-- Evidence gate wired into the build: missing/invalid evidence **fails** `npm run build`.
-- Runnable register viewer (Extraction / Needs verification / Reference sheet / Sources).
+- The simulated process (part flow, temps, concentration trends, fault reactions) is an
+  **educational trend model**, not real metallurgy or a real PLC/NC program. Every interlock
+  is tagged with its evidence category in the registers; the screens say
+  "Simulated logic — not the plant program".
+- Fault→alarm pairings, screens' layout extrapolations and unphotographed geometry are
+  **inferences** (needs-verification register, NV-001..NV-024 in-app).
+- Manual/physical procedure steps and the crack-event reaction are **self-certified**
+  training actions; the simulator cannot verify them. LOTO and all safety procedures:
+  the approved site procedure governs real work.
+- Learning mode reports **informational counters only** — no documented pass/fail criteria
+  exist in the sources, so none is invented (NV-024).
+- It never connects to any real PLC, OPC UA, Modbus or PROFINET network; IP addresses of the
+  teaching scenarios are simulation-only.
+- Screenshot values (e.g. bell external shower 117.9 LPM, quench 34.6 °C, Brix 3.7 %,
+  heat time 69 s) are observed values only, NOT setpoints or fault conditions.
 
 ## Run it
 
-```sh
+```bash
 npm install
-npm run dev        # local viewer
-npm run build      # validate evidence + typecheck + bundle  (must pass)
-npm test           # vitest evidence/conflict tests
-npm run docs:generate   # regenerate docs/NEEDS_VERIFICATION.md + REFERENCE_SHEET.md
+npm run dev          # dev server (e.g. http://localhost:4200/)
+npm run build        # evidence validator + tsc + vite build (build fails on missing/malformed evidence)
+npm run test         # vitest unit tests (137 as of the phase 7 checkpoint)
+npm run preview      # serve the production build
 ```
 
-## Layout
+Optional: `npm run docs:generate`, `npm run render:compare` (3D comparison renders against
+reference photos, requires the Playwright chromium + managed WebGL).
 
-- `docs/` — master prompt, sources, architecture, safety, data dictionary, generated
-  registers, reference photos.
-- `src/data/` — JSON registers (single source of truth).
-- `src/main.ts` — register viewer UI.
-- `scripts/validate-evidence.mjs` — build gate for evidence metadata.
-- `src/tests/extraction.test.ts` — evidence + conflict-preservation tests.
+## What is in the app
 
-See `docs/ARCHITECTURE.md`, `docs/SOURCES.md`, `docs/NEEDS_VERIFICATION.md`,
-`docs/SAFETY_AND_LIMITATIONS.md`, `docs/DATA_DICTIONARY.md`,
-`docs/reference/REFERENCE_SHEET.md`.
+- **3D line as the site**: click any machine (induction heat, both washers, draw oven, laser
+  marking, 2D reader, unload/cooling, boxing, gage + operator) → selection outline + anchored
+  panel with a REAL evidence breakdown of its components.
+- **Machine panel controls** write to one typed signal bus (the single source of truth) —
+  forced signals show a global `FORCED: <signal>` badge, raise the site's real alarm codes
+  (pairings are an inference, NV-022) and are audited.
+- **Screen replicas** (Main HMI with alarm lifecycle, SINUMERIK-safe NC, Inducontrol, AutoID
+  navigator, PLC/IO, recipe, network editor, roles) open from machine panels or the toolbar,
+  all flagged "Simulated logic".
+- **Evidence drawer**: extraction register (213 items), needs-verification (24),
+  reference sheet (64 photos), HMI errors (70), sources, **procedures** (15, verbatim steps
+  with order enforcement + honesty badges), **faults & drills** (6 training-scenario faults +
+  the documented crack event drill) and **learning mode** counters.
+- **Deterministic simulation core** (`src/sim`, runs without a browser): fixed-timestep part
+  lifecycle, tracked CV OR parts (serial/2D/lot/recipe/state/temp/history), pause/step/
+  0.25x–8x rate on simulation time independent from wall clock.
 
-## Not yet built (later phases)
+## Architecture
 
-3D station models, simulation core, HMI/PLC screens, procedures/faults, learning mode.
-Nothing in this checkpoint simulates plant behaviour.
+```
+src/sim        simulation core (bus, lineSim, hmiSim, procedures, faults, learning) — browser-free
+src/three      rendering (scene, machines, viewport loop)
+src/hmi        UI (topbar/shell hooks, drawers, panels, screen replicas)
+src/data       JSON registers (single source of truth; validator-checked evidence metas)
+src/tests      vitest unit tests (jsdom)
+docs           master prompt, phase status, extraction/fidelity notes
+scripts        evidence validator + one-off generators (gen-phase5-data.mjs etc.)
+```
 
-## Rules
+Every new item (component, parameter, alarm, procedure step, fault) must carry an
+`evidence` object; `npm run build` fails when evidence is missing or malformed.
+Unknowns go into the needs-verification register, never into invented values.
 
-Honesty first: no invented specs, no claim of running anything that was not run, no
-simulated OK part as production approval, no connection to any real PLC or factory
-network. Full statement: `docs/SAFETY_AND_LIMITATIONS.md`.
+## Status
+
+Phases 1–6 done, phase 7 (polish/release) done as of this checkpoint — see
+`docs/PHASE_STATUS.md` for the full done/partial/missing ledger. Next acceptance step is
+**nexteer-provided controlled documentation** to close the needs-verification register.

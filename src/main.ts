@@ -30,18 +30,40 @@ app.innerHTML = `
       <span class="brand-sub">digital twin training simulator · educational, not validated</span>
     </div>
     <div id="status-pill" role="alert">${DISCLAIMER}</div>
-    <button id="force-pill" type="button" class="force-pill" hidden></button>
-    <button id="ev-btn" type="button" class="vp-btn">Evidence</button>
+    <button
+      id="force-pill"
+      type="button"
+      class="force-pill"
+      hidden
+      title="Signals forced on the simulation bus (affects the simulation only)"
+      aria-label="Forced signals indicator, cannot act"
+      disabled
+    ></button>
+    <button
+      id="ev-btn"
+      type="button"
+      class="vp-btn"
+      aria-label="Open the evidence registers drawer"
+      aria-expanded="false"
+      aria-controls="ev-drawer"
+    >Evidence</button>
   </header>
-  <main id="scene-host"></main>
-  <aside id="ev-drawer" hidden></aside>`;
+  <main id="scene-host" aria-label="Interactive 3D view of the CV-joint line"></main>
+  <aside id="ev-drawer" role="dialog" aria-modal="false" aria-label="Evidence registers" hidden></aside>`;
 
 mountEvidenceDrawer(document.getElementById('ev-drawer')!);
 mountViewport(document.getElementById('scene-host')!);
 
 document.getElementById('ev-btn')?.addEventListener('click', () => {
   const drawer = document.getElementById('ev-drawer');
-  if (drawer) drawer.hidden = !drawer.hidden;
+  if (drawer) {
+    drawer.hidden = !drawer.hidden;
+    const btn = document.getElementById('ev-btn');
+    if (btn) {
+      btn.setAttribute('aria-expanded', String(!drawer.hidden));
+      btn.setAttribute('aria-label', drawer.hidden ? 'Open the evidence registers drawer' : 'Close the evidence registers drawer');
+    }
+  }
 });
 
 // FORCED signals must be visible on every HMI (hotzone-rules 4); the top bar
@@ -64,6 +86,13 @@ window.addEventListener('keydown', (e) => {
       return;
     }
     const drawer = document.getElementById('ev-drawer');
-    if (drawer && !drawer.hidden) drawer.hidden = true;
+    if (drawer && !drawer.hidden) {
+      drawer.hidden = true;
+      const btn = document.getElementById('ev-btn');
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open the evidence registers drawer');
+      }
+    }
   }
 });

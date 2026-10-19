@@ -21,7 +21,7 @@ export function openScreenOverlay(screenId?: ScreenId): void {
   if (!overlay) {
     overlay = document.createElement('div');
     overlay.id = 'screen-overlay';
-    overlay.innerHTML = `<div class="so-window" role="dialog" aria-label="Simulated screen replica">
+    overlay.innerHTML = `<div class="so-window" role="dialog" aria-modal="true" aria-label="Simulated screen replica">
       <div class="so-head">
         <strong>screen replica — simulated logic, not the plant program (NV-022)</strong>
         <button type="button" class="vp-btn so-close" aria-label="close">×</button>

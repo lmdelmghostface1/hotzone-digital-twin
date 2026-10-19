@@ -951,17 +951,6 @@ function startLoop(station: BuiltLine): void {
     sim.tick(dt);
     hmi.tick(dt);
     updateActors(station, dt);
-
-    const label = document.getElementById('vp-state');
-    if (label) {
-      label.textContent = `heat ${Math.round(state.heat * 100)} % · quench ${
-        quenching ? 'on' : 'off'
-      } · wash ${washing ? 'on' : 'off'} · oven ${
-        tempering ? 'on' : 'off'
-      } · ${
-        heating ? 'heating' : quenching ? 'quenching' : washing ? 'washing' : tempering ? 'tempering' : 'idle'
-      }${paused ? ' · paused' : ''}`;
-    }
   };
 
   const loop = (): void => {
@@ -981,6 +970,23 @@ function startLoop(station: BuiltLine): void {
       const tris = api?.triangles() ?? 0;
       if (s) s.textContent = `triangles: ${tris.toLocaleString()} · fps: ${fps}`;
       window.__stats = { triangles: tris, fps };
+      // status label refreshed with the stats cadence instead of every frame
+      // (per-frame DOM writes, especially toLocaleString, are a known cost)
+      const label = document.getElementById('vp-state');
+      if (label) {
+        const heating = bus.asBool('amb.heating');
+        const quenching = bus.asBool('amb.quenching');
+        const washing = bus.asBool('amb.washing');
+        const tempering = bus.asBool('amb.tempering');
+        const paused = !bus.asBool('line.run');
+        label.textContent = `heat ${Math.round(state.heat * 100)} % · quench ${
+          quenching ? 'on' : 'off'
+        } · wash ${washing ? 'on' : 'off'} · oven ${
+          tempering ? 'on' : 'off'
+        } · ${
+          heating || state.heat > 0.35 ? 'heating' : quenching ? 'quenching' : washing ? 'washing' : tempering ? 'tempering' : 'idle'
+        }${paused ? ' · paused' : ''}`;
+      }
     }
     window.__frames = frames;
     if (frames === 1) window.__sceneReady = true;

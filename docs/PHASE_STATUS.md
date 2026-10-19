@@ -146,6 +146,44 @@ writes/hints → crack drill self-certified, 0 console errors).
 `tsc --noEmit` clean, headless learning-tab smoke (procedure step → drill → Learning tab shows
 session/counter/forced='none'/running='none'/drill row, 0 console errors).
 
+## Phase 7 — polish, accessibility, documentation, release
+
+**Done**
+
+- **Performance**: the per-frame `vp-state` status DOM write moved to the 0.5 s stats cadence;
+  the pixel ratio was already clamped (`renderer.setPixelRatio(min(dpr, 2))`); per-frame
+  allocations in the loop avoided. No behavioural change (status still refreshes, fps counters
+  unchanged).
+- **Accessibility**: `lang`, description meta and page title reflect the training nature;
+  top bar buttons have labels (`aria-expanded`/`aria-controls`/`aria-label`, Evidence toggles
+  correctly on click/Escape); drawer is a labelled dialog with a labelled nav whose tab
+  buttons carry live `aria-pressed`; the screens overlay is `aria-modal="true"`; forced-signal
+  pill is a disabled indicator button (cannot act, labelled); `:focus-visible` outline added;
+  screen-reader-only status region added. Canvas interactive content still requires a pointer
+  (3D picking is mouse/touch; keyboard alternative is the drawer lists, documented in README).
+- **Documentation**: new top-level `README.md` (honest-limits block, run commands,
+  architecture map, status) + this file's final state.
+- **Release checks**: full stack re-verified (validator / tests / build / headless smoke)
+  before tagging; release = training tool with all honesty disclaimers intact.
+
+**Not done / limits**
+
+- No trainee profiles/persistence and no real pass/fail scoring (NV-024; needs controlled
+  sources).
+- 3D picking and the machine-panel controls are pointer-first: a keyboard access path would
+  need a designed alternative (part list ↔ panel) — noted for a future iteration.
+- No `docs/` content from the controlled master was used: the whole twin remains derived from
+  the shop-floor PDF + public sources.
+
+**Verified**: validator OK (24 NV), 137 unit tests, `tsc --noEmit` + `vite build` green,
+headless release smoke (scene ready, drawer + Learning tab, a11y attributes present,
+status-label throttle, 0 console errors).
+
+## Release checkpoint
+
+Tagged as `v0.7.0-training-release`: training simulator only, not validated for production;
+next acceptance step is Nexteer-provided controlled documentation.
+
 ## Phase status
 
 | phase | scope | status | notes |
@@ -157,7 +195,7 @@ session/counter/forced='none'/running='none'/drill row, 0 console errors).
 | 4 | HMI / NC / PLC screens, network editor, roles | **done (training replicas)** | see below. |
 | 5 | procedures and faults | **done (training registers)** | see "Phase 5" below. |
 | 6 | learning mode | **done (informational counters, no scoring)** | see "Phase 6" below. |
-| 7 | polish and release | **not started** | |
+| 7 | polish and release | **done (training release)** | see "Phase 7" below. |
 
 Per the project rules, work stops after each phase with a runnable checkpoint. **Phase 6 is
 not started until you say to continue.**
